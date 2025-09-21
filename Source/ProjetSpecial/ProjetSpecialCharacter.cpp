@@ -37,10 +37,8 @@ AProjetSpecialCharacter::AProjetSpecialCharacter()
 	GetCharacterMovement()->BrakingDecelerationWalking = 2000.f;
 	GetCharacterMovement()->BrakingDecelerationFalling = 1500.0f;
 
-	
 
-	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
-	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
+	FlyingFriction = 10;
 }
 
 void AProjetSpecialCharacter::BeginPlay()
@@ -57,11 +55,12 @@ void AProjetSpecialCharacter::SetupPlayerInputComponent(UInputComponent* PlayerI
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent)) {
 		
 		// Jumping
-		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Started, this, &AProjetSpecialCharacter::DoJumpStart);
-		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
-
+		//EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Started, this, &AProjetSpecialCharacter::DoJumpStart);
+		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Canceled, this, &AProjetSpecialCharacter::DoJumpStart);
+		
+		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Triggered, this, &AProjetSpecialCharacter::TakeOff);
 		// Moving
-		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AProjetSpecialCharacter::Move);
+		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AProjetSpecialCharacter::PSCMove);
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Completed, this, &AProjetSpecialCharacter::MoveStopped);
 		EnhancedInputComponent->BindAction(RunAction, ETriggerEvent::Started,this,&AProjetSpecialCharacter::Run);
 
@@ -80,26 +79,83 @@ void AProjetSpecialCharacter::SetupPlayerInputComponent(UInputComponent* PlayerI
 	}
 }
 
+void AProjetSpecialCharacter::PSCMove(const FInputActionValue& Value)
+{
+	// input is a Vector2D
+	if (CameraPositionResetTimerHandle.IsValid())
+	{
+		StopCameraPositionReset();
+	}
+
+	FVector2D MovementVector = Value.Get<FVector2D>();
+	
+
+	// route the input
+	DoMove(MovementVector.X, MovementVector.Y);
+}
 
 void AProjetSpecialCharacter::Run()
 {
 	
 	if(GetCharacterMovement())
 	{
-		if(GetCharacterMovement()->MaxWalkSpeed == MAX_RUN_SPEED)
+		if(bIsRunning)
 		{
-			GetCharacterMovement()->MaxWalkSpeed = MAX_WALK_SPEED;
+			bIsRunning = false;
 			TargetCameraLag = BASE_CAMERA_LAG_SPEED;
 		}
 		else
 		{
-			GetCharacterMovement()->MaxWalkSpeed = MAX_RUN_SPEED;
-			TargetCameraLag = RUN_CAMERA_LAG_SPEED;
+			bIsRunning = true;
+			TargetCameraLag = RUN_CAMERA_LAG_SPEED;		
 		}
 	}
 	GetWorldTimerManager().SetTimer(CameraLagTransitionTimerHandle,this,&AProjetSpecialCharacter::AdjustCameraLag,0.1,true);
 }
 
+void AProjetSpecialCharacter::TakeOff()
+{
+	bIsTakingOff = true;
+	if(auto PlayerController = Cast<APlayerController>(GetController()))
+	{
+		DisableInput(PlayerController);
+	}
+}
+
+void AProjetSpecialCharacter::StartGliding()
+{
+	//AllowCameraAutoAdjust = false;
+	//AllowCameraWallAvoidance = false;
+	//AllowCameraPositionReset = false;
+	AllowVerticalAutoAdjust = false;
+	//AllowCliffDetection = false;
+	bIsGliding = true;
+	bIsTakingOff = false;
+	GetCharacterMovement()->MaxWalkSpeed = BASE_FLYING_SPEED;
+	currentFlyingSpeed = BASE_FLYING_SPEED;
+	currentFlyingUpSpeed = BASE_FLYING_SPEED;
+	GetCharacterMovement()->Velocity = GetActorForwardVector() * currentFlyingSpeed;
+	GetCharacterMovement()->bOrientRotationToMovement = false;
+	//bUseControllerRotationPitch = true;
+	//bUseControllerRotationYaw = true;
+	//StopCameraPositionReset();
+}
+
+
+void AProjetSpecialCharacter::StopGliding()
+{
+	//AllowCameraAutoAdjust = true;
+	//AllowCameraWallAvoidance = true;
+	//AllowCameraPositionReset = true;
+	AllowVerticalAutoAdjust = true;
+	//AllowCliffDetection = true;
+	bIsGliding = false;
+	GetCharacterMovement()->bOrientRotationToMovement = true;
+	//bUseControllerRotationPitch = false;
+	//bUseControllerRotationYaw = false;
+
+	//GetWorldTimerManager().SetTimer(CameraPositionResetTimerHandle, this,&AAutoCameraCharacter::StartCameraPositionReset, CAMERA_POSITION_RESET_DELAY,false);
+}
 
 void AProjetSpecialCharacter::Tick(float DeltaSeconds)
 {
@@ -109,19 +165,25 @@ void AProjetSpecialCharacter::Tick(float DeltaSeconds)
 	{
 		if(bIsGliding)
 		{
-			bIsGliding = false;
+			StopGliding();
 		}
 	}
 	if(bIsGliding)
 	{
-		GetCharacterMovement()->Velocity = FVector(GetCharacterMovement()->Velocity.X,GetCharacterMovement()->Velocity.Y,-4000*DeltaSeconds);
+		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Black,FString::SanitizeFloat(FlyingFriction));
+		currentFlyingSpeed = currentFlyingSpeed - FlyingFriction*GetActorForwardVector().Z;
+		currentFlyingUpSpeed = currentFlyingUpSpeed -1.5*FlyingFriction;
+		FVector TempVelocity = GetActorForwardVector() * FMath::Max(currentFlyingSpeed,0);
+		GetCharacterMovement()->Velocity = FVector(TempVelocity.X,TempVelocity.Y,TempVelocity.Z+(currentFlyingUpSpeed*DeltaSeconds));
 	}
 	DeltaRotation = GetActorRotation() - CachedRotation;
 	DeltaRotation.Normalize();
 	CachedRotation = GetActorRotation();
-	
-	
-	
+	if(DeltaRotation.Yaw > 2 || DeltaRotation.Yaw < -2)
+	{
+		DeltaRotation.Yaw = 0;
+	}
+
 }
 
 
@@ -132,13 +194,11 @@ void AProjetSpecialCharacter::DoJumpStart()
 	{
 		if(bIsGliding)
 		{
-			//GetCharacterMovement()->SetMovementMode(MOVE_Falling);
-			bIsGliding = false;
+			StopGliding();
 		}
 		else
 		{
-			//GetCharacterMovement()->SetMovementMode(MOVE_Flying);
-			bIsGliding = true;
+			StartGliding();
 		}
 	}
 	else
@@ -146,6 +206,53 @@ void AProjetSpecialCharacter::DoJumpStart()
 		Jump();
 	}
 
+}
+
+void AProjetSpecialCharacter::DoMove(float Right, float Forward)
+{
+	float SpeedPercentage = FMath::Clamp(FMath::Abs(Right) + FMath::Abs(Forward),0,1);
+	if(bIsGliding)
+	{
+		SetActorRotation(FRotator(GetActorRotation().Pitch - Forward,GetActorRotation().Yaw + Right, GetActorRotation().Roll));
+
+	}
+	else
+	{
+		if(bIsRunning)
+		{
+			GetCharacterMovement()->MaxWalkSpeed = SpeedPercentage*MAX_RUN_SPEED;
+			GetCharacterMovement()->MinAnalogWalkSpeed = SpeedPercentage*MAX_RUN_SPEED;
+		}
+		else
+		{
+			GetCharacterMovement()->MaxWalkSpeed = SpeedPercentage*MAX_WALK_SPEED;
+			GetCharacterMovement()->MinAnalogWalkSpeed = SpeedPercentage*MAX_WALK_SPEED;
+		}
+		if (GetController() != nullptr)
+		{
+			// find out which way is forward
+			const FRotator Rotation = GetController()->GetControlRotation();
+			const FRotator YawRotation(0, Rotation.Yaw, 0);
+
+			// get forward vector
+			const FVector ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
+
+			// get right vector 
+			const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+
+			// add movement
+			if(!bIsGliding)
+			{
+				AddMovementInput(ForwardDirection, Forward);
+				AddMovementInput(RightDirection, Right);
+			}
+			else
+			{
+				GetCharacterMovement()->Velocity = GetCharacterMovement()->Velocity + RightDirection*Right;
+			}
+		
+		}
+	}
 }
 
 

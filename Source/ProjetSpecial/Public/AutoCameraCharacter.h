@@ -52,9 +52,14 @@ public:
 	double CameraAdjustSpeedMin;
 	double CameraAdjustSpeedMax;
 	double CameraAutoAdjustDisableDuration;
+	UPROPERTY(BlueprintReadWrite,EditAnywhere)
+	float YawAdjustmentSign;
 	float CameraMovementInterpSpeed;
 	bool AllowCameraAutoAdjust;
 	bool AllowCameraWallAvoidance;
+	bool AllowCameraPositionReset;
+	bool AllowCliffDetection;
+	bool AllowVerticalAutoAdjust;
 	FTimerHandle CameraPositionResetTimerHandle;
 	FTimerHandle CameraAutoAdjustTimerHandle;
 	FTimerHandle CameraLagTransitionTimerHandle;
@@ -83,6 +88,8 @@ public:
 
 	TArray<float> CollisionImpactPitchDirections;
 	float CollisionPitchDirection;
+	UFUNCTION()
+	void StartCameraPositionReset();
 
 protected:
 	// Called when the game starts or when spawned
@@ -102,11 +109,10 @@ protected:
 	void AdjustCameraLag();
 	UFUNCTION()
 	void EnableCameraAutoAdjust();
-	UFUNCTION()
-	void StartCameraPositionReset();
+	
 	UFUNCTION()
 	void StopCameraPositionReset();
-
+	
 	void ComputeAngularDifference();
 	void ComputeCameraWallAvoidance();
 

@@ -36,9 +36,13 @@ AAutoCameraCharacter::AAutoCameraCharacter()
 	CameraAdjustSpeedMin = 1;
 	CameraAdjustSpeedMax = 1;
 	CameraAutoAdjustDisableDuration = 2;
+	YawAdjustmentSign = 0;
 	CameraMovementInterpSpeed = BASE_CAMERA_MOVEMENT_INTERP_SPEED;
 	AllowCameraAutoAdjust = true;
 	AllowCameraWallAvoidance = true;
+	AllowCameraPositionReset = true;
+	AllowCliffDetection = true;
+	AllowVerticalAutoAdjust = true;
 
 	//for camera wall avoidance
 	WallAvoidanceSphereRadius = 100;
@@ -61,6 +65,7 @@ void AAutoCameraCharacter::Move(const FInputActionValue& Value)
 	}
 
 	FVector2D MovementVector = Value.Get<FVector2D>();
+	
 
 	// route the input
 	DoMove(MovementVector.X, MovementVector.Y);
@@ -72,9 +77,11 @@ void AAutoCameraCharacter::MoveStopped()
 	{
 		StopCameraPositionReset();
 	}
-	GetWorldTimerManager().SetTimer(CameraPositionResetTimerHandle, this,
-	                                &AAutoCameraCharacter::StartCameraPositionReset, CAMERA_POSITION_RESET_DELAY,
-	                                false);
+	if(AllowCameraPositionReset)
+	{
+		GetWorldTimerManager().SetTimer(CameraPositionResetTimerHandle, this,&AAutoCameraCharacter::StartCameraPositionReset, CAMERA_POSITION_RESET_DELAY ,false);
+	}
+	
 }
 
 void AAutoCameraCharacter::Look(const FInputActionValue& Value)
@@ -94,8 +101,11 @@ void AAutoCameraCharacter::LookStarted(const FInputActionValue& Value)
 	{
 		GetWorldTimerManager().ClearTimer(CameraAutoAdjustTimerHandle);
 	}
+	
 	GetWorldTimerManager().SetTimer(CameraAutoAdjustTimerHandle, this, &AAutoCameraCharacter::EnableCameraAutoAdjust,
-	                                CameraAutoAdjustDisableDuration, false);
+									CameraAutoAdjustDisableDuration, false);
+	
+	
 }
 
 void AAutoCameraCharacter::LookStopped(const FInputActionValue& Value)
@@ -104,9 +114,13 @@ void AAutoCameraCharacter::LookStopped(const FInputActionValue& Value)
 	{
 		StopCameraPositionReset();
 	}
-	GetWorldTimerManager().SetTimer(CameraPositionResetTimerHandle, this,
-	                                &AAutoCameraCharacter::StartCameraPositionReset, CAMERA_POSITION_RESET_DELAY,
-	                                false);
+	if(AllowCameraPositionReset)
+	{
+		GetWorldTimerManager().SetTimer(CameraPositionResetTimerHandle, this,
+									&AAutoCameraCharacter::StartCameraPositionReset, CAMERA_POSITION_RESET_DELAY,
+									false);
+	}
+	
 }
 
 void AAutoCameraCharacter::AdjustCameraLag()
@@ -122,36 +136,41 @@ void AAutoCameraCharacter::EnableCameraAutoAdjust()
 {
 	AllowCameraAutoAdjust = true;
 	AllowCameraWallAvoidance = true;
+	AllowCameraPositionReset = true;
 }
 
 void AAutoCameraCharacter::StartCameraPositionReset()
 {
 	AllowCameraWallAvoidance = false;
 	FRotator DefaultRotation = GetActorRotation();
-	FHitResult outHit;
-	TArray<AActor*> ActorsToIgnore;
-	ActorsToIgnore.Add(this);
-	FCollisionQueryParams Params;
-	Params.AddIgnoredActors(ActorsToIgnore);
-	FVector TraceStart = GetActorLocation() + GetActorForwardVector() * 100 + GetActorUpVector() * -100;
-	FVector TraceEnd = TraceStart + FVector(0, 0, -0.001);
+	if(AllowCliffDetection)
+	{
+		FHitResult outHit;
+		TArray<AActor*> ActorsToIgnore;
+		ActorsToIgnore.Add(this);
+		FCollisionQueryParams Params;
+		Params.AddIgnoredActors(ActorsToIgnore);
+		FVector TraceStart = GetActorLocation() + GetActorForwardVector() * 100 + GetActorUpVector() * -100;
+		FVector TraceEnd = TraceStart + FVector(0, 0, -0.001);
 
 
-	bool HasHit = GetWorld()->SweepSingleByChannel(outHit, TraceStart, TraceEnd, FQuat::Identity,
-	                                               UEngineTypes::ConvertToCollisionChannel(TraceTypeQuery1),
-	                                               FCollisionShape::MakeSphere(50), Params);
-	//bool HasHit = UKismetSystemLibrary::SphereTraceSingle(GetWorld(),TraceStart,TraceEnd,50,TraceTypeQuery1,false,ActorsToIgnore,EDrawDebugTrace::ForDuration,outHit,true);
-	if (!HasHit)
-	{
-		DefaultRotation.Pitch -= 45;
-	}
-	else
-	{
-		if (outHit.ImpactNormal.Z > 0)
+		bool HasHit = GetWorld()->SweepSingleByChannel(outHit, TraceStart, TraceEnd, FQuat::Identity,
+													   UEngineTypes::ConvertToCollisionChannel(TraceTypeQuery1),
+													   FCollisionShape::MakeSphere(50), Params);
+		//bool HasHit = UKismetSystemLibrary::SphereTraceSingle(GetWorld(),TraceStart,TraceEnd,50,TraceTypeQuery1,false,ActorsToIgnore,EDrawDebugTrace::ForDuration,outHit,true);
+		if (!HasHit)
 		{
-			DefaultRotation.Pitch += FVector::DotProduct(GetActorForwardVector(), outHit.ImpactNormal) * -45;
+			DefaultRotation.Pitch -= 45;
+		}
+		else
+		{
+			if (outHit.ImpactNormal.Z > 0)
+			{
+				DefaultRotation.Pitch += FVector::DotProduct(GetActorForwardVector(), outHit.ImpactNormal) * -45;
+			}
 		}
 	}
+	
 	CameraMovementInterpSpeed = CAMERA_POSITION_RESET_INTERP_SPEED;
 	DesiredControlRotation = DefaultRotation;
 }
@@ -173,13 +192,11 @@ void AAutoCameraCharacter::ComputeAngularDifference()
 			FRotator difference = GetBaseAimRotation() - RootComponent->GetComponentRotation();
 			difference.Normalize();
 
-			if (FMath::Abs(difference.Yaw) >= CameraAdjustStartThreshold && FMath::Abs(difference.Yaw) <=
-				CameraAdjustStopThreshold)
+			if (FMath::Abs(difference.Yaw) >= CameraAdjustStartThreshold && FMath::Abs(difference.Yaw) <= CameraAdjustStopThreshold)
 			{
 				double MappedAdjustValue = FMath::GetMappedRangeValueClamped(
 					TRange<double>(CameraAdjustStartThreshold, CameraAdjustStopThreshold),
 					TRange<double>(CameraAdjustSpeedMin, CameraAdjustSpeedMax), FMath::Abs(difference.Yaw));
-				double YawAdjustmentSign;
 				if (difference.Yaw > 0)
 				{
 					YawAdjustmentSign = -1;
@@ -191,28 +208,34 @@ void AAutoCameraCharacter::ComputeAngularDifference()
 				DesiredControlRotation.Yaw = DesiredControlRotation.Yaw + (MappedAdjustValue * YawAdjustmentSign);
 				//AddControllerYawInput(MappedAdjustValue*YawAdjustmentSign);
 			}
+			else
+			{
+				YawAdjustmentSign = 0;
+			}
 			FVector DiffLocation = GetActorLocation() - PreviousLocation;
 			DiffLocation.Normalize();
 
 			PreviousLocation = GetActorLocation();
 
 
-			GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Black,
-			                                 FString::SanitizeFloat(DiffLocation.Rotation().Pitch));
-
-			if (!FMath::IsNearlyEqual(DiffLocation.Rotation().Pitch, 0, 0.1))
+			//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Black FString::SanitizeFloat(DiffLocation.Rotation().Pitch));
+			if(AllowVerticalAutoAdjust)
 			{
-				if (DiffLocation.Rotation().Pitch < 0)
+				if (!FMath::IsNearlyEqual(DiffLocation.Rotation().Pitch, 0, 0.1))
 				{
-					DesiredControlRotation.Pitch = FMath::Max(DesiredControlRotation.Pitch - 1,
-					                                          DiffLocation.Rotation().Pitch + 10);
-				}
-				else
-				{
-					DesiredControlRotation.Pitch = FMath::Min(DesiredControlRotation.Pitch + 1,
-					                                          DiffLocation.Rotation().Pitch - 10);
+					if (DiffLocation.Rotation().Pitch < 0)
+					{
+						DesiredControlRotation.Pitch = FMath::Max(DesiredControlRotation.Pitch - 1,
+																  DiffLocation.Rotation().Pitch + 10);
+					}
+					else
+					{
+						DesiredControlRotation.Pitch = FMath::Min(DesiredControlRotation.Pitch + 1,
+																  DiffLocation.Rotation().Pitch - 10);
+					}
 				}
 			}
+			
 
 			//AddControllerYawInput(MappedAdjustValue*YawAdjustmentSign);
 		}
