@@ -4,6 +4,7 @@
 #include "FlyingMovementComponent.h"
 
 #include "AutoCameraCharacter.h"
+#include "PowerUpComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
 
@@ -14,7 +15,8 @@ UFlyingMovementComponent::UFlyingMovementComponent()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
-	FlyingFriction = 10;
+	FlyingFrictionUp = 5;
+	FlyingFrictionDown = 10;
 	// ...
 }
 
@@ -80,9 +82,6 @@ void UFlyingMovementComponent::CheckForGlide()
 void UFlyingMovementComponent::BeginPlay()
 {
 	Super::BeginPlay();
-
-	// ...
-	
 }
 
 
@@ -102,23 +101,23 @@ void UFlyingMovementComponent::TickComponent(float DeltaTime, ELevelTick TickTyp
 		}
 		if(bIsGliding)
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Black,FString::SanitizeFloat(FlyingFriction));
+			//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Black,FString::SanitizeFloat(FlyingFrictionUp));
 			if(Character->GetActorForwardVector().Z < 0)
 			{
-				currentFlyingSpeed = FMath::Max(currentFlyingSpeed - FlyingFriction*1.5*Character->GetActorForwardVector().Z,50);;
+				currentFlyingSpeed = FMath::Max(currentFlyingSpeed - FlyingFrictionDown*Character->GetActorForwardVector().Z - FlyingFrictionUp/2,125);;
 			}
 			else
 			{
-				currentFlyingSpeed = FMath::Max(currentFlyingSpeed - FlyingFriction*Character->GetActorForwardVector().Z,50);;
+				currentFlyingSpeed = FMath::Max(currentFlyingSpeed - FlyingFrictionUp*Character->GetActorForwardVector().Z - FlyingFrictionUp/2,125);;
 			}
 		
-			if(currentFlyingSpeed <= 50)
+			if(currentFlyingSpeed <= 150)
 			{
-				currentFlyingUpSpeed = currentFlyingUpSpeed -2.5*FlyingFriction;
+				currentFlyingUpSpeed = currentFlyingUpSpeed -25*FlyingFrictionUp;
 			}
 			else
 			{
-				currentFlyingUpSpeed = currentFlyingUpSpeed -1.5*FlyingFriction;
+				currentFlyingUpSpeed = currentFlyingUpSpeed -1.5*FlyingFrictionUp;
 			}
 		
 			FVector TempVelocity = Character->GetActorForwardVector() * currentFlyingSpeed;

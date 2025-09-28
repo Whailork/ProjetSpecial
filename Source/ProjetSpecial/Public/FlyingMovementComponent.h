@@ -24,10 +24,12 @@ public:
 	float currentFlyingSpeed;
 	float currentFlyingUpSpeed;
 	UPROPERTY(BlueprintReadWrite,EditAnywhere)
-	float FlyingFriction;
+	float FlyingFrictionUp;
+	UPROPERTY(BlueprintReadWrite,EditAnywhere)
+	float FlyingFrictionDown;
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	float BASE_FLYING_SPEED = 600.0f;
+	float BASE_FLYING_SPEED = 450.0f;
 	UPROPERTY(BlueprintReadWrite,EditAnywhere)
 	UInputAction* TakeOffAction;
 

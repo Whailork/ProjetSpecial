@@ -90,13 +90,7 @@ void AAutoCameraCharacter::Look(const FInputActionValue& Value)
 
 	// route the input
 	DoLook(LookAxisVector.X, LookAxisVector.Y);
-}
-
-void AAutoCameraCharacter::LookStarted(const FInputActionValue& Value)
-{
-	StopCameraPositionReset();
-	AllowCameraAutoAdjust = false;
-	AllowCameraWallAvoidance = false;
+	
 	if (CameraAutoAdjustTimerHandle.IsValid())
 	{
 		GetWorldTimerManager().ClearTimer(CameraAutoAdjustTimerHandle);
@@ -104,7 +98,13 @@ void AAutoCameraCharacter::LookStarted(const FInputActionValue& Value)
 	
 	GetWorldTimerManager().SetTimer(CameraAutoAdjustTimerHandle, this, &AAutoCameraCharacter::EnableCameraAutoAdjust,
 									CameraAutoAdjustDisableDuration, false);
-	
+}
+
+void AAutoCameraCharacter::LookStarted(const FInputActionValue& Value)
+{
+	StopCameraPositionReset();
+	AllowCameraAutoAdjust = false;
+	AllowCameraWallAvoidance = false;
 	
 }
 
@@ -251,10 +251,12 @@ void AAutoCameraCharacter::ComputeCameraWallAvoidance()
 		FCollisionObjectQueryParams ObjectParams;
 		ObjectParams.AddObjectTypesToQuery(ECC_WorldStatic);
 		ObjectParams.AddObjectTypesToQuery(ECC_WorldDynamic);
+		
 
 		TArray<AActor*> ActorsToIgnore;
 		ActorsToIgnore.Add(this);
 		FCollisionQueryParams Params;
+		Params.bIgnoreTouches = true;
 		Params.AddIgnoredActors(ActorsToIgnore);
 		//TArray<TEnumAsByte<EObjectTypeQuery>> ObjectTypesArray;
 		//ObjectTypesArray.Add(UEngineTypes::ConvertToObjectType(ECC_WorldStatic));
@@ -275,8 +277,7 @@ void AAutoCameraCharacter::ComputeCameraWallAvoidance()
 					if (InsideWallActors.Contains(ProximityHitResult.GetActor()))
 					{
 						CollisionImpactYawDirections.Add(1 * LastCameraMovementYawDirection);
-						GEngine->AddOnScreenDebugMessage(-1, 1, FColor::Green,
-						                                 FString::SanitizeFloat(LastCameraMovementYawDirection));
+						//GEngine->AddOnScreenDebugMessage(-1, 1, FColor::Green,FString::SanitizeFloat(LastCameraMovementYawDirection));
 					}
 					else
 					{
@@ -329,7 +330,7 @@ void AAutoCameraCharacter::ComputeCameraWallAvoidance()
 					}
 					else
 					{
-						GEngine->AddOnScreenDebugMessage(-1, 1, FColor::Blue, FString("InsideWall"));
+						//GEngine->AddOnScreenDebugMessage(-1, 1, FColor::Blue, FString("InsideWall"));
 						bGetOutOfWallAdjust = true;
 						if (!InsideWallActors.Contains(ProximityHitResult.GetActor()))
 						{
@@ -347,8 +348,7 @@ void AAutoCameraCharacter::ComputeCameraWallAvoidance()
 
 							LastCameraMovementYawDirection = -1 * FMath::Sign(DeltaControlRot.Yaw);
 						}
-						GEngine->AddOnScreenDebugMessage(-1, 1, FColor::Green,
-						                                 FString::SanitizeFloat(LastCameraMovementYawDirection));
+						//GEngine->AddOnScreenDebugMessage(-1, 1, FColor::Green,FString::SanitizeFloat(LastCameraMovementYawDirection));
 						CollisionImpactYawDirections.Add(1 * LastCameraMovementYawDirection);
 					}
 				}

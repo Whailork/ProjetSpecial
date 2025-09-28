@@ -3,6 +3,8 @@
 
 #include "PowerUpComponent.h"
 
+#include "Algo/ForEach.h"
+
 
 // Sets default values for this component's properties
 UPowerUpComponent::UPowerUpComponent()
@@ -14,6 +16,45 @@ UPowerUpComponent::UPowerUpComponent()
 	// ...
 }
 
+
+void UPowerUpComponent::AddPowerUp(EPowerUpType type, bool isNegative)
+{
+	
+	for(int i = 0; i < PowerUps.Num();i++)
+	{
+		if(PowerUps[i].Type == type)
+		{
+			FPowerUpData newData;
+			int LastQuantity = PowerUps[i].Quantity;
+			if(isNegative)
+			{
+				newData = FPowerUpData(PowerUps[i].Quantity - 1,type);
+			}
+			else
+			{
+				newData = FPowerUpData(PowerUps[i].Quantity + 1,type);
+			}
+			
+			PowerUps[i] = newData;
+			PowerUpAddedDelegate.Broadcast(newData,LastQuantity);
+			return;
+		}
+	}
+	int LastQuantity = 0;
+	FPowerUpData newData;
+	if(isNegative)
+	{
+		newData = FPowerUpData(-1,type);
+	}
+	else
+	{
+		newData = FPowerUpData(1,type);
+	}
+	
+	PowerUps.Add(newData);
+	PowerUpAddedDelegate.Broadcast(newData,LastQuantity);
+	
+}
 
 // Called when the game starts
 void UPowerUpComponent::BeginPlay()

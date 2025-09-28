@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "AutoCameraCharacter.h"
 #include "FlyingMovementComponent.h"
+#include "PowerUpComponent.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
 #include "ProjetSpecialCharacter.generated.h"
@@ -33,34 +34,28 @@ public:
 	
 	UPROPERTY(BlueprintReadWrite,EditAnywhere)
 	UFlyingMovementComponent* FlyingMovementComponent;
+	UPROPERTY(BlueprintReadWrite,EditAnywhere)
+	UPowerUpComponent* PowerUpComponent;
 	
-	//UPROPERTY(BlueprintReadWrite)
-	//bool bIsGliding;
 	UPROPERTY(BlueprintReadWrite)
 	bool bIsRunning;
-	//UPROPERTY(BlueprintReadWrite,EditAnywhere)
-	//bool bIsTakingOff;
 	UPROPERTY(BlueprintReadWrite)
 	FRotator CachedRotation;
 	UPROPERTY(BlueprintReadWrite)
 	FRotator DeltaRotation;
-	//float currentFlyingSpeed;
-	//float currentFlyingUpSpeed;
-	//UPROPERTY(BlueprintReadWrite,EditAnywhere)
-	//float FlyingFriction;
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	float MAX_WALK_SPEED = 400.0f;
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	float MAX_RUN_SPEED = 800.0f;
-	//UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	//float GLIDING_GRAVITY_SCALE = 0.15f;
-	//UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	//float REGULAR_GRAVITY_SCALE = 1.0f;
-	//UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	//float BASE_FLYING_SPEED = 600.0f;
-	//UPROPERTY(BlueprintReadWrite,EditAnywhere)
-	//UInputAction* TakeOffAction;
+	float MAX_RUN_SPEED = 600.0f;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	float MAX_STAMINA = 100;
+	UPROPERTY(BlueprintReadOnly,VisibleAnywhere)
+	float Stamina;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	float MAX_HEALTH = 100;
+	UPROPERTY(BlueprintReadOnly,VisibleAnywhere)
+	float Health;
 	
 	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
 	UFUNCTION()
@@ -68,15 +63,20 @@ public:
 	virtual void DoJumpStart() override;
 
 	virtual void DoMove(float Right, float Forward) override;
-	UFUNCTION(BlueprintCallable)
-	void Run();
-	//UFUNCTION(BlueprintCallable)
-	//void TakeOff();
+	UFUNCTION()
+	void RunStart();
+	UFUNCTION()
+	void RunStop();
+	UFUNCTION()
+	void Running();
+	UFUNCTION()
+	void StaminaRegen();
+	UFUNCTION()
+	void PowerUpAdded(FPowerUpData newData,int LastQuantity);
 
-	//UFUNCTION(BlueprintCallable)
-	//void StartGliding();
-	//UFUNCTION(BlueprintCallable)
-	//void StopGliding();
+	FTimerHandle StaminaSpendTimerHandle;
+	FTimerHandle StaminaRegenHandle;
+
 public:
 
 	virtual void Tick(float DeltaSeconds) override;

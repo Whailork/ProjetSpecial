@@ -3,6 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Components/BoxComponent.h"
+#include "Components/WidgetComponent.h"
 #include "GameFramework/Actor.h"
 #include "PowerUp.generated.h"
 
@@ -29,6 +31,18 @@ class PROJETSPECIAL_API APowerUp : public AActor
 public:
 	// Sets default values for this actor's properties
 	APowerUp();
+	UPROPERTY(BlueprintReadWrite,EditAnywhere)
+	UWidgetComponent* AppearanceWidget;
+	UPROPERTY(BlueprintReadWrite,EditAnywhere)
+	UBoxComponent* BoxCollision;
+
+	UPROPERTY(BlueprintReadWrite,EditAnywhere)
+	TEnumAsByte<EPowerUpType> Type;
+	UPROPERTY(BlueprintReadWrite,EditAnywhere)
+	bool IsNegative;
+
+	UFUNCTION()
+	void OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
 protected:
 	// Called when the game starts or when spawned

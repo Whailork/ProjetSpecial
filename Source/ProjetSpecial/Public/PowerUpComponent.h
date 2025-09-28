@@ -18,6 +18,8 @@ struct FPowerUpData
 	
 };
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPowerUpAddedDelegate,FPowerUpData,newPowerUpData,int,LastQuantity);
+
 UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
 class PROJETSPECIAL_API UPowerUpComponent : public UActorComponent
 {
@@ -30,6 +32,11 @@ public:
 	UPROPERTY(BlueprintReadWrite,EditAnywhere)
 	TArray<FPowerUpData> PowerUps;
 
+	FPowerUpAddedDelegate PowerUpAddedDelegate;
+	UFUNCTION(BlueprintCallable)
+	void AddPowerUp(EPowerUpType type,bool isNegative);
+		
+	
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;

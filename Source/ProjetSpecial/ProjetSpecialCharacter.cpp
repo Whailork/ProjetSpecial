@@ -18,6 +18,7 @@ AProjetSpecialCharacter::AProjetSpecialCharacter()
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
 	FlyingMovementComponent = CreateDefaultSubobject<UFlyingMovementComponent>("FlyingMovementComponent");
+	PowerUpComponent = CreateDefaultSubobject<UPowerUpComponent>("PowerUpComponent");
 	
 	// Don't rotate when the controller rotates. Let that just affect the camera.
 	bUseControllerRotationPitch = false;
@@ -43,6 +44,49 @@ void AProjetSpecialCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 	CachedRotation = GetActorRotation();
+	//we process upgrades
+	
+	for (auto PowerUp : PowerUpComponent->PowerUps)
+	{
+		switch (PowerUp.Type)
+		{
+			case EPowerUpType::Flight:
+				FlyingMovementComponent->BASE_FLYING_SPEED += PowerUp.Quantity*18;
+				break;
+			case EPowerUpType::Friction:
+				FlyingMovementComponent->FlyingFrictionDown += PowerUp.Quantity*0.2;
+			FlyingMovementComponent->FlyingFrictionUp -= PowerUp.Quantity*0.2;
+				break;
+			case EPowerUpType::Speed:
+				
+				MAX_WALK_SPEED += PowerUp.Quantity*8;
+				MAX_RUN_SPEED = MAX_WALK_SPEED +200;
+				break;
+			case EPowerUpType::Stamina:
+				MAX_STAMINA += PowerUp.Quantity*10;
+				break;
+			case EPowerUpType::Jump:
+				GetCharacterMovement()->JumpZVelocity += PowerUp.Quantity*10;
+				break;
+			case EPowerUpType::Strength:
+				break;
+			case EPowerUpType::AttackSpeed:
+				break;
+			case EPowerUpType::Health :
+				MAX_HEALTH += PowerUp.Quantity*10;
+				break;
+			case EPowerUpType::Defense :
+				break;
+			case EPowerUpType::All :
+				break;
+			
+		}
+	}
+	
+	Stamina = MAX_STAMINA;
+	Health = MAX_HEALTH;
+
+	PowerUpComponent->PowerUpAddedDelegate.AddDynamic(this,&AProjetSpecialCharacter::PowerUpAdded);
 	
 }
 
@@ -60,7 +104,10 @@ void AProjetSpecialCharacter::SetupPlayerInputComponent(UInputComponent* PlayerI
 		// Moving
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AProjetSpecialCharacter::PSCMove);
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Completed, this, &AProjetSpecialCharacter::MoveStopped);
-		EnhancedInputComponent->BindAction(RunAction, ETriggerEvent::Started,this,&AProjetSpecialCharacter::Run);
+
+		EnhancedInputComponent->BindAction(RunAction, ETriggerEvent::Started,this,&AProjetSpecialCharacter::RunStart);
+		EnhancedInputComponent->BindAction(RunAction, ETriggerEvent::Completed,this,&AProjetSpecialCharacter::RunStop);
+		EnhancedInputComponent->BindAction(RunAction, ETriggerEvent::Canceled,this,&AProjetSpecialCharacter::RunStop);
 
 
 		EnhancedInputComponent->BindAction(MouseLookAction, ETriggerEvent::Triggered, this, &AProjetSpecialCharacter::Look);
@@ -92,91 +139,10 @@ void AProjetSpecialCharacter::PSCMove(const FInputActionValue& Value)
 	DoMove(MovementVector.X, MovementVector.Y);
 }
 
-void AProjetSpecialCharacter::Run()
-{
-	
-	if(GetCharacterMovement())
-	{
-		if(bIsRunning)
-		{
-			bIsRunning = false;
-			TargetCameraLag = BASE_CAMERA_LAG_SPEED;
-		}
-		else
-		{
-			bIsRunning = true;
-			TargetCameraLag = RUN_CAMERA_LAG_SPEED;		
-		}
-	}
-	GetWorldTimerManager().SetTimer(CameraLagTransitionTimerHandle,this,&AProjetSpecialCharacter::AdjustCameraLag,0.1,true);
-}
-
-/*void AProjetSpecialCharacter::TakeOff()
-{
-	bIsTakingOff = true;
-	if(auto PlayerController = Cast<APlayerController>(GetController()))
-	{
-		DisableInput(PlayerController);
-	}
-}*/
-
-/*void AProjetSpecialCharacter::StartGliding()
-{
-	AllowVerticalAutoAdjust = false;
-
-	bIsGliding = true;
-	bIsTakingOff = false;
-	GetCharacterMovement()->MaxWalkSpeed = BASE_FLYING_SPEED;
-	currentFlyingSpeed = BASE_FLYING_SPEED;
-	currentFlyingUpSpeed = BASE_FLYING_SPEED;
-	GetCharacterMovement()->Velocity = GetActorForwardVector() * currentFlyingSpeed;
-	GetCharacterMovement()->bOrientRotationToMovement = false;
-
-}*/
-
-
-/*void AProjetSpecialCharacter::StopGliding()
-{
-	AllowVerticalAutoAdjust = true;
-	bIsGliding = false;
-	GetCharacterMovement()->bOrientRotationToMovement = true;
-}*/
-
 void AProjetSpecialCharacter::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
 
-	/*if(CanJump())
-	{
-		if(bIsGliding)
-		{
-			StopGliding();
-		}
-	}
-	if(bIsGliding)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Black,FString::SanitizeFloat(FlyingFriction));
-		if(GetActorForwardVector().Z < 0)
-		{
-			currentFlyingSpeed = FMath::Max(currentFlyingSpeed - FlyingFriction*1.5*GetActorForwardVector().Z,50);;
-		}
-		else
-		{
-			currentFlyingSpeed = FMath::Max(currentFlyingSpeed - FlyingFriction*GetActorForwardVector().Z,50);;
-		}
-		
-		if(currentFlyingSpeed <= 50)
-		{
-			currentFlyingUpSpeed = currentFlyingUpSpeed -2.5*FlyingFriction;
-		}
-		else
-		{
-			currentFlyingUpSpeed = currentFlyingUpSpeed -1.5*FlyingFriction;
-		}
-		
-		FVector TempVelocity = GetActorForwardVector() * currentFlyingSpeed;
-		GetCharacterMovement()->Velocity = FVector(TempVelocity.X,TempVelocity.Y,TempVelocity.Z+(currentFlyingUpSpeed*DeltaSeconds));
-	}*/
 	DeltaRotation = GetActorRotation() - CachedRotation;
 	DeltaRotation.Normalize();
 	CachedRotation = GetActorRotation();
@@ -250,6 +216,109 @@ void AProjetSpecialCharacter::DoMove(float Right, float Forward)
 			}
 		
 		}
+	}
+}
+
+void AProjetSpecialCharacter::RunStart()
+{
+	if(Stamina > 5)
+	{
+		bIsRunning = true;
+		TargetCameraLag = RUN_CAMERA_LAG_SPEED;		
+		GetWorldTimerManager().SetTimer(CameraLagTransitionTimerHandle,this,&AProjetSpecialCharacter::AdjustCameraLag,0.1,true);
+		GetWorldTimerManager().SetTimer(StaminaSpendTimerHandle,this,&AProjetSpecialCharacter::Running,0.01,true);
+		if(GetWorldTimerManager().IsTimerActive(StaminaRegenHandle))
+		{
+			GetWorldTimerManager().ClearTimer(StaminaRegenHandle);
+		}
+	}
+	else
+	{
+		//too tired to run
+	}
+	
+}
+
+void AProjetSpecialCharacter::RunStop()
+{
+	if(bIsRunning)
+	{
+		bIsRunning = false;
+		TargetCameraLag = BASE_CAMERA_LAG_SPEED;
+		GetWorldTimerManager().SetTimer(CameraLagTransitionTimerHandle,this,&AProjetSpecialCharacter::AdjustCameraLag,0.1,true);
+		if(GetWorldTimerManager().IsTimerActive(StaminaSpendTimerHandle))
+		{
+			GetWorldTimerManager().ClearTimer(StaminaSpendTimerHandle);
+		}
+	}
+	if(!GetWorldTimerManager().IsTimerActive(StaminaRegenHandle))
+	{
+		GetWorldTimerManager().SetTimer(StaminaRegenHandle,this,&AProjetSpecialCharacter::StaminaRegen,0.01,true);
+	}
+	
+}
+
+void AProjetSpecialCharacter::Running()
+{
+	//GEngine->AddOnScreenDebugMessage(-1, 1, FColor::Green,FString("SpendStamina"));
+	Stamina -=0.25;
+	if(Stamina <= 0)
+	{
+		RunStop();
+	}
+}
+
+void AProjetSpecialCharacter::StaminaRegen()
+{
+	Stamina+= 0.15;
+	if(Stamina >= MAX_STAMINA)
+	{
+		if(GetWorldTimerManager().IsTimerActive(StaminaRegenHandle))
+		{
+			GetWorldTimerManager().ClearTimer(StaminaRegenHandle);
+		}
+	}
+	GEngine->AddOnScreenDebugMessage(-1, 1, FColor::Green,FString("RegenStamina"));
+}
+
+void AProjetSpecialCharacter::PowerUpAdded(FPowerUpData newData,int LastQuantity)
+{
+	int QuantityDifference = newData.Quantity - LastQuantity;
+	switch (newData.Type)
+	{
+		case EPowerUpType::Flight:
+			FlyingMovementComponent->BASE_FLYING_SPEED += QuantityDifference*18;
+			break;
+		case EPowerUpType::Friction:
+			FlyingMovementComponent->FlyingFrictionDown += QuantityDifference*0.7;
+			if(FlyingMovementComponent->FlyingFrictionUp >= 0.5)
+			{
+				FlyingMovementComponent->FlyingFrictionUp -= QuantityDifference*0.05;
+			}
+			
+			break;
+		case EPowerUpType::Speed:
+			MAX_WALK_SPEED += QuantityDifference*8;
+			MAX_RUN_SPEED = MAX_WALK_SPEED +200;
+			break;
+		case EPowerUpType::Stamina:
+			MAX_STAMINA += QuantityDifference*10;
+			break;
+		case EPowerUpType::Jump:
+			GetCharacterMovement()->JumpZVelocity += QuantityDifference*10;
+			break;
+		case EPowerUpType::Strength:
+			break;
+		case EPowerUpType::AttackSpeed:
+			break;
+		case EPowerUpType::Health :
+			MAX_HEALTH += QuantityDifference*10;
+			break;
+		case EPowerUpType::Defense :
+			break;
+		case EPowerUpType::All :
+			break;
+				
 	}
 }
 
