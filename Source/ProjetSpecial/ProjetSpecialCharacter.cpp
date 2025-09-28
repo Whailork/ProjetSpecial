@@ -17,7 +17,7 @@ AProjetSpecialCharacter::AProjetSpecialCharacter()
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
-	
+	FlyingMovementComponent = CreateDefaultSubobject<UFlyingMovementComponent>("FlyingMovementComponent");
 	
 	// Don't rotate when the controller rotates. Let that just affect the camera.
 	bUseControllerRotationPitch = false;
@@ -36,9 +36,7 @@ AProjetSpecialCharacter::AProjetSpecialCharacter()
 	GetCharacterMovement()->MinAnalogWalkSpeed = 20.f;
 	GetCharacterMovement()->BrakingDecelerationWalking = 2000.f;
 	GetCharacterMovement()->BrakingDecelerationFalling = 1500.0f;
-
-
-	FlyingFriction = 10;
+	
 }
 
 void AProjetSpecialCharacter::BeginPlay()
@@ -58,7 +56,7 @@ void AProjetSpecialCharacter::SetupPlayerInputComponent(UInputComponent* PlayerI
 		//EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Started, this, &AProjetSpecialCharacter::DoJumpStart);
 		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Canceled, this, &AProjetSpecialCharacter::DoJumpStart);
 		
-		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Triggered, this, &AProjetSpecialCharacter::TakeOff);
+		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Triggered, FlyingMovementComponent, &UFlyingMovementComponent::TakeOff);
 		// Moving
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AProjetSpecialCharacter::PSCMove);
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Completed, this, &AProjetSpecialCharacter::MoveStopped);
@@ -113,22 +111,19 @@ void AProjetSpecialCharacter::Run()
 	GetWorldTimerManager().SetTimer(CameraLagTransitionTimerHandle,this,&AProjetSpecialCharacter::AdjustCameraLag,0.1,true);
 }
 
-void AProjetSpecialCharacter::TakeOff()
+/*void AProjetSpecialCharacter::TakeOff()
 {
 	bIsTakingOff = true;
 	if(auto PlayerController = Cast<APlayerController>(GetController()))
 	{
 		DisableInput(PlayerController);
 	}
-}
+}*/
 
-void AProjetSpecialCharacter::StartGliding()
+/*void AProjetSpecialCharacter::StartGliding()
 {
-	//AllowCameraAutoAdjust = false;
-	//AllowCameraWallAvoidance = false;
-	//AllowCameraPositionReset = false;
 	AllowVerticalAutoAdjust = false;
-	//AllowCliffDetection = false;
+
 	bIsGliding = true;
 	bIsTakingOff = false;
 	GetCharacterMovement()->MaxWalkSpeed = BASE_FLYING_SPEED;
@@ -136,32 +131,22 @@ void AProjetSpecialCharacter::StartGliding()
 	currentFlyingUpSpeed = BASE_FLYING_SPEED;
 	GetCharacterMovement()->Velocity = GetActorForwardVector() * currentFlyingSpeed;
 	GetCharacterMovement()->bOrientRotationToMovement = false;
-	//bUseControllerRotationPitch = true;
-	//bUseControllerRotationYaw = true;
-	//StopCameraPositionReset();
-}
+
+}*/
 
 
-void AProjetSpecialCharacter::StopGliding()
+/*void AProjetSpecialCharacter::StopGliding()
 {
-	//AllowCameraAutoAdjust = true;
-	//AllowCameraWallAvoidance = true;
-	//AllowCameraPositionReset = true;
 	AllowVerticalAutoAdjust = true;
-	//AllowCliffDetection = true;
 	bIsGliding = false;
 	GetCharacterMovement()->bOrientRotationToMovement = true;
-	//bUseControllerRotationPitch = false;
-	//bUseControllerRotationYaw = false;
-
-	//GetWorldTimerManager().SetTimer(CameraPositionResetTimerHandle, this,&AAutoCameraCharacter::StartCameraPositionReset, CAMERA_POSITION_RESET_DELAY,false);
-}
+}*/
 
 void AProjetSpecialCharacter::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
 
-	if(CanJump())
+	/*if(CanJump())
 	{
 		if(bIsGliding)
 		{
@@ -171,11 +156,27 @@ void AProjetSpecialCharacter::Tick(float DeltaSeconds)
 	if(bIsGliding)
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Black,FString::SanitizeFloat(FlyingFriction));
-		currentFlyingSpeed = currentFlyingSpeed - FlyingFriction*GetActorForwardVector().Z;
-		currentFlyingUpSpeed = currentFlyingUpSpeed -1.5*FlyingFriction;
-		FVector TempVelocity = GetActorForwardVector() * FMath::Max(currentFlyingSpeed,0);
+		if(GetActorForwardVector().Z < 0)
+		{
+			currentFlyingSpeed = FMath::Max(currentFlyingSpeed - FlyingFriction*1.5*GetActorForwardVector().Z,50);;
+		}
+		else
+		{
+			currentFlyingSpeed = FMath::Max(currentFlyingSpeed - FlyingFriction*GetActorForwardVector().Z,50);;
+		}
+		
+		if(currentFlyingSpeed <= 50)
+		{
+			currentFlyingUpSpeed = currentFlyingUpSpeed -2.5*FlyingFriction;
+		}
+		else
+		{
+			currentFlyingUpSpeed = currentFlyingUpSpeed -1.5*FlyingFriction;
+		}
+		
+		FVector TempVelocity = GetActorForwardVector() * currentFlyingSpeed;
 		GetCharacterMovement()->Velocity = FVector(TempVelocity.X,TempVelocity.Y,TempVelocity.Z+(currentFlyingUpSpeed*DeltaSeconds));
-	}
+	}*/
 	DeltaRotation = GetActorRotation() - CachedRotation;
 	DeltaRotation.Normalize();
 	CachedRotation = GetActorRotation();
@@ -192,14 +193,11 @@ void AProjetSpecialCharacter::DoJumpStart()
 	// signal the character to jump
 	if(!CanJump())
 	{
-		if(bIsGliding)
+		if(FlyingMovementComponent)
 		{
-			StopGliding();
+			FlyingMovementComponent->CheckForGlide();
 		}
-		else
-		{
-			StartGliding();
-		}
+		
 	}
 	else
 	{
@@ -211,10 +209,10 @@ void AProjetSpecialCharacter::DoJumpStart()
 void AProjetSpecialCharacter::DoMove(float Right, float Forward)
 {
 	float SpeedPercentage = FMath::Clamp(FMath::Abs(Right) + FMath::Abs(Forward),0,1);
-	if(bIsGliding)
+	
+	if(FlyingMovementComponent->bIsGliding)
 	{
 		SetActorRotation(FRotator(GetActorRotation().Pitch - Forward,GetActorRotation().Yaw + Right, GetActorRotation().Roll));
-
 	}
 	else
 	{
@@ -241,7 +239,7 @@ void AProjetSpecialCharacter::DoMove(float Right, float Forward)
 			const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 
 			// add movement
-			if(!bIsGliding)
+			if(!FlyingMovementComponent->bIsGliding)
 			{
 				AddMovementInput(ForwardDirection, Forward);
 				AddMovementInput(RightDirection, Right);
