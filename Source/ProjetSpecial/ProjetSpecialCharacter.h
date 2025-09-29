@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "AutoCameraCharacter.h"
 #include "FlyingMovementComponent.h"
+#include "HitableActor.h"
 #include "PowerUpComponent.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
@@ -22,7 +23,7 @@ DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
  *  Implements a controllable orbiting camera
  */
 UCLASS(abstract)
-class AProjetSpecialCharacter : public AAutoCameraCharacter
+class AProjetSpecialCharacter : public AAutoCameraCharacter, public IHitableActor
 {
 	GENERATED_BODY()
 
@@ -56,7 +57,11 @@ public:
 	float MAX_HEALTH = 100;
 	UPROPERTY(BlueprintReadOnly,VisibleAnywhere)
 	float Health;
-	
+
+	UPROPERTY(EditAnywhere, Category="Input")
+	UInputAction* MeleeAttackAction;
+	UPROPERTY(EditAnywhere, Category="Input")
+	UInputAction* RangedAttackAction;
 	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
 	UFUNCTION()
 	void PSCMove(const FInputActionValue& Value);
@@ -77,6 +82,29 @@ public:
 	FTimerHandle StaminaSpendTimerHandle;
 	FTimerHandle StaminaRegenHandle;
 
+	UFUNCTION(BlueprintNativeEvent,BlueprintCallable)
+	void MeleeAttack();
+	UFUNCTION(BlueprintNativeEvent,BlueprintCallable)
+	void RangedAttack();
+	UFUNCTION()
+	void ResetAttackCooldown();
+	UFUNCTION()
+	void ResetAttackTrigger();
+	UFUNCTION(BlueprintCallable)
+	void AttackTrace();
+
+	UPROPERTY(BlueprintReadWrite,EditAnywhere)
+	bool TriggeredMeleeAttack;
+	UPROPERTY(BlueprintReadWrite,EditAnywhere)
+	bool TriggeredRangedAttack;
+	UPROPERTY(BlueprintReadWrite,EditAnywhere)
+	bool CanAttack = true;
+
+	FTimerHandle AttackCoolDownHandle;
+	FTimerHandle ResetAttackTriggerHandle;
+	float AttackSpeed = 0.5;
+
+	virtual void OnActorHit_Implementation() override;
 public:
 
 	virtual void Tick(float DeltaSeconds) override;

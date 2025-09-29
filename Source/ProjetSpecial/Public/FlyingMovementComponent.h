@@ -20,6 +20,7 @@ public:
 	bool bIsGliding;
 	UPROPERTY(BlueprintReadWrite,EditAnywhere)
 	bool bIsTakingOff;
+	bool wasGliding;
 	
 	float currentFlyingSpeed;
 	float currentFlyingUpSpeed;

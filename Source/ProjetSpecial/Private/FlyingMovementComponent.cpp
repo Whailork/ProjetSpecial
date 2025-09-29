@@ -43,13 +43,20 @@ void UFlyingMovementComponent::StartGliding()
 	if(auto Character = Cast<ACharacter>(GetOwner()))
 	{
 		Character->GetCharacterMovement()->MaxWalkSpeed = BASE_FLYING_SPEED;
-		Character->GetCharacterMovement()->Velocity = Character->GetActorForwardVector() * currentFlyingSpeed;
+		if(!wasGliding)
+		{
+			Character->GetCharacterMovement()->Velocity = Character->GetActorForwardVector() * currentFlyingSpeed;
+		}
 		Character->GetCharacterMovement()->bOrientRotationToMovement = false;
 	}
 	bIsGliding = true;
 	bIsTakingOff = false;
-	currentFlyingSpeed = BASE_FLYING_SPEED;
-	currentFlyingUpSpeed = BASE_FLYING_SPEED;
+	if(!wasGliding)
+	{
+		currentFlyingSpeed = BASE_FLYING_SPEED;
+		currentFlyingUpSpeed = BASE_FLYING_SPEED;
+	}
+	
 	
 }
 
@@ -71,6 +78,7 @@ void UFlyingMovementComponent::CheckForGlide()
 	if(bIsGliding)
 	{
 		StopGliding();
+		wasGliding = true;
 	}
 	else
 	{
@@ -94,6 +102,7 @@ void UFlyingMovementComponent::TickComponent(float DeltaTime, ELevelTick TickTyp
 	{
 		if(Character->CanJump())
 		{
+			wasGliding = false;
 			if(bIsGliding)
 			{
 				StopGliding();

@@ -37,6 +37,8 @@ AProjetSpecialCharacter::AProjetSpecialCharacter()
 	GetCharacterMovement()->MinAnalogWalkSpeed = 20.f;
 	GetCharacterMovement()->BrakingDecelerationWalking = 2000.f;
 	GetCharacterMovement()->BrakingDecelerationFalling = 1500.0f;
+
+	CanAttack = true;
 	
 }
 
@@ -66,7 +68,7 @@ void AProjetSpecialCharacter::BeginPlay()
 				MAX_STAMINA += PowerUp.Quantity*10;
 				break;
 			case EPowerUpType::Jump:
-				GetCharacterMovement()->JumpZVelocity += PowerUp.Quantity*10;
+				GetCharacterMovement()->JumpZVelocity += PowerUp.Quantity*15;
 				break;
 			case EPowerUpType::Strength:
 				break;
@@ -87,6 +89,7 @@ void AProjetSpecialCharacter::BeginPlay()
 	Health = MAX_HEALTH;
 
 	PowerUpComponent->PowerUpAddedDelegate.AddDynamic(this,&AProjetSpecialCharacter::PowerUpAdded);
+	CanAttack = true;
 	
 }
 
@@ -117,6 +120,10 @@ void AProjetSpecialCharacter::SetupPlayerInputComponent(UInputComponent* PlayerI
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AProjetSpecialCharacter::Look);
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Started,this,&AProjetSpecialCharacter::LookStarted);
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Completed,this,&AProjetSpecialCharacter::LookStopped);
+
+
+		EnhancedInputComponent->BindAction(MeleeAttackAction, ETriggerEvent::Started, this, &AProjetSpecialCharacter::MeleeAttack);
+		EnhancedInputComponent->BindAction(RangedAttackAction, ETriggerEvent::Started, this, &AProjetSpecialCharacter::RangedAttack);
 	}
 	else
 	{
@@ -137,6 +144,11 @@ void AProjetSpecialCharacter::PSCMove(const FInputActionValue& Value)
 
 	// route the input
 	DoMove(MovementVector.X, MovementVector.Y);
+}
+
+void AProjetSpecialCharacter::OnActorHit_Implementation()
+{
+	IHitableActor::OnActorHit_Implementation();
 }
 
 void AProjetSpecialCharacter::Tick(float DeltaSeconds)
@@ -221,21 +233,25 @@ void AProjetSpecialCharacter::DoMove(float Right, float Forward)
 
 void AProjetSpecialCharacter::RunStart()
 {
-	if(Stamina > 5)
+	if(!FlyingMovementComponent->bIsGliding)
 	{
-		bIsRunning = true;
-		TargetCameraLag = RUN_CAMERA_LAG_SPEED;		
-		GetWorldTimerManager().SetTimer(CameraLagTransitionTimerHandle,this,&AProjetSpecialCharacter::AdjustCameraLag,0.1,true);
-		GetWorldTimerManager().SetTimer(StaminaSpendTimerHandle,this,&AProjetSpecialCharacter::Running,0.01,true);
-		if(GetWorldTimerManager().IsTimerActive(StaminaRegenHandle))
+		if(Stamina > 5)
 		{
-			GetWorldTimerManager().ClearTimer(StaminaRegenHandle);
+			bIsRunning = true;
+			TargetCameraLag = RUN_CAMERA_LAG_SPEED;		
+			GetWorldTimerManager().SetTimer(CameraLagTransitionTimerHandle,this,&AProjetSpecialCharacter::AdjustCameraLag,0.1,true);
+			GetWorldTimerManager().SetTimer(StaminaSpendTimerHandle,this,&AProjetSpecialCharacter::Running,0.01,true);
+			if(GetWorldTimerManager().IsTimerActive(StaminaRegenHandle))
+			{
+				GetWorldTimerManager().ClearTimer(StaminaRegenHandle);
+			}
+		}
+		else
+		{
+			//too tired to run
 		}
 	}
-	else
-	{
-		//too tired to run
-	}
+	
 	
 }
 
@@ -284,6 +300,7 @@ void AProjetSpecialCharacter::StaminaRegen()
 void AProjetSpecialCharacter::PowerUpAdded(FPowerUpData newData,int LastQuantity)
 {
 	int QuantityDifference = newData.Quantity - LastQuantity;
+	float FillPercentage;
 	switch (newData.Type)
 	{
 		case EPowerUpType::Flight:
@@ -302,10 +319,17 @@ void AProjetSpecialCharacter::PowerUpAdded(FPowerUpData newData,int LastQuantity
 			MAX_RUN_SPEED = MAX_WALK_SPEED +200;
 			break;
 		case EPowerUpType::Stamina:
+			FillPercentage = Stamina/MAX_STAMINA;
 			MAX_STAMINA += QuantityDifference*10;
+			Stamina = FillPercentage*MAX_STAMINA;
+			
+			if(!GetWorldTimerManager().IsTimerActive(StaminaRegenHandle) && FillPercentage < 1)
+			{
+				GetWorldTimerManager().SetTimer(StaminaRegenHandle,this,&AProjetSpecialCharacter::StaminaRegen,0.01,true);
+			}
 			break;
 		case EPowerUpType::Jump:
-			GetCharacterMovement()->JumpZVelocity += QuantityDifference*10;
+			GetCharacterMovement()->JumpZVelocity += QuantityDifference*15;
 			break;
 		case EPowerUpType::Strength:
 			break;
@@ -321,5 +345,62 @@ void AProjetSpecialCharacter::PowerUpAdded(FPowerUpData newData,int LastQuantity
 				
 	}
 }
+
+void AProjetSpecialCharacter::MeleeAttack_Implementation()
+{
+	if(CanAttack)
+	{
+		TriggeredMeleeAttack = true;
+		CanAttack = false;
+		GetWorldTimerManager().SetTimer(AttackCoolDownHandle,this,&AProjetSpecialCharacter::ResetAttackCooldown,AttackSpeed);
+		GetWorldTimerManager().SetTimer(ResetAttackTriggerHandle,this,&AProjetSpecialCharacter::ResetAttackTrigger,0.1);
+	}
+}
+
+void AProjetSpecialCharacter::RangedAttack_Implementation()
+{
+	if(CanAttack)
+	{
+		TriggeredRangedAttack = true;
+		CanAttack = false;
+		GetWorldTimerManager().SetTimer(AttackCoolDownHandle,this,&AProjetSpecialCharacter::ResetAttackCooldown,AttackSpeed);
+		GetWorldTimerManager().SetTimer(ResetAttackTriggerHandle,this,&AProjetSpecialCharacter::ResetAttackTrigger,0.1);
+	}
+}
+
+void AProjetSpecialCharacter::ResetAttackCooldown()
+{
+	TriggeredMeleeAttack = false;
+	TriggeredRangedAttack = false;
+	CanAttack = true;
+}
+
+void AProjetSpecialCharacter::ResetAttackTrigger()
+{
+	TriggeredMeleeAttack = false;
+	TriggeredRangedAttack = false;
+}
+
+void AProjetSpecialCharacter::AttackTrace()
+{
+	TArray<FHitResult> ProximityHitResults;
+
+	FCollisionObjectQueryParams ObjectParams;
+	ObjectParams.AddObjectTypesToQuery(ECC_WorldStatic);
+	ObjectParams.AddObjectTypesToQuery(ECC_WorldDynamic);
+		
+
+	TArray<AActor*> ActorsToIgnore;
+	ActorsToIgnore.Add(this);
+	FCollisionQueryParams Params;
+	Params.bIgnoreTouches = true;
+	Params.AddIgnoredActors(ActorsToIgnore);
+
+	FVector Start = GetActorLocation() + GetActorForwardVector()*50;
+
+	bMadeContact = GetWorld()->SweepMultiByObjectType(ProximityHitResults, Start,(Start + GetActorForwardVector() * 0.001), FQuat::Identity, ObjectParams,FCollisionShape::MakeSphere(50),Params);
+	DrawDebugSphere(GetWorld(),Start,50,10,FColor::Blue);
+}
+
 
 
