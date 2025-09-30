@@ -23,6 +23,6 @@ class PROJETSPECIAL_API IHitableActor
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
 	UFUNCTION(BlueprintCallable,BlueprintNativeEvent)
-	void OnActorHit();
+	void OnHittableObjectHit(float damage, AActor* Source);
 public:
 };

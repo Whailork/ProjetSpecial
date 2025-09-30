@@ -102,9 +102,29 @@ public:
 
 	FTimerHandle AttackCoolDownHandle;
 	FTimerHandle ResetAttackTriggerHandle;
-	float AttackSpeed = 0.5;
+	UPROPERTY(BlueprintReadWrite,EditAnywhere)
+	float AttackSpeed = 1;
+	UPROPERTY(BlueprintReadWrite,EditAnywhere)
+	float Strength = 10;
+	UPROPERTY(BlueprintReadWrite,EditAnywhere)
+	float Defense = 0;
 
-	virtual void OnActorHit_Implementation() override;
+	UPROPERTY(BlueprintReadWrite,VisibleAnywhere)
+	bool bIsDead;
+	UFUNCTION(BlueprintNativeEvent)
+	void OnDeath();
+	UFUNCTION(BlueprintNativeEvent)
+	void OnRevive();
+	UPROPERTY(BlueprintReadWrite,VisibleAnywhere)
+	bool HitFalling;
+	UPROPERTY(BlueprintReadWrite,VisibleAnywhere)
+	bool LeftHit = false;
+	
+	FTimerHandle ReviveRegenTimerHandle;
+	UFUNCTION()
+	void TriggerRegen();
+
+	virtual void OnHittableObjectHit_Implementation(float damage, AActor* Source) override;
 public:
 
 	virtual void Tick(float DeltaSeconds) override;

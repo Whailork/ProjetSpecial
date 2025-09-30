@@ -12,6 +12,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
 #include "ProjetSpecial.h"
+#include "Kismet/KismetMathLibrary.h"
 
 AProjetSpecialCharacter::AProjetSpecialCharacter()
 {
@@ -146,10 +147,63 @@ void AProjetSpecialCharacter::PSCMove(const FInputActionValue& Value)
 	DoMove(MovementVector.X, MovementVector.Y);
 }
 
-void AProjetSpecialCharacter::OnActorHit_Implementation()
+void AProjetSpecialCharacter::OnDeath_Implementation()
 {
-	IHitableActor::OnActorHit_Implementation();
+	//Trigger health regen
+	bIsDead = true;
+	DisableInput(Cast<APlayerController>(GetController()));
+	GetWorldTimerManager().SetTimer(ReviveRegenTimerHandle,this,&AProjetSpecialCharacter::TriggerRegen,0.05,true);
 }
+
+void AProjetSpecialCharacter::OnRevive_Implementation()
+{
+	bIsDead = false;
+	//GetCharacterMovement()->MovementMode = MOVE_Walking;
+}
+
+void AProjetSpecialCharacter::TriggerRegen()
+{
+	Health += MAX_HEALTH*0.025;
+	if(Health >= MAX_HEALTH)
+	{
+		Health = MAX_HEALTH;
+		if(GetWorldTimerManager().IsTimerActive(ReviveRegenTimerHandle))
+		{
+			GetWorldTimerManager().ClearTimer(ReviveRegenTimerHandle);
+		}
+		OnRevive();
+	}
+}
+
+void AProjetSpecialCharacter::OnHittableObjectHit_Implementation(float damage, AActor* Source)
+{
+	
+	if(FlyingMovementComponent->bIsGliding)
+	{
+		FlyingMovementComponent->StopGliding();
+		FlyingMovementComponent->wasGliding = true;
+		HitFalling = true;
+	}
+	if(Health > 0)
+	{
+		//compute defense damage reduction
+		float HealthLoss = damage - damage*Defense;
+		Health -= HealthLoss;
+	}
+
+	FRotator delta = GetActorRotation() - UKismetMathLibrary::FindLookAtRotation(GetActorLocation(),Source->GetActorLocation());
+	delta.Normalize();
+	LeftHit = delta.Yaw >= 0;
+	
+	if(Health <= 0)
+	{
+		OnDeath();
+	}
+
+	
+}
+
+
 
 void AProjetSpecialCharacter::Tick(float DeltaSeconds)
 {
@@ -280,6 +334,7 @@ void AProjetSpecialCharacter::Running()
 	Stamina -=0.25;
 	if(Stamina <= 0)
 	{
+		Stamina = 0;
 		RunStop();
 	}
 }
@@ -293,8 +348,9 @@ void AProjetSpecialCharacter::StaminaRegen()
 		{
 			GetWorldTimerManager().ClearTimer(StaminaRegenHandle);
 		}
+		Stamina = MAX_STAMINA;
 	}
-	GEngine->AddOnScreenDebugMessage(-1, 1, FColor::Green,FString("RegenStamina"));
+	//GEngine->AddOnScreenDebugMessage(-1, 1, FColor::Green,FString("RegenStamina"));
 }
 
 void AProjetSpecialCharacter::PowerUpAdded(FPowerUpData newData,int LastQuantity)
@@ -312,6 +368,10 @@ void AProjetSpecialCharacter::PowerUpAdded(FPowerUpData newData,int LastQuantity
 			{
 				FlyingMovementComponent->FlyingFrictionUp -= QuantityDifference*0.05;
 			}
+			else
+			{
+				FlyingMovementComponent->FlyingFrictionUp -= QuantityDifference*0.05*FlyingMovementComponent->FlyingFrictionUp;
+			}
 			
 			break;
 		case EPowerUpType::Speed:
@@ -325,22 +385,91 @@ void AProjetSpecialCharacter::PowerUpAdded(FPowerUpData newData,int LastQuantity
 			
 			if(!GetWorldTimerManager().IsTimerActive(StaminaRegenHandle) && FillPercentage < 1)
 			{
-				GetWorldTimerManager().SetTimer(StaminaRegenHandle,this,&AProjetSpecialCharacter::StaminaRegen,0.01,true);
+				GetWorldTimerManager().SetTimer(StaminaRegenHandle,this,&AProjetSpecialCharacter::StaminaRegen,0.01f,true);
 			}
 			break;
 		case EPowerUpType::Jump:
 			GetCharacterMovement()->JumpZVelocity += QuantityDifference*15;
 			break;
 		case EPowerUpType::Strength:
+			Strength += QuantityDifference*1.5;
 			break;
 		case EPowerUpType::AttackSpeed:
+			if(AttackSpeed <= 0.5)
+			{
+				AttackSpeed -= QuantityDifference*0.02*AttackSpeed;
+			}
+			else
+			{
+				AttackSpeed -= QuantityDifference*0.04;
+			}
 			break;
 		case EPowerUpType::Health :
+			FillPercentage = Health/MAX_HEALTH;
 			MAX_HEALTH += QuantityDifference*10;
+			Health = FillPercentage*MAX_HEALTH;
 			break;
 		case EPowerUpType::Defense :
+			if(Defense >= 0.5)
+			{
+				Defense += QuantityDifference*0.02*Defense;
+			}
+			else
+			{
+				Defense += QuantityDifference*0.025;
+			}
 			break;
 		case EPowerUpType::All :
+			//Flight
+			FlyingMovementComponent->BASE_FLYING_SPEED += QuantityDifference*18;
+			//friction
+			FlyingMovementComponent->FlyingFrictionDown += QuantityDifference*0.7;
+			if(FlyingMovementComponent->FlyingFrictionUp >= 0.5)
+			{
+				FlyingMovementComponent->FlyingFrictionUp -= QuantityDifference*0.05;
+			}
+			else
+			{
+				FlyingMovementComponent->FlyingFrictionUp -= QuantityDifference*0.05*FlyingMovementComponent->FlyingFrictionUp;
+			}
+			//speed
+			MAX_WALK_SPEED += QuantityDifference*8;
+			MAX_RUN_SPEED = MAX_WALK_SPEED +200;
+			//stamina
+			FillPercentage = Stamina/MAX_STAMINA;
+			MAX_STAMINA += QuantityDifference*10;
+			Stamina = FillPercentage*MAX_STAMINA;
+				
+			if(!GetWorldTimerManager().IsTimerActive(StaminaRegenHandle) && FillPercentage < 1)
+			{
+				GetWorldTimerManager().SetTimer(StaminaRegenHandle,this,&AProjetSpecialCharacter::StaminaRegen,0.01f,true);
+			}
+			//jump
+			GetCharacterMovement()->JumpZVelocity += QuantityDifference*15;
+			//Strength
+			Strength += QuantityDifference*1.5;
+			//AttackSpeed
+			if(AttackSpeed <= 0.5)
+			{
+				AttackSpeed -= QuantityDifference*0.02*AttackSpeed;
+			}
+			else
+			{
+				AttackSpeed -= QuantityDifference*0.04;
+			}
+			//Health
+			FillPercentage = Health/MAX_HEALTH;
+			MAX_HEALTH += QuantityDifference*10;
+			Health = FillPercentage*MAX_HEALTH;
+			//Defense
+			if(Defense >= 0.5)
+			{
+				Defense += QuantityDifference*0.02*Defense;
+			}
+			else
+			{
+				Defense += QuantityDifference*0.025;
+			}
 			break;
 				
 	}
@@ -383,23 +512,43 @@ void AProjetSpecialCharacter::ResetAttackTrigger()
 
 void AProjetSpecialCharacter::AttackTrace()
 {
-	TArray<FHitResult> ProximityHitResults;
+	TArray<FHitResult> HitResults;
 
 	FCollisionObjectQueryParams ObjectParams;
 	ObjectParams.AddObjectTypesToQuery(ECC_WorldStatic);
 	ObjectParams.AddObjectTypesToQuery(ECC_WorldDynamic);
+	ObjectParams.AddObjectTypesToQuery(ECC_Pawn);
+	ObjectParams.AddObjectTypesToQuery(ECC_Destructible);
 		
 
 	TArray<AActor*> ActorsToIgnore;
 	ActorsToIgnore.Add(this);
 	FCollisionQueryParams Params;
-	Params.bIgnoreTouches = true;
+	//Params.bIgnoreTouches = true;
 	Params.AddIgnoredActors(ActorsToIgnore);
 
 	FVector Start = GetActorLocation() + GetActorForwardVector()*50;
 
-	bMadeContact = GetWorld()->SweepMultiByObjectType(ProximityHitResults, Start,(Start + GetActorForwardVector() * 0.001), FQuat::Identity, ObjectParams,FCollisionShape::MakeSphere(50),Params);
+	bool hasHit = GetWorld()->SweepMultiByObjectType(HitResults, Start,(Start + GetActorForwardVector() * 0.001), FQuat::Identity, ObjectParams,FCollisionShape::MakeSphere(50),Params);
 	DrawDebugSphere(GetWorld(),Start,50,10,FColor::Blue);
+	if(hasHit)
+	{
+		TArray<AActor*> DifferentHitActors;
+		for (auto Hit : HitResults)
+		{
+			if(!DifferentHitActors.Contains(Hit.GetActor()))
+			{
+				DifferentHitActors.Add(Hit.GetActor());
+			}
+		}
+		for(AActor* HitActor : DifferentHitActors)
+		{
+			if(HitActor->Implements<UHitableActor>())
+			{
+				Execute_OnHittableObjectHit(HitActor,Strength,this);
+			}
+		}	
+	}
 }
 
 

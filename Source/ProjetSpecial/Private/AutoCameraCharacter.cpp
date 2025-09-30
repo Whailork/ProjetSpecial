@@ -236,8 +236,6 @@ void AAutoCameraCharacter::ComputeAngularDifference()
 				}
 			}
 			
-
-			//AddControllerYawInput(MappedAdjustValue*YawAdjustmentSign);
 		}
 	}
 }
@@ -256,11 +254,10 @@ void AAutoCameraCharacter::ComputeCameraWallAvoidance()
 		TArray<AActor*> ActorsToIgnore;
 		ActorsToIgnore.Add(this);
 		FCollisionQueryParams Params;
+		Params.MobilityType = EQueryMobilityType::Static;
 		Params.bIgnoreTouches = true;
 		Params.AddIgnoredActors(ActorsToIgnore);
-		//TArray<TEnumAsByte<EObjectTypeQuery>> ObjectTypesArray;
-		//ObjectTypesArray.Add(UEngineTypes::ConvertToObjectType(ECC_WorldStatic));
-		//ObjectTypesArray.Add(UEngineTypes::ConvertToObjectType(ECC_WorldDynamic));
+
 
 		bMadeContact = GetWorld()->SweepMultiByObjectType(ProximityHitResults, FollowCamera->GetComponentLocation(),
 		                                                  (GetActorLocation() + FVector(0, 0, 40)) - (FollowCamera->
