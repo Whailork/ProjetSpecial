@@ -40,6 +40,17 @@ public:
 	TEnumAsByte<EPowerUpType> Type;
 	UPROPERTY(BlueprintReadWrite,EditAnywhere)
 	bool IsNegative;
+	FTimerHandle SetCollisionTimerHandle;
+	UFUNCTION()
+	void SetCollisions();
+
+	UPROPERTY(BlueprintReadWrite,EditAnywhere)
+	float DespawnDelay;
+	FTimerHandle DespawnTimerHandle;
+	UFUNCTION()
+	void Despawn();
+	UPROPERTY(BlueprintReadOnly,VisibleAnywhere)
+	bool StartDespawnAnim;
 
 	UFUNCTION()
 	void OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);

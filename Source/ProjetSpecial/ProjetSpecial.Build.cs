@@ -18,26 +18,14 @@ public class ProjetSpecial : ModuleRules
 			"StateTreeModule",
 			"GameplayStateTreeModule",
 			"UMG",
-			"Slate"
+			"Slate",
+			"Niagara"
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] { });
 
 		PublicIncludePaths.AddRange(new string[] {
-			"ProjetSpecial",
-			"ProjetSpecial/Variant_Platforming",
-			"ProjetSpecial/Variant_Platforming/Animation",
-			"ProjetSpecial/Variant_Combat",
-			"ProjetSpecial/Variant_Combat/AI",
-			"ProjetSpecial/Variant_Combat/Animation",
-			"ProjetSpecial/Variant_Combat/Gameplay",
-			"ProjetSpecial/Variant_Combat/Interfaces",
-			"ProjetSpecial/Variant_Combat/UI",
-			"ProjetSpecial/Variant_SideScrolling",
-			"ProjetSpecial/Variant_SideScrolling/AI",
-			"ProjetSpecial/Variant_SideScrolling/Gameplay",
-			"ProjetSpecial/Variant_SideScrolling/Interfaces",
-			"ProjetSpecial/Variant_SideScrolling/UI"
+			"ProjetSpecial"
 		});
 
 		// Uncomment if you are using Slate UI

@@ -11,6 +11,7 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
+#include "PowerUpManager.h"
 #include "ProjetSpecial.h"
 #include "Kismet/KismetMathLibrary.h"
 
@@ -48,6 +49,7 @@ void AProjetSpecialCharacter::BeginPlay()
 	Super::BeginPlay();
 	CachedRotation = GetActorRotation();
 	//we process upgrades
+	
 	
 	for (auto PowerUp : PowerUpComponent->PowerUps)
 	{
@@ -161,6 +163,7 @@ void AProjetSpecialCharacter::OnRevive_Implementation()
 	//GetCharacterMovement()->MovementMode = MOVE_Walking;
 }
 
+
 void AProjetSpecialCharacter::TriggerRegen()
 {
 	Health += MAX_HEALTH*0.025;
@@ -186,8 +189,15 @@ void AProjetSpecialCharacter::OnHittableObjectHit_Implementation(float damage, A
 	}
 	if(Health > 0)
 	{
+		
 		//compute defense damage reduction
 		float HealthLoss = damage - damage*Defense;
+		int NbPowerUpDropped = (HealthLoss/8);
+		NbPowerUpDropped = FMath::RandRange(NbPowerUpDropped-1,NbPowerUpDropped+1);
+		if(NbPowerUpDropped > 0)
+		{
+			PowerUpComponent->DropPowerUps(NbPowerUpDropped);
+		}
 		Health -= HealthLoss;
 	}
 
@@ -197,9 +207,9 @@ void AProjetSpecialCharacter::OnHittableObjectHit_Implementation(float damage, A
 	
 	if(Health <= 0)
 	{
+		PowerUpComponent->DropPowerUps(FMath::RandRange(4,8));
 		OnDeath();
 	}
-
 	
 }
 

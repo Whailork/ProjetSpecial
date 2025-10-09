@@ -3,6 +3,7 @@
 
 #include "PowerUpComponent.h"
 
+#include "PowerUpManager.h"
 #include "Algo/ForEach.h"
 
 
@@ -34,8 +35,15 @@ void UPowerUpComponent::AddPowerUp(EPowerUpType type, bool isNegative)
 			{
 				newData = FPowerUpData(PowerUps[i].Quantity + 1,type);
 			}
+			if(newData.Quantity == 0)
+			{
+				PowerUps.RemoveAt(i);
+			}
+			else
+			{
+				PowerUps[i] = newData;
+			}
 			
-			PowerUps[i] = newData;
 			PowerUpAddedDelegate.Broadcast(newData,LastQuantity);
 			return;
 		}
@@ -54,6 +62,34 @@ void UPowerUpComponent::AddPowerUp(EPowerUpType type, bool isNegative)
 	PowerUps.Add(newData);
 	PowerUpAddedDelegate.Broadcast(newData,LastQuantity);
 	
+}
+
+void UPowerUpComponent::DropPowerUps(int number)
+{
+	TArray<TEnumAsByte<EPowerUpType>> PowerUpsToDrop;
+	for(int i = 0; i < number;i++)
+	{
+		if(!PowerUps.IsEmpty())
+		{
+			int typeRandom = FMath::RandRange(0,PowerUps.Num()-1);
+			FPowerUpData newData = PowerUps[typeRandom];
+
+			PowerUpsToDrop.Add(newData.Type);
+
+			AddPowerUp(newData.Type,true);
+			
+		}
+	}
+	if(PowerUpsToDrop.IsEmpty())
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 1, FColor::Red,FString("No PowerUp to drop"));
+		
+	}
+	else
+	{
+		
+		GetWorld()->GetSubsystem<UPowerUpManager>()->SpawnPowerUps(PowerUpsToDrop,GetOwner()->GetActorLocation());
+	}
 }
 
 // Called when the game starts

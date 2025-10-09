@@ -9,7 +9,7 @@
 
 
 
-USTRUCT(BlueprintType)
+USTRUCT(BlueprintType,Blueprintable)
 struct FPowerUpData
 {
 	GENERATED_BODY()
@@ -35,6 +35,8 @@ public:
 	FPowerUpAddedDelegate PowerUpAddedDelegate;
 	UFUNCTION(BlueprintCallable)
 	void AddPowerUp(EPowerUpType type,bool isNegative);
+	UFUNCTION(BlueprintCallable)
+	void DropPowerUps(int number);
 		
 	
 protected:

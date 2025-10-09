@@ -3,8 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Components/SphereComponent.h"
 #include "GameFramework/Actor.h"
+#include "GameFramework/ProjectileMovementComponent.h"
+#include "Niagara/Public/NiagaraComponent.h"
+#include "HitableActor.h"
+#include "ProjetSpecialCharacter.h"
 #include "Fireball.generated.h"
+
 
 UCLASS()
 class PROJETSPECIAL_API AFireball : public AActor
@@ -14,6 +20,18 @@ class PROJETSPECIAL_API AFireball : public AActor
 public:
 	// Sets default values for this actor's properties
 	AFireball();
+	UPROPERTY(BlueprintReadWrite,EditAnywhere)
+	USphereComponent* SphereComponent;
+	UPROPERTY(BlueprintReadWrite,EditAnywhere)
+	UStaticMeshComponent* StaticMeshComponent;
+	UPROPERTY(BlueprintReadWrite,EditAnywhere)
+	UNiagaraComponent* Particles;
+	UPROPERTY(BlueprintReadWrite,EditAnywhere)
+	UProjectileMovementComponent* ProjectileMovementComponent;
+	UPROPERTY(BlueprintReadWrite,EditAnywhere);
+	AProjetSpecialCharacter* SpawnerCharacter;
+	UFUNCTION()
+	void OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
 protected:
 	// Called when the game starts or when spawned
