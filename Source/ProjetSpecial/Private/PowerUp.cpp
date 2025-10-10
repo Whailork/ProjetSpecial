@@ -35,6 +35,28 @@ void APowerUp::Despawn()
 	//this->Destroy();
 }
 
+
+/*void APowerUp::SetupValues_Implementation(TEnumAsByte<EPowerUpType> typeValue, bool isNegativeValue)
+{
+	//Type = typeValue;
+	//IsNegative = isNegativeValue;
+}*/
+
+void APowerUp::SetupTypeValues_Implementation(EPowerUpType typeValue, bool negativeValue)
+{
+	IsNegative = negativeValue;
+	Type = typeValue;
+}
+
+/*void APowerUp::SetupTypeValues(TEnumAsByte<EPowerUpType> typeValue, bool negativeValue)
+{
+}*/
+
+/*void APowerUp::SetupTypeValues_Implementation(TEnumAsByte<EPowerUpType> typeValue, bool negativeValue)
+{
+	
+}*/
+
 void APowerUp::OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	if(auto PowerUpComp = OtherActor->GetComponentByClass<UPowerUpComponent>())

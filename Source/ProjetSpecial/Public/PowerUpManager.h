@@ -10,7 +10,7 @@
 /**
  * 
  */
-UCLASS()
+UCLASS(BlueprintType)
 class PROJETSPECIAL_API UPowerUpManager : public UWorldSubsystem
 {
 	GENERATED_BODY()

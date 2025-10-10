@@ -33,7 +33,7 @@ void AFireball::OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActo
 		{
 			if(auto HitableActor = Cast<IHitableActor>(OtherActor))
 			{
-				HitableActor->Execute_OnHittableObjectHit(OtherActor,SpawnerCharacter->Strength,SpawnerCharacter);
+				HitableActor->Execute_OnHittableObjectHit(OtherActor,SpawnerCharacter->Strength,this,SweepResult);
 			}
 		}
 	}

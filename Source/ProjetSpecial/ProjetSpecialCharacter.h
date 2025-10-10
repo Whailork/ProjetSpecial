@@ -124,7 +124,7 @@ public:
 	UFUNCTION()
 	void TriggerRegen();
 
-	virtual void OnHittableObjectHit_Implementation(float damage, AActor* Source) override;
+	virtual void OnHittableObjectHit_Implementation(float damage, AActor* Source,FHitResult Hit) override;
 public:
 
 	virtual void Tick(float DeltaSeconds) override;

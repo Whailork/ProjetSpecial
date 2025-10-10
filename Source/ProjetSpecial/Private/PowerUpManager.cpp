@@ -32,7 +32,7 @@ void UPowerUpManager::SpawnPowerUps(TArray<TEnumAsByte<EPowerUpType>> powerUpTyp
 			APowerUp* newPowerUp = GetWorld()->SpawnActor<APowerUp>(PowerUpClass,Transform,SpawnParameters);
 			if(newPowerUp)
 			{
-				newPowerUp->Type = type;
+				newPowerUp->SetupTypeValues(type,false);
 			}
 			
 		}

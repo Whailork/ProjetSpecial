@@ -51,10 +51,15 @@ public:
 	void Despawn();
 	UPROPERTY(BlueprintReadOnly,VisibleAnywhere)
 	bool StartDespawnAnim;
+	
+	//void SetupValues(TEnumAsByte<EPowerUpType> typeValue, bool isNegativeValue);
 
 	UFUNCTION()
 	void OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
+
+	UFUNCTION(BlueprintNativeEvent,BlueprintCallable)
+	void SetupTypeValues(EPowerUpType typeValue, bool negativeValue);
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

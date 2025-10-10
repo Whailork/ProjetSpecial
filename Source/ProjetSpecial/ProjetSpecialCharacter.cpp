@@ -178,7 +178,7 @@ void AProjetSpecialCharacter::TriggerRegen()
 	}
 }
 
-void AProjetSpecialCharacter::OnHittableObjectHit_Implementation(float damage, AActor* Source)
+void AProjetSpecialCharacter::OnHittableObjectHit_Implementation(float damage, AActor* Source,FHitResult Hit)
 {
 	
 	if(FlyingMovementComponent->bIsGliding)
@@ -544,20 +544,17 @@ void AProjetSpecialCharacter::AttackTrace()
 	if(hasHit)
 	{
 		TArray<AActor*> DifferentHitActors;
-		for (auto Hit : HitResults)
+		for (auto HitR : HitResults)
 		{
-			if(!DifferentHitActors.Contains(Hit.GetActor()))
+			if(!DifferentHitActors.Contains(HitR.GetActor()))
 			{
-				DifferentHitActors.Add(Hit.GetActor());
+				DifferentHitActors.Add(HitR.GetActor());
+				if(HitR.GetActor()->Implements<UHitableActor>())
+				{
+					Execute_OnHittableObjectHit(HitR.GetActor(),Strength,this,HitR);
+				}
 			}
 		}
-		for(AActor* HitActor : DifferentHitActors)
-		{
-			if(HitActor->Implements<UHitableActor>())
-			{
-				Execute_OnHittableObjectHit(HitActor,Strength,this);
-			}
-		}	
 	}
 }
 
