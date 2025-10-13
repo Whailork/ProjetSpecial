@@ -3,7 +3,9 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "CrateSpawner.h"
 #include "PowerUp.h"
+#include "PowerUpComponent.h"
 #include "Subsystems/WorldSubsystem.h"
 #include "PowerUpManager.generated.h"
 
@@ -22,5 +24,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSubclassOf<AActor> CrateClass; 
 	UFUNCTION(BlueprintCallable)
-	void SpawnPowerUps(TArray<TEnumAsByte<EPowerUpType>> powerUpTypes,FVector AroundLocation);
+	void SpawnPowerUps(TArray<FPowerUpData> powerUpTypes,FVector AroundLocation);
+	UFUNCTION(BlueprintCallable)
+	void SpawnCrate(ACrateSpawner* CrateSpawner);
+	UFUNCTION(BlueprintCallable)
+	TArray<FPowerUpData> GeneratePowerUpDrops();
 };

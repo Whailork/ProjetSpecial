@@ -111,6 +111,8 @@ public:
 
 	UPROPERTY(BlueprintReadWrite,VisibleAnywhere)
 	bool bIsDead;
+	UPROPERTY(BlueprintReadWrite,VisibleAnywhere)
+	bool bIsInvulnerable;
 	UFUNCTION(BlueprintNativeEvent)
 	void OnDeath();
 	UFUNCTION(BlueprintNativeEvent)

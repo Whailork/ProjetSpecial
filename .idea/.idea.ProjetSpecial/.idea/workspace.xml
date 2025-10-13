@@ -12,62 +12,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af21e49e-7ad0-41e9-a8eb-fc2c3127f65d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/CrateSpawner.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/CrateSpawner.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetSpecial/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjetSpecial/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_Fireball.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_Fireball.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_PowerUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_PowerUp.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/0/2E/OZTXQQQ0BB8CSZLX0I68US.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/0/3V/XT0HJ2PY9VE3HOGPNVLOHO.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/0/8M/6TKNUS6I39SHMWTXUORWCH.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/0/BV/PWO25MTDCRB5YJ9HZINPVI.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/1/6C/RIDD1MGSB6J76I1Y6QPMBN.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/1/6G/ADI69JA66YXNVQ5GHMKCD5.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/1/9I/E3Z6U2XW05103EWEP47JEI.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/1/AP/YL5JWGYKIGB0Q7VYFP2K8Z.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/1/LG/URUYX3KBJT84OI122Q7HHZ.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/1/WS/9NRNGPWLIMOLBWCAY63Y73.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/2/82/T7B2560ZYUMAN1U7F1ABLO.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/2/9R/3XE3KQW8YBG5YA9F795GAR.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/3/DJ/CE0I04M70T3N7EGYCW7B6G.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/3/JO/TPU4V36ZM097OFU4D3XGWB.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/3/LY/BMNE6CJALFGWF0O0HOF8MI.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/3/TT/SHGE7I42DZDECCJ9HACUYT.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/4/DT/VC80ZQXDG5OA44KJNFR4HO.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/4/GL/DLBVAGUJH8SQA3X2CCG5BZ.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/4/KC/LC4125E522ATERTEZ4Q8WF.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/4/QW/RRTQ2DXTFU8024YXU2HAJC.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/5/QE/EHD9BHSNWWUV9U0EPF8NE7.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/5/QT/71SROVFC6B8YI3CEK5MWTU.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/5/YR/LG35Q7CRIEDNFFZ4NLYNLJ.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/6/7Y/WZWNLLRMV5LEWPO1JZAGII.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/6/BW/88S8PQJKGC54UZ60W6YHTJ.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/6/IU/UKKT8RYGNDHAOU2SWXELDB.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/7/0P/8EBH5YYW6RKV6E9X6KYL8M.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/7/YF/QAMP3YXQNPUL6PJSDAE7RA.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_01_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_01_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_02_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_02_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_05_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_05_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_06_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_06_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_07_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_07_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_18_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_18_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_19_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_19_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_21_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_21_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_25_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_25_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Master/M_Pot.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ClayPots/Materials/Master/M_Pot.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_01_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_01_LP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_02_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_02_LP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_04_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_04_LP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_05_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_05_LP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_06_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_06_LP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_07_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_07_LP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_08_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_08_LP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_09_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_09_LP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_10_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_10_LP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_11_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_11_LP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_12_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_12_LP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_13_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_13_LP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_14_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_14_LP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_15_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_15_LP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_18_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_18_LP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_19_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_19_LP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_21_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_21_LP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_22_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_22_LP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_24_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_24_LP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_25_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meshes/Destruction/GC_SM_Pot_25_LP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/ABP_LittleDragon.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/ABP_LittleDragon.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/8/7L/2C0LYOTBYA2EDKNOARH9J4.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/8/7L/2C0LYOTBYA2EDKNOARH9J4.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/8/EP/95CTY2AWHRR3C2PC5ZGU6I.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/8/GC/U7I9NSJRKAZ2FBDJL4Z4N3.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/8/JY/RZYSS36F3DTIORAJQJAOBY.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/9/ND/L1LSZYIAZ5P02YEYPDA63V.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/9/Q1/D1MRD6RGGT6QXG7XYJ6S8W.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/A/5Z/NG9RHV60X85E8K4P8MVN41.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/A/6J/TR4W986V1NHUZ069G2NWIS.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/A/NM/1QE8I56VF6PI1QRIRS738S.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/A/YU/LHDQK448WAO3F022N9C10M.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/B/76/77YOYEKZZFMJBEWVNJX1CY.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/B/B5/VQSKT4IPW0FZB32G1ZGJ9E.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/C/5B/TUG651DVQ8X37WHSJEWKKJ.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/C/EC/DZSW5TPW2J0ZT1F4PNQZ4A.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/C/HY/Q7CPP7VHOXBAMAJI90W626.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/C/HY/Q7CPP7VHOXBAMAJI90W626.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/D/3N/ACQ38OW6Q33RNA42ZS5LFJ.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/D/8O/U75GI9U4EIILK1XOYE066G.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/D/L6/PIHOEQONW6M6SXUNJMO5FR.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/D/UU/FT7JJ0KQ1GG5TKVI0NM7DG.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/D/WM/N9DRF9T8HAZ0WW2TQ7ZT76.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/D/XU/XXZBET67WN2ZX757OVOHA7.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/D/Z0/5D6JZGB7XTXMUJRY2JACS9.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/E/DG/GW0B08U2T5492930W19K4R.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/F/0R/I2B0F00ZLO4FLX3FCYIV1P.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/F/48/H89QQCWJ2K0SQJEL2SZ98I.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/AutoCameraCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/AutoCameraCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/FlyingMovementComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/FlyingMovementComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/PowerUp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/PowerUp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/PowerUpComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/PowerUpComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/PowerUpManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/PowerUpManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/ProjetSpecialCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/ProjetSpecialCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/ProjetSpecialCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/ProjetSpecialCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/PowerUpManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/PowerUpManager.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +68,57 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -125,7 +166,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "C++ Project.ProjetSpecial.executor": "Run",
+    "C++ Project.ProjetSpecial.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -572,6 +613,7 @@
       <workItem from="1759963929041" duration="13397000" />
       <workItem from="1760021458805" duration="4999000" />
       <workItem from="1760104379542" duration="8487000" />
+      <workItem from="1760314676581" duration="7376000" />
     </task>
     <servers />
   </component>

@@ -153,6 +153,7 @@ void AProjetSpecialCharacter::OnDeath_Implementation()
 {
 	//Trigger health regen
 	bIsDead = true;
+	bIsInvulnerable = true;
 	DisableInput(Cast<APlayerController>(GetController()));
 	GetWorldTimerManager().SetTimer(ReviveRegenTimerHandle,this,&AProjetSpecialCharacter::TriggerRegen,0.05,true);
 }
@@ -180,37 +181,38 @@ void AProjetSpecialCharacter::TriggerRegen()
 
 void AProjetSpecialCharacter::OnHittableObjectHit_Implementation(float damage, AActor* Source,FHitResult Hit)
 {
-	
-	if(FlyingMovementComponent->bIsGliding)
+	if(!bIsInvulnerable && !bIsDead)
 	{
-		FlyingMovementComponent->StopGliding();
-		FlyingMovementComponent->wasGliding = true;
-		HitFalling = true;
-	}
-	if(Health > 0)
-	{
-		
-		//compute defense damage reduction
-		float HealthLoss = damage - damage*Defense;
-		int NbPowerUpDropped = (HealthLoss/8);
-		NbPowerUpDropped = FMath::RandRange(NbPowerUpDropped-1,NbPowerUpDropped+1);
-		if(NbPowerUpDropped > 0)
+		if(FlyingMovementComponent->bIsGliding)
 		{
-			PowerUpComponent->DropPowerUps(NbPowerUpDropped);
+			FlyingMovementComponent->StopGliding();
+			FlyingMovementComponent->wasGliding = true;
+			HitFalling = true;
 		}
-		Health -= HealthLoss;
-	}
+		if(Health > 0)
+		{
+		
+			//compute defense damage reduction
+			float HealthLoss = damage - damage*Defense;
+			int NbPowerUpDropped = (HealthLoss/8);
+			NbPowerUpDropped = FMath::RandRange(NbPowerUpDropped-1,NbPowerUpDropped+1);
+			if(NbPowerUpDropped > 0)
+			{
+				PowerUpComponent->DropPowerUps(NbPowerUpDropped);
+			}
+			Health -= HealthLoss;
+		}
 
-	FRotator delta = GetActorRotation() - UKismetMathLibrary::FindLookAtRotation(GetActorLocation(),Source->GetActorLocation());
-	delta.Normalize();
-	LeftHit = delta.Yaw >= 0;
+		FRotator delta = GetActorRotation() - UKismetMathLibrary::FindLookAtRotation(GetActorLocation(),Source->GetActorLocation());
+		delta.Normalize();
+		LeftHit = delta.Yaw >= 0;
 	
-	if(Health <= 0)
-	{
-		PowerUpComponent->DropPowerUps(FMath::RandRange(4,8));
-		OnDeath();
+		if(Health <= 0)
+		{
+			PowerUpComponent->DropPowerUps(FMath::RandRange(4,8));
+			OnDeath();
+		}
 	}
-	
 }
 
 
@@ -237,6 +239,7 @@ void AProjetSpecialCharacter::DoJumpStart()
 	{
 		if(FlyingMovementComponent)
 		{
+			RunStop();
 			FlyingMovementComponent->CheckForGlide();
 		}
 		

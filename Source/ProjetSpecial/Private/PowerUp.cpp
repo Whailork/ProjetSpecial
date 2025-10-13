@@ -4,6 +4,7 @@
 #include "PowerUp.h"
 
 #include "PowerUpComponent.h"
+#include "ProjetSpecialCharacter.h"
 
 
 // Sets default values
@@ -61,8 +62,20 @@ void APowerUp::OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor
 {
 	if(auto PowerUpComp = OtherActor->GetComponentByClass<UPowerUpComponent>())
 	{
-		PowerUpComp->AddPowerUp(Type,IsNegative);
-		this->Destroy();
+		if(auto Character =  Cast<AProjetSpecialCharacter>(OtherActor))
+		{
+			if(!Character->bIsDead)
+			{
+				PowerUpComp->AddPowerUp(Type,IsNegative);
+				this->Destroy();
+			}
+		}
+		else
+		{
+			PowerUpComp->AddPowerUp(Type,IsNegative);
+			this->Destroy();
+		}
+		
 	}
 	
 }
@@ -72,7 +85,7 @@ void APowerUp::BeginPlay()
 {
 	Super::BeginPlay();
 	BoxCollision->SetCollisionResponseToAllChannels(ECR_Ignore);
-	GetWorldTimerManager().SetTimer(SetCollisionTimerHandle,this,&APowerUp::SetCollisions,0.3);
+	GetWorldTimerManager().SetTimer(SetCollisionTimerHandle,this,&APowerUp::SetCollisions,0.5);
 	GetWorldTimerManager().SetTimer(DespawnTimerHandle,this,&APowerUp::Despawn,DespawnDelay);
 	BoxCollision->OnComponentBeginOverlap.AddDynamic(this,&APowerUp::OnOverlap);
 	

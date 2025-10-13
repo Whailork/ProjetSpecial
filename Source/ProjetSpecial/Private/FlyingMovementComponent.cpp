@@ -5,6 +5,7 @@
 
 #include "AutoCameraCharacter.h"
 #include "PowerUpComponent.h"
+#include "ProjetSpecialCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
 
@@ -31,6 +32,10 @@ void UFlyingMovementComponent::TakeOff()
 			Pawn->DisableInput(PlayerController);
 		}
 	}
+	if(auto dragonCharacter =  Cast<AProjetSpecialCharacter>(GetOwner()))
+	{
+		dragonCharacter->RunStop();
+	}
 	
 }
 
@@ -39,6 +44,7 @@ void UFlyingMovementComponent::StartGliding()
 	if(auto autoCameraCharacter = Cast<AAutoCameraCharacter>(GetOwner()))
 	{
 		autoCameraCharacter->AllowVerticalAutoAdjust = false;
+		autoCameraCharacter->DesiredControlRotation =  autoCameraCharacter->GetActorRotation();
 	}
 	if(auto Character = Cast<ACharacter>(GetOwner()))
 	{

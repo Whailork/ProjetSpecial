@@ -66,17 +66,27 @@ void UPowerUpComponent::AddPowerUp(EPowerUpType type, bool isNegative)
 
 void UPowerUpComponent::DropPowerUps(int number)
 {
-	TArray<TEnumAsByte<EPowerUpType>> PowerUpsToDrop;
+	TArray<FPowerUpData> PowerUpsToDrop;
+	TArray<EPowerUpType> AvailableTypes;
+
 	for(int i = 0; i < number;i++)
 	{
-		if(!PowerUps.IsEmpty())
+		AvailableTypes.Empty();
+		for (auto powerUp : PowerUps)
 		{
-			int typeRandom = FMath::RandRange(0,PowerUps.Num()-1);
-			FPowerUpData newData = PowerUps[typeRandom];
+			if(powerUp.Quantity > 0)
+			{
+				AvailableTypes.Add(powerUp.Type);
+			}
+		}
+		if(!AvailableTypes.IsEmpty())
+		{
+			int typeRandom = FMath::RandRange(0,AvailableTypes.Num()-1);
+			EPowerUpType newDataType = AvailableTypes[typeRandom];
 
-			PowerUpsToDrop.Add(newData.Type);
+			PowerUpsToDrop.Add(FPowerUpData(0,newDataType));
 
-			AddPowerUp(newData.Type,true);
+			AddPowerUp(newDataType,true);
 			
 		}
 	}

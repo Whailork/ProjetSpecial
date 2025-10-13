@@ -225,13 +225,20 @@ void AAutoCameraCharacter::ComputeAngularDifference()
 				{
 					if (DiffLocation.Rotation().Pitch < 0)
 					{
-						DesiredControlRotation.Pitch = FMath::Max(DesiredControlRotation.Pitch - 1,
-																  DiffLocation.Rotation().Pitch + 10);
+						if(DesiredControlRotation.Pitch > -50)
+						{
+							DesiredControlRotation.Pitch = FMath::Max(DesiredControlRotation.Pitch - 1,
+																  DiffLocation.Rotation().Pitch);
+						}
+						
 					}
 					else
 					{
-						DesiredControlRotation.Pitch = FMath::Min(DesiredControlRotation.Pitch + 1,
-																  DiffLocation.Rotation().Pitch - 10);
+						if(DesiredControlRotation.Pitch < 50)
+						{
+							DesiredControlRotation.Pitch = FMath::Min(DesiredControlRotation.Pitch + 1,
+																  DiffLocation.Rotation().Pitch);
+						}
 					}
 				}
 			}
