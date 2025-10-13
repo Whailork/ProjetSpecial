@@ -64,6 +64,12 @@ void UPowerUpComponent::AddPowerUp(EPowerUpType type, bool isNegative)
 	
 }
 
+void UPowerUpComponent::AddAbilityPowerUp(EAbilityPowerUpType AbilityType)
+{
+	ActiveAbility = AbilityType;
+	AbilityActivatedDelegate.Broadcast(AbilityType);
+}
+
 void UPowerUpComponent::DropPowerUps(int number)
 {
 	TArray<FPowerUpData> PowerUpsToDrop;

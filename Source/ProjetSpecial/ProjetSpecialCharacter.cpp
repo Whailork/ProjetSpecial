@@ -14,6 +14,7 @@
 #include "PowerUpManager.h"
 #include "ProjetSpecial.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "Kismet/KismetSystemLibrary.h"
 
 AProjetSpecialCharacter::AProjetSpecialCharacter()
 {
@@ -21,6 +22,9 @@ AProjetSpecialCharacter::AProjetSpecialCharacter()
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
 	FlyingMovementComponent = CreateDefaultSubobject<UFlyingMovementComponent>("FlyingMovementComponent");
 	PowerUpComponent = CreateDefaultSubobject<UPowerUpComponent>("PowerUpComponent");
+
+	FireBreathingParticles = CreateDefaultSubobject<UNiagaraComponent>("FireBreathingParticles");
+	FireBreathingParticles->SetupAttachment(GetMesh(),FName("JawSocket"));
 	
 	// Don't rotate when the controller rotates. Let that just affect the camera.
 	bUseControllerRotationPitch = false;
@@ -41,6 +45,7 @@ AProjetSpecialCharacter::AProjetSpecialCharacter()
 	GetCharacterMovement()->BrakingDecelerationFalling = 1500.0f;
 
 	CanAttack = true;
+	AbilityDuration = 20;
 	
 }
 
@@ -92,6 +97,7 @@ void AProjetSpecialCharacter::BeginPlay()
 	Health = MAX_HEALTH;
 
 	PowerUpComponent->PowerUpAddedDelegate.AddDynamic(this,&AProjetSpecialCharacter::PowerUpAdded);
+	PowerUpComponent->AbilityActivatedDelegate.AddDynamic(this,&AProjetSpecialCharacter::AbilityActivated);
 	CanAttack = true;
 	
 }
@@ -485,6 +491,73 @@ void AProjetSpecialCharacter::PowerUpAdded(FPowerUpData newData,int LastQuantity
 			}
 			break;
 				
+	}
+}
+
+void AProjetSpecialCharacter::TriggerAbilityEffect_Implementation()
+{
+	if(PowerUpComponent->ActiveAbility == FireBreathing)
+	{
+		TArray<FHitResult> HitResults;
+		FVector Start = FireBreathingParticles->GetComponentLocation();
+		FVector End = Start + FireBreathingParticles->GetForwardVector()* 225;
+
+		TArray<TEnumAsByte<EObjectTypeQuery>> ObjectTypesArray;
+		ObjectTypesArray.Add(UEngineTypes::ConvertToObjectType(ECC_WorldStatic));
+		ObjectTypesArray.Add(UEngineTypes::ConvertToObjectType(ECC_WorldDynamic));
+		ObjectTypesArray.Add(UEngineTypes::ConvertToObjectType(ECC_Pawn));
+		ObjectTypesArray.Add(UEngineTypes::ConvertToObjectType(ECC_Destructible));
+
+		TArray<AActor*> ActorsToIgnore;
+		ActorsToIgnore.Add(this);
+		bool bHasHit = UKismetSystemLibrary::SphereTraceMultiForObjects(this,Start,End,20,ObjectTypesArray,false,ActorsToIgnore,EDrawDebugTrace::ForOneFrame,HitResults,true);
+
+		if(bHasHit)
+		{
+			TArray<AActor*> DifferentHitActors;
+			for (auto HitR : HitResults)
+			{
+				if(!DifferentHitActors.Contains(HitR.GetActor()))
+				{
+					DifferentHitActors.Add(HitR.GetActor());
+					if(HitR.GetActor()->Implements<UHitableActor>())
+					{
+						Execute_OnHittableObjectHit(HitR.GetActor(),Strength,this,HitR);
+					}
+				}
+			}
+		}
+	}
+}
+
+void AProjetSpecialCharacter::RemoveAbility_Implementation()
+{
+	PowerUpComponent->AddAbilityPowerUp(EAbilityPowerUpType::None);
+	if(GetWorldTimerManager().IsTimerActive(AbilityTriggerTimerHandle))
+	{
+		GetWorldTimerManager().ClearTimer(AbilityTriggerTimerHandle);
+	}
+	if(FireBreathingParticles->IsActive())
+	{
+		FireBreathingParticles->Deactivate();
+	}
+}
+
+void AProjetSpecialCharacter::AbilityActivated_Implementation(EAbilityPowerUpType AbilityType)
+{
+	if(GetWorldTimerManager().IsTimerActive(AbilityLossHandle))
+	{
+		GetWorldTimerManager().ClearTimer(AbilityLossHandle);
+	}
+	if(GetWorldTimerManager().IsTimerActive(AbilityTriggerTimerHandle))
+	{
+		GetWorldTimerManager().ClearTimer(AbilityTriggerTimerHandle);
+	}
+	GetWorldTimerManager().SetTimer(AbilityLossHandle,this, &AProjetSpecialCharacter::RemoveAbility,AbilityDuration);
+	GetWorldTimerManager().SetTimer(AbilityTriggerTimerHandle,this,&AProjetSpecialCharacter::TriggerAbilityEffect,0.1,true);
+	if(AbilityType == FireBreathing)
+	{
+		FireBreathingParticles->Activate();
 	}
 }
 

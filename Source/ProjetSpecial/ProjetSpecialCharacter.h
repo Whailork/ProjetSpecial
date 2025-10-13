@@ -6,6 +6,7 @@
 #include "AutoCameraCharacter.h"
 #include "FlyingMovementComponent.h"
 #include "HitableActor.h"
+#include "NiagaraComponent.h"
 #include "PowerUpComponent.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
@@ -37,6 +38,13 @@ public:
 	UFlyingMovementComponent* FlyingMovementComponent;
 	UPROPERTY(BlueprintReadWrite,EditAnywhere)
 	UPowerUpComponent* PowerUpComponent;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite)
+	float AbilityDuration;
+	FTimerHandle AbilityLossHandle;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite)
+	UNiagaraComponent* FireBreathingParticles;
+	FTimerHandle AbilityTriggerTimerHandle;
+	
 	
 	UPROPERTY(BlueprintReadWrite)
 	bool bIsRunning;
@@ -78,6 +86,12 @@ public:
 	void StaminaRegen();
 	UFUNCTION()
 	void PowerUpAdded(FPowerUpData newData,int LastQuantity);
+	UFUNCTION(BlueprintNativeEvent)
+	void AbilityActivated(EAbilityPowerUpType AbilityType);
+	UFUNCTION(BlueprintNativeEvent)
+	void RemoveAbility();
+	UFUNCTION(BlueprintNativeEvent)
+	void TriggerAbilityEffect();
 
 	FTimerHandle StaminaSpendTimerHandle;
 	FTimerHandle StaminaRegenHandle;

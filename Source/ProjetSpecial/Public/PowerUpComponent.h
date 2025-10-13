@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "AbilityPowerUp.h"
 #include "PowerUp.h"
 #include "Components/ActorComponent.h"
 #include "PowerUpComponent.generated.h"
@@ -15,10 +16,10 @@ struct FPowerUpData
 	GENERATED_BODY()
 	int Quantity;
 	EPowerUpType Type;
-	
 };
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPowerUpAddedDelegate,FPowerUpData,newPowerUpData,int,LastQuantity);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAbilityActivatedDelegate,EAbilityPowerUpType,AbilityType);
 
 UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
 class PROJETSPECIAL_API UPowerUpComponent : public UActorComponent
@@ -31,10 +32,15 @@ public:
 	UPowerUpComponent();
 	UPROPERTY(BlueprintReadWrite,EditAnywhere)
 	TArray<FPowerUpData> PowerUps;
+	UPROPERTY(BlueprintReadWrite,EditAnywhere)
+	TEnumAsByte<EAbilityPowerUpType> ActiveAbility;
 
 	FPowerUpAddedDelegate PowerUpAddedDelegate;
+	FAbilityActivatedDelegate AbilityActivatedDelegate;
 	UFUNCTION(BlueprintCallable)
 	void AddPowerUp(EPowerUpType type,bool isNegative);
+	UFUNCTION(BlueprintCallable)
+	void AddAbilityPowerUp(EAbilityPowerUpType AbilityType);
 	UFUNCTION(BlueprintCallable)
 	void DropPowerUps(int number);
 		

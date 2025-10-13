@@ -8,6 +8,7 @@
 #include "Camera/CameraComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Kismet/KismetSystemLibrary.h"
 
 
 // Sets default values
@@ -141,7 +142,7 @@ void AAutoCameraCharacter::EnableCameraAutoAdjust()
 
 void AAutoCameraCharacter::StartCameraPositionReset()
 {
-	AllowCameraWallAvoidance = false;
+	//AllowCameraWallAvoidance = false;
 	FRotator DefaultRotation = GetActorRotation();
 	if(AllowCliffDetection)
 	{
@@ -253,7 +254,7 @@ void AAutoCameraCharacter::ComputeCameraWallAvoidance()
 	{
 		TArray<FHitResult> ProximityHitResults;
 
-		FCollisionObjectQueryParams ObjectParams;
+		/*FCollisionObjectQueryParams ObjectParams;
 		ObjectParams.AddObjectTypesToQuery(ECC_WorldStatic);
 		ObjectParams.AddObjectTypesToQuery(ECC_WorldDynamic);
 		
@@ -263,15 +264,18 @@ void AAutoCameraCharacter::ComputeCameraWallAvoidance()
 		FCollisionQueryParams Params;
 		Params.MobilityType = EQueryMobilityType::Static;
 		Params.bIgnoreTouches = true;
-		Params.AddIgnoredActors(ActorsToIgnore);
+		Params.AddIgnoredActors(ActorsToIgnore);*/
 
 
-		bMadeContact = GetWorld()->SweepMultiByObjectType(ProximityHitResults, FollowCamera->GetComponentLocation(),
+		/*bMadeContact = GetWorld()->SweepMultiByObjectType(ProximityHitResults, FollowCamera->GetComponentLocation(),
 		                                                  (GetActorLocation() + FVector(0, 0, 40)) - (FollowCamera->
 			                                                  GetForwardVector() * 100), FQuat::Identity, ObjectParams,
 		                                                  FCollisionShape::MakeSphere(WallAvoidanceSphereRadius),
-		                                                  Params);
-		//bMadeContact = UKismetSystemLibrary::SphereTraceMultiForObjects(this, FollowCamera->GetComponentLocation(), (GetActorLocation() + FVector(0,0,40)) - (FollowCamera->GetForwardVector() * 100), WallAvoidanceSphereRadius,ObjectTypesArray, false, TArray<AActor*>(),EDrawDebugTrace::None , ProximityHitResults, true);
+		                                                  Params);*/
+		TArray<TEnumAsByte<EObjectTypeQuery>> ObjectTypesArray;
+		ObjectTypesArray.Add(UEngineTypes::ConvertToObjectType(ECC_WorldStatic));
+		ObjectTypesArray.Add(UEngineTypes::ConvertToObjectType(ECC_WorldDynamic));
+		bMadeContact = UKismetSystemLibrary::SphereTraceMultiForObjects(this, FollowCamera->GetComponentLocation(), (GetActorLocation() + FVector(0,0,40)) - (FollowCamera->GetForwardVector() * 100), WallAvoidanceSphereRadius,ObjectTypesArray, false, TArray<AActor*>(),EDrawDebugTrace::None , ProximityHitResults, true);
 		if (bMadeContact)
 		{
 			for (auto ProximityHitResult : ProximityHitResults)
@@ -410,7 +414,11 @@ void AAutoCameraCharacter::Tick(float DeltaTime)
 		{
 			
 			APlayerController* PlayerController = Cast<APlayerController>(GetController());
-			PlayerController->SetControlRotation(intepRotator);
+			if(PlayerController)
+			{
+				PlayerController->SetControlRotation(intepRotator);
+			}
+			
 		}
 	}
 }

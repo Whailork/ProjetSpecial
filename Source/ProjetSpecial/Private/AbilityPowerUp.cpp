@@ -1,14 +1,15 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "PowerUp.h"
+#include "AbilityPowerUp.h"
 
 #include "PowerUpComponent.h"
 #include "ProjetSpecialCharacter.h"
+#include "Components/BoxComponent.h"
 
 
 // Sets default values
-APowerUp::APowerUp()
+AAbilityPowerUp::AAbilityPowerUp()
 {
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -22,31 +23,20 @@ APowerUp::APowerUp()
 	SpawnCollisionHandlingMethod = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 }
 
-void APowerUp::SetCollisions()
+void AAbilityPowerUp::SetCollisions()
 {
 	BoxCollision->SetCollisionResponseToAllChannels(ECR_Block);
 	BoxCollision->SetCollisionResponseToChannel(ECC_Pawn,ECR_Overlap);
 	BoxCollision->SetCollisionResponseToChannel(ECC_Camera,ECR_Overlap);
-	//BoxCollision->SetCollisionResponseToChannel(ECC_Visibility,ECR_Ignore);
 }
 
-void APowerUp::Despawn()
+void AAbilityPowerUp::Despawn()
 {
 	StartDespawnAnim = true;
-	//this->Destroy();
 }
 
-
-
-void APowerUp::SetupTypeValues_Implementation(EPowerUpType typeValue, bool negativeValue)
-{
-	IsNegative = negativeValue;
-	Type = typeValue;
-}
-
-
-
-void APowerUp::OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+void AAbilityPowerUp::OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp,
+	int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	if(auto PowerUpComp = OtherActor->GetComponentByClass<UPowerUpComponent>())
 	{
@@ -54,33 +44,37 @@ void APowerUp::OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor
 		{
 			if(!Character->bIsDead)
 			{
-				PowerUpComp->AddPowerUp(Type,IsNegative);
+				PowerUpComp->AddAbilityPowerUp(Type);
 				this->Destroy();
 			}
 		}
 		else
 		{
-			PowerUpComp->AddPowerUp(Type,IsNegative);
+			PowerUpComp->AddAbilityPowerUp(Type);
 			this->Destroy();
 		}
 		
 	}
-	
+}
+
+void AAbilityPowerUp::SetupTypeValues_Implementation(EAbilityPowerUpType typeValue)
+{
+	Type = typeValue;
 }
 
 // Called when the game starts or when spawned
-void APowerUp::BeginPlay()
+void AAbilityPowerUp::BeginPlay()
 {
 	Super::BeginPlay();
 	BoxCollision->SetCollisionResponseToAllChannels(ECR_Ignore);
-	GetWorldTimerManager().SetTimer(SetCollisionTimerHandle,this,&APowerUp::SetCollisions,0.5);
-	GetWorldTimerManager().SetTimer(DespawnTimerHandle,this,&APowerUp::Despawn,DespawnDelay);
-	BoxCollision->OnComponentBeginOverlap.AddDynamic(this,&APowerUp::OnOverlap);
+	GetWorldTimerManager().SetTimer(SetCollisionTimerHandle,this,&AAbilityPowerUp::SetCollisions,0.5);
+	GetWorldTimerManager().SetTimer(DespawnTimerHandle,this,&AAbilityPowerUp::Despawn,DespawnDelay);
+	BoxCollision->OnComponentBeginOverlap.AddDynamic(this,&AAbilityPowerUp::OnOverlap);
 	
 }
 
 // Called every frame
-void APowerUp::Tick(float DeltaTime)
+void AAbilityPowerUp::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 }
