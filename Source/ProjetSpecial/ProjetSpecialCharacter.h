@@ -84,10 +84,14 @@ public:
 	void Running();
 	UFUNCTION()
 	void StaminaRegen();
-	UFUNCTION()
-	void PowerUpAdded(FPowerUpData newData,int LastQuantity);
+	UFUNCTION(BlueprintNativeEvent)
+	void PowerUpAdded(FPowerUpData newData,int LastQuantity,EPowerUpType type);
 	UFUNCTION(BlueprintNativeEvent)
 	void AbilityActivated(EAbilityPowerUpType AbilityType);
+	UFUNCTION(BlueprintNativeEvent)
+	void FoodPickedUp(EFoodType type, float HealValue);
+
+
 	UFUNCTION(BlueprintNativeEvent)
 	void RemoveAbility();
 	UFUNCTION(BlueprintNativeEvent)

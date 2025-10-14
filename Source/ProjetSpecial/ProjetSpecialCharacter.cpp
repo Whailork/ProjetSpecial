@@ -98,6 +98,7 @@ void AProjetSpecialCharacter::BeginPlay()
 
 	PowerUpComponent->PowerUpAddedDelegate.AddDynamic(this,&AProjetSpecialCharacter::PowerUpAdded);
 	PowerUpComponent->AbilityActivatedDelegate.AddDynamic(this,&AProjetSpecialCharacter::AbilityActivated);
+	PowerUpComponent->FoodPickedUpDelegate.AddDynamic(this,&AProjetSpecialCharacter::FoodPickedUp);
 	CanAttack = true;
 	
 }
@@ -372,7 +373,8 @@ void AProjetSpecialCharacter::StaminaRegen()
 	//GEngine->AddOnScreenDebugMessage(-1, 1, FColor::Green,FString("RegenStamina"));
 }
 
-void AProjetSpecialCharacter::PowerUpAdded(FPowerUpData newData,int LastQuantity)
+
+void AProjetSpecialCharacter::PowerUpAdded_Implementation(FPowerUpData newData,int LastQuantity, EPowerUpType type)
 {
 	int QuantityDifference = newData.Quantity - LastQuantity;
 	float FillPercentage;
@@ -492,6 +494,11 @@ void AProjetSpecialCharacter::PowerUpAdded(FPowerUpData newData,int LastQuantity
 			break;
 				
 	}
+}
+
+void AProjetSpecialCharacter::FoodPickedUp_Implementation(EFoodType type, float HealValue)
+{
+	Health = Health + HealValue*MAX_HEALTH;
 }
 
 void AProjetSpecialCharacter::TriggerAbilityEffect_Implementation()
