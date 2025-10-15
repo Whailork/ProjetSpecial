@@ -12,35 +12,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af21e49e-7ad0-41e9-a8eb-fc2c3127f65d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.vsconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Blueprints/BP_FoodPickup.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Blueprints/PickupDataTable.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/HUD/UW_FoodPickup.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/HUD/UW_PickupDescription.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/FoodPickup.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/FoodPickup.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetSpecial/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjetSpecial/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_AbilityPowerUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_AbilityPowerUp.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_PowerUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_PowerUp.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/HUD/UW_AbilityPowerUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HUD/UW_AbilityPowerUp.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/HUD/UW_PowerUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HUD/UW_PowerUp.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Materials/FollowCameraWidgetMaterial.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Materials/FollowCameraWidgetMaterial.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RocketThrusterExhaustFX/FX/NS_RocketExhaust_Plume_1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/RocketThrusterExhaustFX/FX/NS_RocketExhaust_Plume_1.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/PowerUps/fireball.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/ABP_LittleDragon.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/ABP_LittleDragon.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_Fireball.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_Fireball.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/HUD/UW_PlayerHUD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HUD/UW_PlayerHUD.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Materials/FollowCameraWidgetMaterial_Inst.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Materials/FollowCameraWidgetMaterial_Inst.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Materials/PowerUps/Stamina_Mat.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Materials/PowerUps/Stamina_Mat.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Lvl_ThirdPerson.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Lvl_ThirdPerson.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/0/01/9M4QDYHTTNWPVLDYMMA1QA.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/8/7L/2C0LYOTBYA2EDKNOARH9J4.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/8/7L/2C0LYOTBYA2EDKNOARH9J4.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/AutoCameraCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/AutoCameraCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/PowerUpComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/PowerUpComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/PowerUpCrate.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/PowerUpManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/PowerUpManager.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/ProjetSpecialCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/ProjetSpecialCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/ProjetSpecialCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/ProjetSpecialCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/AutoCameraCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/AutoCameraCharacter.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/PowerUpComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/PowerUpComponent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/PowerUpCrate.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/PowerUpManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/PowerUpManager.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -530,7 +515,9 @@
       <workItem from="1760314676581" duration="7376000" />
       <workItem from="1760363404422" duration="12830000" />
       <workItem from="1760390212293" duration="2669000" />
-      <workItem from="1760450759922" duration="13332000" />
+      <workItem from="1760450759922" duration="13625000" />
+      <workItem from="1760498868323" duration="1048000" />
+      <workItem from="1760537073047" duration="5292000" />
     </task>
     <servers />
   </component>

@@ -46,6 +46,8 @@ public:
 	//Auto Camera
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	FRotator DesiredControlRotation;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	FRotator DefaultRotationOffset;
 	FVector PreviousLocation;
 	double CameraAdjustStartThreshold;
 	double CameraAdjustStopThreshold;

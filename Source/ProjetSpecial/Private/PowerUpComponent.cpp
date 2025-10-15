@@ -18,7 +18,7 @@ UPowerUpComponent::UPowerUpComponent()
 }
 
 
-void UPowerUpComponent::AddPowerUp(EPowerUpType type, bool isNegative)
+void UPowerUpComponent::AddPowerUp(EPowerUpType type, bool isNegative, bool PowerUpDropped)
 {
 	
 	for(int i = 0; i < PowerUps.Num();i++)
@@ -44,7 +44,7 @@ void UPowerUpComponent::AddPowerUp(EPowerUpType type, bool isNegative)
 				PowerUps[i] = newData;
 			}
 			
-			PowerUpAddedDelegate.Broadcast(newData,LastQuantity,newData.Type);
+			PowerUpAddedDelegate.Broadcast(newData,LastQuantity,newData.Type,PowerUpDropped);
 			return;
 		}
 	}
@@ -60,14 +60,14 @@ void UPowerUpComponent::AddPowerUp(EPowerUpType type, bool isNegative)
 	}
 	
 	PowerUps.Add(newData);
-	PowerUpAddedDelegate.Broadcast(newData,LastQuantity,newData.Type);
+	PowerUpAddedDelegate.Broadcast(newData,LastQuantity,newData.Type,PowerUpDropped);
 	
 }
 
-void UPowerUpComponent::AddAbilityPowerUp(EAbilityPowerUpType AbilityType)
+void UPowerUpComponent::AddAbilityPowerUp(EAbilityPowerUpType AbilityType, bool AbilityFinished)
 {
 	ActiveAbility = AbilityType;
-	AbilityActivatedDelegate.Broadcast(AbilityType);
+	AbilityActivatedDelegate.Broadcast(AbilityType,AbilityFinished);
 }
 
 void UPowerUpComponent::AddFoodPickup(EFoodType type,float HealValue)
@@ -97,7 +97,7 @@ void UPowerUpComponent::DropPowerUps(int number)
 
 			PowerUpsToDrop.Add(FPowerUpData(0,newDataType));
 
-			AddPowerUp(newDataType,true);
+			AddPowerUp(newDataType,true,true);
 			
 		}
 	}

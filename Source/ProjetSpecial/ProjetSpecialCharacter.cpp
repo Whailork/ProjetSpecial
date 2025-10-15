@@ -374,7 +374,7 @@ void AProjetSpecialCharacter::StaminaRegen()
 }
 
 
-void AProjetSpecialCharacter::PowerUpAdded_Implementation(FPowerUpData newData,int LastQuantity, EPowerUpType type)
+void AProjetSpecialCharacter::PowerUpAdded_Implementation(FPowerUpData newData,int LastQuantity, EPowerUpType type,bool PowerUpDropped)
 {
 	int QuantityDifference = newData.Quantity - LastQuantity;
 	float FillPercentage;
@@ -539,7 +539,7 @@ void AProjetSpecialCharacter::TriggerAbilityEffect_Implementation()
 
 void AProjetSpecialCharacter::RemoveAbility_Implementation()
 {
-	PowerUpComponent->AddAbilityPowerUp(EAbilityPowerUpType::None);
+	PowerUpComponent->AddAbilityPowerUp(EAbilityPowerUpType::None,true);
 	if(GetWorldTimerManager().IsTimerActive(AbilityTriggerTimerHandle))
 	{
 		GetWorldTimerManager().ClearTimer(AbilityTriggerTimerHandle);
@@ -550,7 +550,7 @@ void AProjetSpecialCharacter::RemoveAbility_Implementation()
 	}
 }
 
-void AProjetSpecialCharacter::AbilityActivated_Implementation(EAbilityPowerUpType AbilityType)
+void AProjetSpecialCharacter::AbilityActivated_Implementation(EAbilityPowerUpType AbilityType,bool AbilityFinished)
 {
 	if(GetWorldTimerManager().IsTimerActive(AbilityLossHandle))
 	{

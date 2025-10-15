@@ -25,8 +25,8 @@ struct FPowerUpData
 	TEnumAsByte<EFoodType> FoodType = EFoodType::No;
 };
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FPowerUpAddedDelegate,FPowerUpData,newPowerUpData,int,LastQuantity, EPowerUpType, type);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAbilityActivatedDelegate,EAbilityPowerUpType,AbilityType);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FPowerUpAddedDelegate,FPowerUpData,newPowerUpData,int,LastQuantity, EPowerUpType, type,bool,PowerUpDropped);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FAbilityActivatedDelegate,EAbilityPowerUpType,AbilityType,bool, AbilityFinished);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFoodPickedUpDelegate,EFoodType,FoodType,float, HealValue);
 
 UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
@@ -43,13 +43,16 @@ public:
 	UPROPERTY(BlueprintReadWrite,EditAnywhere)
 	TEnumAsByte<EAbilityPowerUpType> ActiveAbility;
 
+	UPROPERTY(BlueprintReadWrite,EditAnywhere,BlueprintAssignable)
 	FPowerUpAddedDelegate PowerUpAddedDelegate;
+	UPROPERTY(BlueprintReadWrite,EditAnywhere,BlueprintAssignable)
 	FAbilityActivatedDelegate AbilityActivatedDelegate;
+	UPROPERTY(BlueprintReadWrite,EditAnywhere,BlueprintAssignable)
 	FFoodPickedUpDelegate FoodPickedUpDelegate;
 	UFUNCTION(BlueprintCallable)
-	void AddPowerUp(EPowerUpType type,bool isNegative);
+	void AddPowerUp(EPowerUpType type,bool isNegative, bool PowerUpDropped = false);
 	UFUNCTION(BlueprintCallable)
-	void AddAbilityPowerUp(EAbilityPowerUpType AbilityType);
+	void AddAbilityPowerUp(EAbilityPowerUpType AbilityType,bool AbilityFinished = false);
 	UFUNCTION(BlueprintCallable)
 	void AddFoodPickup(EFoodType type,float HealValue);
 	UFUNCTION(BlueprintCallable)

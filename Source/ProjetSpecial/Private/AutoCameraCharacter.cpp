@@ -39,6 +39,7 @@ AAutoCameraCharacter::AAutoCameraCharacter()
 	CameraAutoAdjustDisableDuration = 2;
 	YawAdjustmentSign = 0;
 	CameraMovementInterpSpeed = BASE_CAMERA_MOVEMENT_INTERP_SPEED;
+	DefaultRotationOffset = FRotator(-15,0,0);
 	AllowCameraAutoAdjust = true;
 	AllowCameraWallAvoidance = true;
 	AllowCameraPositionReset = true;
@@ -53,7 +54,7 @@ AAutoCameraCharacter::AAutoCameraCharacter()
 void AAutoCameraCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	DesiredControlRotation = GetControlRotation();
+	DesiredControlRotation = GetControlRotation() + DefaultRotationOffset;
 	PreviousLocation = GetActorLocation();
 }
 
@@ -170,6 +171,10 @@ void AAutoCameraCharacter::StartCameraPositionReset()
 				DefaultRotation.Pitch += FVector::DotProduct(GetActorForwardVector(), outHit.ImpactNormal) * -45;
 			}
 		}
+	}
+	else
+	{
+		DefaultRotation += DefaultRotationOffset;
 	}
 	
 	CameraMovementInterpSpeed = CAMERA_POSITION_RESET_INTERP_SPEED;
