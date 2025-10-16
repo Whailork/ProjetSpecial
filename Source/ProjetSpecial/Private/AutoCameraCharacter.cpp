@@ -285,12 +285,13 @@ void AAutoCameraCharacter::ComputeCameraWallAvoidance()
 		{
 			for (auto ProximityHitResult : ProximityHitResults)
 			{
+				
 				if (bGetOutOfWallAdjust)
 				{
 					if (InsideWallActors.Contains(ProximityHitResult.GetActor()))
 					{
 						CollisionImpactYawDirections.Add(1 * LastCameraMovementYawDirection);
-						//GEngine->AddOnScreenDebugMessage(-1, 1, FColor::Green,FString::SanitizeFloat(LastCameraMovementYawDirection));
+						
 					}
 					else
 					{
@@ -314,12 +315,12 @@ void AAutoCameraCharacter::ComputeCameraWallAvoidance()
 					FRotator ControlRot = FRotator(0, ControlForwardVector.Rotation().Yaw, 0);
 
 
-					if (!FMath::IsNearlyEqual(FMath::Abs(FVector::DotProduct(ControlForwardVector, ImpactNormalVector)),
-					                          1,
-					                          0.1))
+					if (!FMath::IsNearlyEqual(FMath::Abs(FVector::DotProduct(ControlForwardVector, ImpactNormalVector)),1,0.1))
 					{
+						
 						if (!ImpactNormalVector.IsNearlyZero(0.01))
 						{
+							GEngine->AddOnScreenDebugMessage(-1, 1, FColor::Green,ProximityHitResult.GetComponent()->GetName());
 							FRotator DeltaRotator = GetControlRotation() - ImpactNormalVector.Rotation();
 							DeltaRotator.Normalize();
 							float distance = ProximityHitResult.ImpactPoint.Distance(

@@ -14,74 +14,37 @@
     <list default="true" id="af21e49e-7ad0-41e9-a8eb-fc2c3127f65d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetSpecial/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjetSpecial/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_01_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_01_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_02_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_02_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_04_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_04_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_05_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_05_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_06_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_06_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_07_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_07_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_08_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_08_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_09_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_09_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_10_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_10_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_11_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_11_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_12_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_12_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_13_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_13_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_14_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_14_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_15_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_15_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_18_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_18_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_19_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_19_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_21_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_21_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_22_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_22_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_24_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_24_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_25_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_25_PowerUpJar.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_PowerUpJar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Demo/Materials/MI_Curve_Wall.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Demo/Materials/Master/M_Curve_Wall.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Demo/Meshes/SM_Curve_Wall.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Demo/Textures/HDRI/photo_studio_loft_hall_8k.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Maps/ClayPot_Overview.umap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_01.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_02.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_03.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_04.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_05.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_06.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_07.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_08.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_09.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_10.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_11.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_12.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_13.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_14.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_15.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_16.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_17.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_18.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_19.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_20.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_21.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_22.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_23.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_24.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Materials/Nanite/MI_Pot_25.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_01.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_02.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_03.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_04.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_05.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_06.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_07.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_08.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_09.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_10.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_11.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_12.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_13.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_14.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_15.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_16.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_17.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_18.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_19.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_20.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_21.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_22.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_23.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_24.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ClayPots/Meshes/Nanite/SM_Pot_25.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Map/Overview.umap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RocketThrusterExhaustFX/Cinematics/DemoLevelSequence.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RocketThrusterExhaustFX/Maps/Demo.umap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/1/3I/6HGKHIOFD8CW1IUTRPQRCC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/1/3I/6HGKHIOFD8CW1IUTRPQRCC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/4/NF/OR2X6AKCHQ629QII7YY57J.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/4/NF/OR2X6AKCHQ629QII7YY57J.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/6/3B/POZIVPDGXXSE8MM2X209AV.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/6/3B/POZIVPDGXXSE8MM2X209AV.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/8/7L/2C0LYOTBYA2EDKNOARH9J4.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/8/7L/2C0LYOTBYA2EDKNOARH9J4.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/9/LU/06EDL4Y13GUQMHVES6MFOB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/9/LU/06EDL4Y13GUQMHVES6MFOB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/A/4N/UO6FL08RGNVQ99AKZOSTB1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/A/4N/UO6FL08RGNVQ99AKZOSTB1.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/C/QK/ODAPZAZDDQ8M8YHAZK8F7H.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/C/QK/ODAPZAZDDQ8M8YHAZK8F7H.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/F/0N/22YECUTTYQIJV02TZY1851.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/F/0N/22YECUTTYQIJV02TZY1851.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/HUD/UW_JarDetector.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HUD/UW_JarDetector.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Lvl_ThirdPerson.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Lvl_ThirdPerson.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/1/3I/6HGKHIOFD8CW1IUTRPQRCC.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/4/NF/OR2X6AKCHQ629QII7YY57J.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/6/3B/POZIVPDGXXSE8MM2X209AV.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/9/LU/06EDL4Y13GUQMHVES6MFOB.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/A/4N/UO6FL08RGNVQ99AKZOSTB1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/C/HY/Q7CPP7VHOXBAMAJI90W626.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/C/HY/Q7CPP7VHOXBAMAJI90W626.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/C/QK/ODAPZAZDDQ8M8YHAZK8F7H.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/F/0N/22YECUTTYQIJV02TZY1851.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/AutoCameraCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/AutoCameraCharacter.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -574,7 +537,8 @@
       <workItem from="1760450759922" duration="13625000" />
       <workItem from="1760498868323" duration="1048000" />
       <workItem from="1760537073047" duration="5355000" />
-      <workItem from="1760558257791" duration="1506000" />
+      <workItem from="1760558257791" duration="3232000" />
+      <workItem from="1760570759792" duration="2521000" />
     </task>
     <servers />
   </component>
