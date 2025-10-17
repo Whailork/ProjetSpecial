@@ -76,8 +76,11 @@ void UPowerUpManager::SpawnPowerUps(TArray<FPowerUpData> powerUpTypes,const FVec
 	}
 }
 
-void UPowerUpManager::SpawnCrate(ACrateSpawner* CrateSpawner)
+
+void UPowerUpManager::SpawnCrate(FVector SpawnLocation)
 {
+	int RandJarType =  FMath::RandRange(0,JarClasses.Num()-1);
+	AActor* newPowerUpJar = GetWorld()->SpawnActor<AActor>(JarClasses[RandJarType],SpawnLocation,FRotator(0,0,0));
 }
 
 TArray<FPowerUpData> UPowerUpManager::GeneratePowerUpDrops()

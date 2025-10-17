@@ -3,19 +3,21 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "BehaviorTree/BehaviorTree.h"
 #include "GameFramework/Pawn.h"
-#include "CrateSpawner.generated.h"
+#include "JarSpawnerPawn.generated.h"
 
 UCLASS()
-class PROJETSPECIAL_API ACrateSpawner : public APawn
+class PROJETSPECIAL_API AJarSpawnerPawn : public APawn
 {
 	GENERATED_BODY()
 
 public:
 	// Sets default values for this pawn's properties
-	ACrateSpawner();
-	UPROPERTY(BlueprintReadWrite,EditAnywhere)
-	TArray<TSubclassOf<AActor>> JarClasses;
+	AJarSpawnerPawn();
+
+	UPROPERTY(EditAnywhere,BlueprintReadWrite)
+	UBehaviorTree* BehaviorTreeAsset;
 
 protected:
 	// Called when the game starts or when spawned

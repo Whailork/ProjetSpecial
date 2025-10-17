@@ -12,13 +12,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af21e49e-7ad0-41e9-a8eb-fc2c3127f65d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/JarSpawner/JarSpawnerController.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/JarSpawner/JarSpawnerController.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetSpecial/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjetSpecial/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/HUD/UW_PlayerDetector.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HUD/UW_PlayerDetector.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LittleDragons/Meshes/SK_Little_Dragon_Tiger_Simple.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LittleDragons/Meshes/SK_Little_Dragon_Tiger_Simple.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LittleDragons/Meshes/SK_Little_Dragon_Tiger_Toon.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LittleDragons/Meshes/SK_Little_Dragon_Tiger_Toon.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_01_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_01_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_02_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_02_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_04_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_04_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_05_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_05_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_06_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_06_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_07_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_07_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_08_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_08_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_09_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_09_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_10_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_10_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_11_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_11_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_12_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_12_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_13_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_13_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_14_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_14_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_15_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_15_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_18_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_18_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_19_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_19_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_21_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_21_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_22_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_22_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_24_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_24_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_25_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_25_PowerUpJar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_PowerUpJar.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Lvl_ThirdPerson.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Lvl_ThirdPerson.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/8/7L/2C0LYOTBYA2EDKNOARH9J4.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/8/7L/2C0LYOTBYA2EDKNOARH9J4.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/ProjetSpecialCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/ProjetSpecialCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/CrateSpawner.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/JarSpawner/JarSpawnerPawn.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/PowerUpManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/PowerUpManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/CrateSpawner.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/JarSpawner/JarSpawnerPawn.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/PowerUpManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/PowerUpManager.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,16 +54,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -58,7 +73,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "C++ Project.ProjetSpecial.executor": "Run",
+    "C++ Project.ProjetSpecial.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -515,6 +530,7 @@
       <workItem from="1760570759792" duration="3113000" />
       <workItem from="1760653632621" duration="2305000" />
       <workItem from="1760665644111" duration="669000" />
+      <workItem from="1760733612575" duration="6809000" />
     </task>
     <servers />
   </component>

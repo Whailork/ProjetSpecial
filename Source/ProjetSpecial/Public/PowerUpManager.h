@@ -3,7 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "CrateSpawner.h"
 #include "FoodPickup.h"
 #include "PowerUp.h"
 #include "PowerUpComponent.h"
@@ -53,11 +52,11 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSubclassOf<AFoodPickup> FoodPickupClass;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TSubclassOf<AActor> CrateClass; 
+	TArray<TSubclassOf<AActor>> JarClasses; 
 	UFUNCTION(BlueprintCallable)
 	void SpawnPowerUps(TArray<FPowerUpData> powerUpTypes,FVector AroundLocation);
 	UFUNCTION(BlueprintCallable)
-	void SpawnCrate(ACrateSpawner* CrateSpawner);
+	void SpawnCrate(FVector SpawnLocation);
 	UFUNCTION(BlueprintCallable)
 	TArray<FPowerUpData> GeneratePowerUpDrops();
 };
