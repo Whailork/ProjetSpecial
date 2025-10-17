@@ -13,38 +13,12 @@
   <component name="ChangeListManager">
     <list default="true" id="af21e49e-7ad0-41e9-a8eb-fc2c3127f65d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetSpecial/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjetSpecial/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_01_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_01_PowerUpJar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_02_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_02_PowerUpJar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_04_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_04_PowerUpJar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_05_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_05_PowerUpJar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_06_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_06_PowerUpJar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_07_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_07_PowerUpJar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_08_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_08_PowerUpJar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_09_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_09_PowerUpJar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_10_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_10_PowerUpJar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_11_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_11_PowerUpJar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_12_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_12_PowerUpJar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_13_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_13_PowerUpJar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_14_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_14_PowerUpJar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_15_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_15_PowerUpJar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_18_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_18_PowerUpJar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_19_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_19_PowerUpJar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_21_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_21_PowerUpJar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_22_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_22_PowerUpJar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_24_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_24_PowerUpJar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_25_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_25_PowerUpJar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_PowerUpJar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PowerUpJars/BP_PowerUpJar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/HUD/UW_JarDetector.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HUD/UW_JarDetector.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Lvl_ThirdPerson.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Lvl_ThirdPerson.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/1/3I/6HGKHIOFD8CW1IUTRPQRCC.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/4/NF/OR2X6AKCHQ629QII7YY57J.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/6/3B/POZIVPDGXXSE8MM2X209AV.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/9/LU/06EDL4Y13GUQMHVES6MFOB.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/A/4N/UO6FL08RGNVQ99AKZOSTB1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/C/HY/Q7CPP7VHOXBAMAJI90W626.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/C/HY/Q7CPP7VHOXBAMAJI90W626.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/C/QK/ODAPZAZDDQ8M8YHAZK8F7H.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/F/0N/22YECUTTYQIJV02TZY1851.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/AutoCameraCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/AutoCameraCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/HUD/UW_PlayerDetector.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HUD/UW_PlayerDetector.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/LittleDragons/Meshes/SK_Little_Dragon_Tiger_Simple.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LittleDragons/Meshes/SK_Little_Dragon_Tiger_Simple.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/LittleDragons/Meshes/SK_Little_Dragon_Tiger_Toon.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LittleDragons/Meshes/SK_Little_Dragon_Tiger_Toon.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/8/7L/2C0LYOTBYA2EDKNOARH9J4.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Lvl_ThirdPerson/8/7L/2C0LYOTBYA2EDKNOARH9J4.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/ProjetSpecialCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/ProjetSpecialCharacter.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,27 +56,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;C++ Project.ProjetSpecial.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "C++ Project.ProjetSpecial.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\berge\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\berge\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\berge\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\berge\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\berge\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\berge\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="C++ Project.ProjetSpecial">
     <configuration name="ProjetSpecial" type="CppProject" factoryName="C++ Project">
       <configuration_1>
@@ -538,7 +512,9 @@
       <workItem from="1760498868323" duration="1048000" />
       <workItem from="1760537073047" duration="5355000" />
       <workItem from="1760558257791" duration="3232000" />
-      <workItem from="1760570759792" duration="2521000" />
+      <workItem from="1760570759792" duration="3113000" />
+      <workItem from="1760653632621" duration="2305000" />
+      <workItem from="1760665644111" duration="669000" />
     </task>
     <servers />
   </component>
@@ -547,5 +523,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/../../Epic Games/UE_5.6/Engine/Source/Runtime/Engine/Private/GameplayStatics.cpp</url>
+          <line>3325</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

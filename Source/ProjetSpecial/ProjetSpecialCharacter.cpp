@@ -13,6 +13,7 @@
 #include "InputActionValue.h"
 #include "PowerUpManager.h"
 #include "ProjetSpecial.h"
+#include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "Kismet/KismetSystemLibrary.h"
 
@@ -494,6 +495,7 @@ void AProjetSpecialCharacter::PowerUpAdded_Implementation(FPowerUpData newData,i
 			break;
 				
 	}
+	//UGameplayStatics::ProjectWorldToScreen()
 }
 
 void AProjetSpecialCharacter::FoodPickedUp_Implementation(EFoodType type, float HealValue)
