@@ -622,9 +622,9 @@ void AProjetSpecialCharacter::AttackTrace()
 	//Params.bIgnoreTouches = true;
 	Params.AddIgnoredActors(ActorsToIgnore);
 
-	FVector Start = GetActorLocation() + GetActorForwardVector()*50;
+	FVector Start = GetActorLocation() + GetActorForwardVector()*100;
 
-	bool hasHit = GetWorld()->SweepMultiByObjectType(HitResults, Start,(Start + GetActorForwardVector() * 0.001), FQuat::Identity, ObjectParams,FCollisionShape::MakeSphere(50),Params);
+	bool hasHit = GetWorld()->SweepMultiByObjectType(HitResults, Start,(Start + GetActorForwardVector() * 0.001), FQuat::Identity, ObjectParams,FCollisionShape::MakeSphere(100),Params);
 	DrawDebugSphere(GetWorld(),Start,50,10,FColor::Blue);
 	if(hasHit)
 	{
