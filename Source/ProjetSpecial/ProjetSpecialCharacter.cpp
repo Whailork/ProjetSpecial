@@ -74,7 +74,7 @@ void AProjetSpecialCharacter::BeginPlay()
 				MAX_RUN_SPEED = MAX_WALK_SPEED +200;
 				break;
 			case EPowerUpType::Stamina:
-				MAX_STAMINA += PowerUp.Quantity*10;
+				MAX_STAMINA += PowerUp.Quantity*20;
 				break;
 			case EPowerUpType::Jump:
 				GetCharacterMovement()->JumpZVelocity += PowerUp.Quantity*15;
@@ -362,7 +362,7 @@ void AProjetSpecialCharacter::Running()
 
 void AProjetSpecialCharacter::StaminaRegen()
 {
-	Stamina+= 0.15;
+	Stamina+= 0.45;
 	if(Stamina >= MAX_STAMINA)
 	{
 		if(GetWorldTimerManager().IsTimerActive(StaminaRegenHandle))
@@ -402,7 +402,7 @@ void AProjetSpecialCharacter::PowerUpAdded_Implementation(FPowerUpData newData,i
 			break;
 		case EPowerUpType::Stamina:
 			FillPercentage = Stamina/MAX_STAMINA;
-			MAX_STAMINA += QuantityDifference*10;
+			MAX_STAMINA += QuantityDifference*20;
 			Stamina = FillPercentage*MAX_STAMINA;
 			
 			if(!GetWorldTimerManager().IsTimerActive(StaminaRegenHandle) && FillPercentage < 1)

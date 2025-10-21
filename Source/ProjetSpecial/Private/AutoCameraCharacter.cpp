@@ -32,8 +32,8 @@ AAutoCameraCharacter::AAutoCameraCharacter()
 
 
 	//for camera auto adjust
-	CameraAdjustStartThreshold = 60;
-	CameraAdjustStopThreshold = 140;
+	CameraAdjustStartThreshold = 40;
+	CameraAdjustStopThreshold = 120;
 	CameraAdjustSpeedMin = 1;
 	CameraAdjustSpeedMax = 1;
 	CameraAutoAdjustDisableDuration = 2;
@@ -227,14 +227,14 @@ void AAutoCameraCharacter::ComputeAngularDifference()
 			//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Black FString::SanitizeFloat(DiffLocation.Rotation().Pitch));
 			if(AllowVerticalAutoAdjust)
 			{
-				if (!FMath::IsNearlyEqual(DiffLocation.Rotation().Pitch, 0, 0.1))
+				if (!FMath::IsNearlyEqual(DiffLocation.Rotation().Pitch, 0, 20))
 				{
 					if (DiffLocation.Rotation().Pitch < 0)
 					{
 						if(DesiredControlRotation.Pitch > -50)
 						{
-							DesiredControlRotation.Pitch = FMath::Max(DesiredControlRotation.Pitch - 1,
-																  DiffLocation.Rotation().Pitch);
+							DesiredControlRotation.Pitch = FMath::Max(DesiredControlRotation.Pitch - 1,DiffLocation.Rotation().Pitch);
+							//DesiredControlRotation.Pitch = FMath::Max(DesiredControlRotation.Pitch - 1);
 						}
 						
 					}
@@ -242,9 +242,16 @@ void AAutoCameraCharacter::ComputeAngularDifference()
 					{
 						if(DesiredControlRotation.Pitch < 50)
 						{
-							DesiredControlRotation.Pitch = FMath::Min(DesiredControlRotation.Pitch + 1,
-																  DiffLocation.Rotation().Pitch);
+							DesiredControlRotation.Pitch = FMath::Min(DesiredControlRotation.Pitch + 1,DiffLocation.Rotation().Pitch);
+							//DesiredControlRotation.Pitch = FMath::Min(DesiredControlRotation.Pitch + 1);
 						}
+					}
+				}
+				else
+				{
+					if(!FMath::IsNearlyEqual(DesiredControlRotation.Pitch,(GetActorRotation() + DefaultRotationOffset).Pitch,20))
+					{
+						DesiredControlRotation.Pitch = (GetActorRotation() + DefaultRotationOffset).Pitch;
 					}
 				}
 			}
@@ -280,7 +287,10 @@ void AAutoCameraCharacter::ComputeCameraWallAvoidance()
 		TArray<TEnumAsByte<EObjectTypeQuery>> ObjectTypesArray;
 		ObjectTypesArray.Add(UEngineTypes::ConvertToObjectType(ECC_WorldStatic));
 		ObjectTypesArray.Add(UEngineTypes::ConvertToObjectType(ECC_WorldDynamic));
-		bMadeContact = UKismetSystemLibrary::SphereTraceMultiForObjects(this, FollowCamera->GetComponentLocation(), (GetActorLocation() + FVector(0,0,40)) - (FollowCamera->GetForwardVector() * 100), WallAvoidanceSphereRadius,ObjectTypesArray, false, TArray<AActor*>(),EDrawDebugTrace::None , ProximityHitResults, true);
+		TArray<AActor*> ActorsToIgnore;
+		
+		ActorsToIgnore.Add(GetCharacterMovement()->CurrentFloor.HitResult.GetActor());
+		bMadeContact = UKismetSystemLibrary::SphereTraceMultiForObjects(this, FollowCamera->GetComponentLocation(), (GetActorLocation() + FVector(0,0,40)) - (FollowCamera->GetForwardVector() * 100), WallAvoidanceSphereRadius,ObjectTypesArray, false,ActorsToIgnore ,EDrawDebugTrace::None , ProximityHitResults, true);
 		if (bMadeContact)
 		{
 			for (auto ProximityHitResult : ProximityHitResults)

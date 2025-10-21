@@ -58,7 +58,7 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	float MAX_RUN_SPEED = 600.0f;
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	float MAX_STAMINA = 100;
+	float MAX_STAMINA = 200;
 	UPROPERTY(BlueprintReadOnly,VisibleAnywhere)
 	float Stamina;
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
