@@ -7,6 +7,8 @@
 #include "InputMappingContext.h"
 #include "Blueprint/UserWidget.h"
 #include "ProjetSpecial.h"
+#include "Kismet/GameplayStatics.h"
+#include "Networking/ProjetSpecialNetWorkSubsystem.h"
 #include "Widgets/Input/SVirtualJoystick.h"
 
 void AProjetSpecialPlayerController::BeginPlay()
@@ -30,6 +32,10 @@ void AProjetSpecialPlayerController::BeginPlay()
 
 		}
 
+	}
+	if(IsLocalPlayerController())
+	{
+		GetWorld()->GetSubsystem<UProjetSpecialNetWorkSubsystem>()->RegisterController(this);
 	}
 }
 
@@ -58,4 +64,18 @@ void AProjetSpecialPlayerController::SetupInputComponent()
 			}
 		}
 	}
+}
+
+AProjetSpecialPlayerController::AProjetSpecialPlayerController()
+{
+	TimeSyncComponent = CreateDefaultSubobject<UTimeSyncComponent>("TimeSyncComponent");
+}
+
+void AProjetSpecialPlayerController::HostGame()
+{
+	UGameplayStatics::OpenLevel(this ,"/Game/Levels/Lvl_Lobby?listen");
+}
+
+void AProjetSpecialPlayerController::JoinGame()
+{
 }

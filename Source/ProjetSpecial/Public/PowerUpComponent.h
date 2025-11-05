@@ -43,6 +43,7 @@ public:
 	UPROPERTY(BlueprintReadWrite,EditAnywhere)
 	TEnumAsByte<EAbilityPowerUpType> ActiveAbility;
 
+	bool bCanDropPowerUps;
 	UPROPERTY(BlueprintReadWrite,EditAnywhere,BlueprintAssignable)
 	FPowerUpAddedDelegate PowerUpAddedDelegate;
 	UPROPERTY(BlueprintReadWrite,EditAnywhere,BlueprintAssignable)

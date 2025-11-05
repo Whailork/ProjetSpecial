@@ -23,6 +23,7 @@ AProjetSpecialCharacter::AProjetSpecialCharacter()
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
 	FlyingMovementComponent = CreateDefaultSubobject<UFlyingMovementComponent>("FlyingMovementComponent");
 	PowerUpComponent = CreateDefaultSubobject<UPowerUpComponent>("PowerUpComponent");
+	PowerUpComponent->bCanDropPowerUps = true;
 
 	FireBreathingParticles = CreateDefaultSubobject<UNiagaraComponent>("FireBreathingParticles");
 	FireBreathingParticles->SetupAttachment(GetMesh(),FName("JawSocket"));
@@ -382,23 +383,23 @@ void AProjetSpecialCharacter::PowerUpAdded_Implementation(FPowerUpData newData,i
 	switch (newData.Type)
 	{
 		case EPowerUpType::Flight:
-			FlyingMovementComponent->BASE_FLYING_SPEED += QuantityDifference*18;
+			FlyingMovementComponent->BASE_FLYING_SPEED += QuantityDifference*21;
 			break;
 		case EPowerUpType::Friction:
-			FlyingMovementComponent->FlyingFrictionDown += QuantityDifference*0.7;
-			if(FlyingMovementComponent->FlyingFrictionUp >= 0.5)
+			FlyingMovementComponent->FlyingFrictionDown += QuantityDifference*0.9;
+			if(FlyingMovementComponent->FlyingFrictionUp >= 0.4)
 			{
-				FlyingMovementComponent->FlyingFrictionUp -= QuantityDifference*0.05;
+				FlyingMovementComponent->FlyingFrictionUp -= QuantityDifference*0.07;
 			}
 			else
 			{
-				FlyingMovementComponent->FlyingFrictionUp -= QuantityDifference*0.05*FlyingMovementComponent->FlyingFrictionUp;
+				FlyingMovementComponent->FlyingFrictionUp -= QuantityDifference*0.07*FlyingMovementComponent->FlyingFrictionUp;
 			}
 			
 			break;
 		case EPowerUpType::Speed:
-			MAX_WALK_SPEED += QuantityDifference*8;
-			MAX_RUN_SPEED = MAX_WALK_SPEED +200;
+			MAX_WALK_SPEED += QuantityDifference*10;
+			MAX_RUN_SPEED = MAX_WALK_SPEED +400;
 			break;
 		case EPowerUpType::Stamina:
 			FillPercentage = Stamina/MAX_STAMINA;
@@ -411,7 +412,7 @@ void AProjetSpecialCharacter::PowerUpAdded_Implementation(FPowerUpData newData,i
 			}
 			break;
 		case EPowerUpType::Jump:
-			GetCharacterMovement()->JumpZVelocity += QuantityDifference*15;
+			GetCharacterMovement()->JumpZVelocity += QuantityDifference*18;
 			break;
 		case EPowerUpType::Strength:
 			Strength += QuantityDifference*1.5;
@@ -419,11 +420,11 @@ void AProjetSpecialCharacter::PowerUpAdded_Implementation(FPowerUpData newData,i
 		case EPowerUpType::AttackSpeed:
 			if(AttackSpeed <= 0.5)
 			{
-				AttackSpeed -= QuantityDifference*0.02*AttackSpeed;
+				AttackSpeed -= QuantityDifference*0.03*AttackSpeed;
 			}
 			else
 			{
-				AttackSpeed -= QuantityDifference*0.04;
+				AttackSpeed -= QuantityDifference*0.06;
 			}
 			break;
 		case EPowerUpType::Health :
@@ -443,23 +444,23 @@ void AProjetSpecialCharacter::PowerUpAdded_Implementation(FPowerUpData newData,i
 			break;
 		case EPowerUpType::All :
 			//Flight
-			FlyingMovementComponent->BASE_FLYING_SPEED += QuantityDifference*18;
+			FlyingMovementComponent->BASE_FLYING_SPEED += QuantityDifference*21;
 			//friction
-			FlyingMovementComponent->FlyingFrictionDown += QuantityDifference*0.7;
-			if(FlyingMovementComponent->FlyingFrictionUp >= 0.5)
+			FlyingMovementComponent->FlyingFrictionDown += QuantityDifference*0.9;
+			if(FlyingMovementComponent->FlyingFrictionUp >= 0.4)
 			{
-				FlyingMovementComponent->FlyingFrictionUp -= QuantityDifference*0.05;
+				FlyingMovementComponent->FlyingFrictionUp -= QuantityDifference*0.07;
 			}
 			else
 			{
-				FlyingMovementComponent->FlyingFrictionUp -= QuantityDifference*0.05*FlyingMovementComponent->FlyingFrictionUp;
+				FlyingMovementComponent->FlyingFrictionUp -= QuantityDifference*0.07*FlyingMovementComponent->FlyingFrictionUp;
 			}
 			//speed
-			MAX_WALK_SPEED += QuantityDifference*8;
-			MAX_RUN_SPEED = MAX_WALK_SPEED +200;
+			MAX_WALK_SPEED += QuantityDifference*10;
+			MAX_RUN_SPEED = MAX_WALK_SPEED +400;
 			//stamina
 			FillPercentage = Stamina/MAX_STAMINA;
-			MAX_STAMINA += QuantityDifference*10;
+			MAX_STAMINA += QuantityDifference*20;
 			Stamina = FillPercentage*MAX_STAMINA;
 				
 			if(!GetWorldTimerManager().IsTimerActive(StaminaRegenHandle) && FillPercentage < 1)
@@ -467,17 +468,17 @@ void AProjetSpecialCharacter::PowerUpAdded_Implementation(FPowerUpData newData,i
 				GetWorldTimerManager().SetTimer(StaminaRegenHandle,this,&AProjetSpecialCharacter::StaminaRegen,0.01f,true);
 			}
 			//jump
-			GetCharacterMovement()->JumpZVelocity += QuantityDifference*15;
+			GetCharacterMovement()->JumpZVelocity += QuantityDifference*18;
 			//Strength
 			Strength += QuantityDifference*1.5;
 			//AttackSpeed
 			if(AttackSpeed <= 0.5)
 			{
-				AttackSpeed -= QuantityDifference*0.02*AttackSpeed;
+				AttackSpeed -= QuantityDifference*0.03*AttackSpeed;
 			}
 			else
 			{
-				AttackSpeed -= QuantityDifference*0.04;
+				AttackSpeed -= QuantityDifference*0.06;
 			}
 			//Health
 			FillPercentage = Health/MAX_HEALTH;

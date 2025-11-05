@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
+#include "Networking/TimeSyncComponent.h"
 #include "ProjetSpecialPlayerController.generated.h"
 
 class UInputMappingContext;
@@ -37,8 +38,19 @@ protected:
 
 	/** Gameplay initialization */
 	virtual void BeginPlay() override;
+	
 
 	/** Input mapping context setup */
 	virtual void SetupInputComponent() override;
+
+
+public:
+	AProjetSpecialPlayerController();
+	UPROPERTY()
+	UTimeSyncComponent* TimeSyncComponent;
+	UFUNCTION(BlueprintCallable)
+	void HostGame();
+	UFUNCTION(BlueprintCallable)
+	void JoinGame();
 
 };
