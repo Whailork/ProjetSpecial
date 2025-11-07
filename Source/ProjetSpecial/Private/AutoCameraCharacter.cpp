@@ -311,7 +311,9 @@ void AAutoCameraCharacter::ComputeCameraWallAvoidance()
 				}
 				else
 				{
-					bool ImpactNormalPointsUp = ProximityHitResult.ImpactNormal.Z > 0.5;
+					if(ProximityHitResult.GetActor()->GetComponentsCollisionResponseToChannel(ECC_Camera) == ECR_Block)
+					{
+											bool ImpactNormalPointsUp = ProximityHitResult.ImpactNormal.Z > 0.5;
 					FVector X, Y, Z;
 					//get axes
 					FRotationMatrix R(GetControlRotation());
@@ -375,6 +377,8 @@ void AAutoCameraCharacter::ComputeCameraWallAvoidance()
 						//GEngine->AddOnScreenDebugMessage(-1, 1, FColor::Green,FString::SanitizeFloat(LastCameraMovementYawDirection));
 						CollisionImpactYawDirections.Add(1 * LastCameraMovementYawDirection);
 					}
+					}
+
 				}
 			}
 			if (!CollisionImpactYawDirections.IsEmpty())
@@ -490,7 +494,7 @@ void AAutoCameraCharacter::DoMove(float Right, float Forward)
 
 void AAutoCameraCharacter::DoLook(float Yaw, float Pitch)
 {
-	DesiredControlRotation = FRotator(DesiredControlRotation.Pitch - Pitch,DesiredControlRotation.Yaw + Yaw, DesiredControlRotation.Roll);
+	DesiredControlRotation = FRotator(DesiredControlRotation.Pitch - Pitch*2,DesiredControlRotation.Yaw + Yaw*2, DesiredControlRotation.Roll);
 }
 
 void AAutoCameraCharacter::DoJumpStart()

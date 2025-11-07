@@ -12,31 +12,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af21e49e-7ad0-41e9-a8eb-fc2c3127f65d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Exploration/ExplorationPlayerController.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Trials/TrialGameModeBase.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Trials/TrialGameStateBase.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Trials/TrialPlayerController.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Exploration/ExplorationPlayerController.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/TrialGameModeBase.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/TrialGameStateBase.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/TrialPlayerController.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetSpecial/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjetSpecial/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Exploration/BP_ExplorationGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Exploration/BP_ExplorationGameMode.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/SpeedUpZone.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/SpeedUpZone.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Trials/FlightRace/BP_FlightRaceTrialGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Trials/FlightRace/BP_FlightRaceTrialGameMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Trials/FlightRace/BP_FlightRaceTrialGameState.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Trials/FlightRace/BP_FlightRaceTrialGameState.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Levels/Trials/Lvl_FlightRaceTrial.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/Trials/Lvl_FlightRaceTrial.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/PlayerStats.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/PlayerStats.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/UW_GameLobby.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/UW_GameLobby.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/UW_TrialScreen.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/UW_TrialScreen.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_A_GateB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_A_GateB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Exploration/ExplorationGameMode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Exploration/ExplorationGameMode.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Exploration/ExplorationGameState.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Exploration/ExplorationGameState.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Trials/FlightRace/FlightRaceTrialGameState.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Trials/FlightRace/FlightRaceTrialGameState.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Exploration/ExplorationGameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Exploration/ExplorationGameMode.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Exploration/ExplorationGameState.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Exploration/ExplorationGameState.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/FlightRace/FlightRaceTrialGameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/FlightRace/FlightRaceTrialGameMode.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/FlightRace/FlightRaceTrialGameState.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/FlightRace/FlightRaceTrialGameState.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Trials/BP_RaceGateActor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Trials/BP_RaceGateActor.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Levels/Lvl_Island.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/Lvl_Island.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/AutoCameraCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/AutoCameraCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/FlyingMovementComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/FlyingMovementComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/ProjetSpecialCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/ProjetSpecialCharacter.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,27 +121,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "C++ Project.ProjetSpecial.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;C++ Project.ProjetSpecial.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\berge\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\berge\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\berge\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\berge\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\berge\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\berge\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="C++ Project.ProjetSpecial">
     <configuration name="ProjetSpecial" type="CppProject" factoryName="C++ Project">
       <configuration_1>
@@ -616,7 +598,8 @@
       <workItem from="1762396679798" duration="783000" />
       <workItem from="1762451006994" duration="9209000" />
       <workItem from="1762462907743" duration="7089000" />
-      <workItem from="1762481362756" duration="6665000" />
+      <workItem from="1762481362756" duration="7153000" />
+      <workItem from="1762530423604" duration="1542000" />
     </task>
     <servers />
   </component>

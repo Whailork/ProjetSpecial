@@ -266,7 +266,8 @@ void AProjetSpecialCharacter::DoMove(float Right, float Forward)
 	
 	if(FlyingMovementComponent->bIsGliding)
 	{
-		SetActorRotation(FRotator(GetActorRotation().Pitch - Forward,GetActorRotation().Yaw + Right, GetActorRotation().Roll));
+		
+		SetActorRotation(FRotator(FMath::Clamp(GetActorRotation().Pitch - Forward*1.5,-80,80),GetActorRotation().Yaw + Right*1.5, GetActorRotation().Roll));
 	}
 	else
 	{

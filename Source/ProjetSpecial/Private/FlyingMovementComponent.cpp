@@ -62,6 +62,11 @@ void UFlyingMovementComponent::StartGliding()
 		currentFlyingSpeed = BASE_FLYING_SPEED;
 		currentFlyingUpSpeed = BASE_FLYING_SPEED;
 	}
+	else
+	{
+		currentFlyingSpeed = currentFlyingSpeed*0.9;
+		currentFlyingUpSpeed = currentFlyingUpSpeed*0.9;
+	}
 	
 	
 }
