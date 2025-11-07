@@ -9,6 +9,7 @@
 /**
  * 
  */
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSwitchToTrial,FName,TrialName);
 UCLASS()
 class PROJETSPECIAL_API AExplorationGameMode : public AGameModeBase
 {
@@ -19,4 +20,14 @@ public:
 	//game time is in seconds
 	UPROPERTY(BlueprintReadOnly)
 	float GameTime = 10;
+	FOnSwitchToTrial OnSwitchToTrialDelegate;
+	FName ChosenTrial;
+	
+	UPROPERTY(EditDefaultsOnly)
+	UDataTable* TrialsDataTable;
+	
+	UFUNCTION()
+	void OnGameTimeElapsed(float EndTime);
+	UFUNCTION()
+	void TravelToTrial();
 };

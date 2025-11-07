@@ -9,18 +9,34 @@
 /**
  * 
  */
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPlayerReadyForTrialChanged,int32,NbPlayersReady);
 UCLASS()
 class PROJETSPECIAL_API AExplorationGameState : public AGameStateBase
 {
 	GENERATED_BODY()
 
+protected:
+	int NbPlayers;
+	int NbPlayersReadyForTrial;
 public:
 	//UPROPERTY(ReplicatedUsing=OnRep_TimerEndTime)
 	float TimerEndTime;
-	virtual void BeginPlay() override;
+	UPROPERTY(BlueprintAssignable)
+	FOnPlayerReadyForTrialChanged OnPlayerReadyForTrialChangedDelegate;
 
 	UFUNCTION()
-	void OnGameTimeElapsed(float EndTime);
+	void OnPlayerLoggedIn(APlayerController* newPlayer);
+	virtual void BeginPlay() override;
+
+	UFUNCTION(BlueprintCallable)
+	void PlayerReady();
+	UFUNCTION(BlueprintCallable)
+	void PlayerNotReady();
+	UFUNCTION(BlueprintCallable)
+	int GetNbPlayers();
+
+	
+
 	//UFUNCTION()
 	//void OnRep_TimerEndTime();
 };

@@ -12,8 +12,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af21e49e-7ad0-41e9-a8eb-fc2c3127f65d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Exploration/ExplorationPlayerController.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Trials/TrialGameModeBase.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Trials/TrialGameStateBase.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Trials/TrialPlayerController.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Exploration/ExplorationPlayerController.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/TrialGameModeBase.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/TrialGameStateBase.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/TrialPlayerController.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetSpecial/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjetSpecial/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Levels/Lvl_Island.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/Lvl_Island.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Exploration/BP_ExplorationGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Exploration/BP_ExplorationGameMode.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/SpeedUpZone.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/SpeedUpZone.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Trials/FlightRace/BP_FlightRaceTrialGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Trials/FlightRace/BP_FlightRaceTrialGameMode.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Trials/FlightRace/BP_FlightRaceTrialGameState.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Trials/FlightRace/BP_FlightRaceTrialGameState.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Levels/Trials/Lvl_FlightRaceTrial.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/Trials/Lvl_FlightRaceTrial.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/PlayerStats.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/PlayerStats.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/UW_GameLobby.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/UW_GameLobby.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/UW_TrialScreen.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/UW_TrialScreen.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_A_GateB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_A_GateB.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Exploration/ExplorationGameMode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Exploration/ExplorationGameMode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Exploration/ExplorationGameState.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Exploration/ExplorationGameState.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Trials/FlightRace/FlightRaceTrialGameState.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Trials/FlightRace/FlightRaceTrialGameState.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Exploration/ExplorationGameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Exploration/ExplorationGameMode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Exploration/ExplorationGameState.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Exploration/ExplorationGameState.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/FlightRace/FlightRaceTrialGameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/FlightRace/FlightRaceTrialGameMode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/FlightRace/FlightRaceTrialGameState.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/FlightRace/FlightRaceTrialGameState.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +47,85 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="cidr-memory-view://1" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="cidr-memory-view://7" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -512,7 +613,10 @@
       <workItem from="1762280018995" duration="4328000" />
       <workItem from="1762290339258" duration="8841000" />
       <workItem from="1762363159134" duration="11808000" />
-      <workItem from="1762396679798" duration="781000" />
+      <workItem from="1762396679798" duration="783000" />
+      <workItem from="1762451006994" duration="9209000" />
+      <workItem from="1762462907743" duration="7089000" />
+      <workItem from="1762481362756" duration="6665000" />
     </task>
     <servers />
   </component>

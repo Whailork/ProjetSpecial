@@ -6,6 +6,14 @@
 #include "Exploration/ExplorationGameMode.h"
 #include "Networking/ProjetSpecialNetWorkSubsystem.h"
 
+void AExplorationGameState::OnPlayerLoggedIn(APlayerController* newPlayer)
+{
+	if(!newPlayer->IsLocalController())
+	{
+		NbPlayers++;
+	}
+}
+
 void AExplorationGameState::BeginPlay()
 {
 	Super::BeginPlay();
@@ -14,13 +22,37 @@ void AExplorationGameState::BeginPlay()
 		TimerEndTime = GetWorld()->TimeSeconds + GameMode->GameTime;
 		//OnRep_TimerEndTime();
 		GetWorld()->GetSubsystem<UProjetSpecialNetWorkSubsystem>()->SetTimerEndTime(TimerEndTime);
-		GetWorld()->GetSubsystem<UProjetSpecialNetWorkSubsystem>()->TimerEndReachedDelegate.AddDynamic(this,&AExplorationGameState::OnGameTimeElapsed);
+		
+	}
+	if(HasAuthority())
+	{
+		UGameInstance* GameInstance = GetGameInstance();
+		checkf(GameInstance,TEXT("There is no game instance"))
+		
+		const int NbLocal = GameInstance->GetLocalPlayers().Num();
+		NbPlayers+=NbLocal;
 	}
 	
 }
 
-void AExplorationGameState::OnGameTimeElapsed(float EndTime)
+void AExplorationGameState::PlayerReady()
 {
-	GEngine->AddOnScreenDebugMessage(-1,1,FColor::Black,FString("travel to trial"));
-	//GetWorld()->ServerTravel("/Game/Levels/Lvl_Lobby?listen");
+	NbPlayersReadyForTrial++;
+	if(NbPlayersReadyForTrial >= NbPlayers)
+	{
+		GetWorld()->GetAuthGameMode<AExplorationGameMode>()->TravelToTrial();
+	}
+	OnPlayerReadyForTrialChangedDelegate.Broadcast(NbPlayersReadyForTrial);
 }
+
+void AExplorationGameState::PlayerNotReady()
+{
+	NbPlayersReadyForTrial--;
+	OnPlayerReadyForTrialChangedDelegate.Broadcast(NbPlayersReadyForTrial);
+}
+
+int AExplorationGameState::GetNbPlayers()
+{
+	return NbPlayers;
+}
+
