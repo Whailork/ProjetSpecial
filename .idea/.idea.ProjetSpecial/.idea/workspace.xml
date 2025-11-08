@@ -13,12 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="af21e49e-7ad0-41e9-a8eb-fc2c3127f65d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetSpecial/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjetSpecial/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/SpeedUpZone.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/SpeedUpZone.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Trials/BP_RaceGateActor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Trials/BP_RaceGateActor.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Levels/Lvl_Island.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/Lvl_Island.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/AutoCameraCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/AutoCameraCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/FlyingMovementComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/FlyingMovementComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/ProjetSpecialCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/ProjetSpecialCharacter.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -599,7 +593,8 @@
       <workItem from="1762451006994" duration="9209000" />
       <workItem from="1762462907743" duration="7089000" />
       <workItem from="1762481362756" duration="7153000" />
-      <workItem from="1762530423604" duration="1542000" />
+      <workItem from="1762530423604" duration="2292000" />
+      <workItem from="1762559465724" duration="1530000" />
     </task>
     <servers />
   </component>
