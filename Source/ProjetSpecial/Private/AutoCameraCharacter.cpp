@@ -145,6 +145,7 @@ void AAutoCameraCharacter::StartCameraPositionReset()
 {
 	//AllowCameraWallAvoidance = false;
 	FRotator DefaultRotation = GetActorRotation();
+	DefaultRotation += DefaultRotationOffset;
 	if(AllowCliffDetection)
 	{
 		FHitResult outHit;
@@ -172,10 +173,7 @@ void AAutoCameraCharacter::StartCameraPositionReset()
 			}
 		}
 	}
-	else
-	{
-		DefaultRotation += DefaultRotationOffset;
-	}
+	
 	
 	CameraMovementInterpSpeed = CAMERA_POSITION_RESET_INTERP_SPEED;
 	DesiredControlRotation = DefaultRotation;

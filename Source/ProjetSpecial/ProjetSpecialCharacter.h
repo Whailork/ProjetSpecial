@@ -17,6 +17,20 @@ class UCameraComponent;
 class UInputAction;
 struct FInputActionValue;
 
+USTRUCT(BlueprintType)
+struct FSkinDataRow : public FTableRowBase
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SkinData")
+	TSoftObjectPtr<USkeletalMesh> SkeletalMesh;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SkinData")
+	TArray<UMaterialInstance*> SkinColors;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SkinData")
+	TArray<UMaterialInstance*> EyeTypes;
+	
+};
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
 /**

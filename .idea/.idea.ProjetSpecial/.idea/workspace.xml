@@ -13,6 +13,18 @@
   <component name="ChangeListManager">
     <list default="true" id="af21e49e-7ad0-41e9-a8eb-fc2c3127f65d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetSpecial/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjetSpecial/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Lobby/BP_InputReceiver.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Lobby/BP_InputReceiver.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Lobby/BP_PlayerAvatar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Lobby/BP_PlayerAvatar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/LittleDragons/Meshes/SK_Little_Dragon_Tiger_Toon.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LittleDragons/Meshes/SK_Little_Dragon_Tiger_Toon.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Sprites/arrowFilled.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Sprites/arrowFilled.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/Btn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/Btn.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/UW_GameLobby.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/UW_GameLobby.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/UW_LocalPlayer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/UW_LocalPlayer.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/UW_MainMenu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/UW_MainMenu.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/UW_TrialFinishedScreen.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/UW_TrialFinishedScreen.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/UW_TrialScreen.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/UW_TrialScreen.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/AutoCameraCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/AutoCameraCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/ProjetSpecialCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/ProjetSpecialCharacter.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -594,7 +606,8 @@
       <workItem from="1762462907743" duration="7089000" />
       <workItem from="1762481362756" duration="7153000" />
       <workItem from="1762530423604" duration="2292000" />
-      <workItem from="1762559465724" duration="1530000" />
+      <workItem from="1762559465724" duration="2130000" />
+      <workItem from="1762622544715" duration="2551000" />
     </task>
     <servers />
   </component>
