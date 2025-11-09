@@ -39,6 +39,7 @@ void AInputReceiver::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent)) {
 		
 		EnhancedInputComponent->BindAction(JoinAction, ETriggerEvent::Triggered, this,&AInputReceiver::AddPlayer );
+		EnhancedInputComponent->BindAction(RotateAvatarAction, ETriggerEvent::Triggered, this,&AInputReceiver::RotateAvatar );
 	}
 	else
 	{
@@ -51,6 +52,20 @@ void AInputReceiver::AddPlayer()
 	{
 		GS->AddPlayer(this);
 	}
+}
+
+void AInputReceiver::RotateAvatar(const FInputActionValue& Value)
+{
+	FVector2D InputVector = Value.Get<FVector2D>();
+	if(!LinkedAvatar)
+	{
+		return;
+	}
+	float newPitch = LinkedAvatar->GetActorRotation().Pitch;
+	float newYaw = LinkedAvatar->GetActorRotation().Yaw + InputVector.X;
+	float newRoll = LinkedAvatar->GetActorRotation().Roll + InputVector.Y;
+	LinkedAvatar->SetActorRotation(FRotator(newPitch,newYaw,newRoll));	
+		
 }
 
 

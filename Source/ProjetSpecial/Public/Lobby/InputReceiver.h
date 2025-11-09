@@ -18,6 +18,10 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	UInputAction* JoinAction;
+	UPROPERTY(EditAnywhere)
+	UInputAction* RotateAvatarAction;
+	UPROPERTY(BlueprintReadWrite)
+	AActor* LinkedAvatar;
 
 protected:
 	// Called when the game starts or when spawned
@@ -25,6 +29,8 @@ protected:
 
 	UFUNCTION()
 	void AddPlayer();
+	UFUNCTION()
+	void RotateAvatar(const FInputActionValue& Value);
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
