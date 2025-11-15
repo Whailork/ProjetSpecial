@@ -25,6 +25,7 @@ struct FPowerUpData
 	TEnumAsByte<EFoodType> FoodType = EFoodType::No;
 };
 
+
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FPowerUpAddedDelegate,FPowerUpData,newPowerUpData,int,LastQuantity, EPowerUpType, type,bool,PowerUpDropped);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FAbilityActivatedDelegate,EAbilityPowerUpType,AbilityType,bool, AbilityFinished);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFoodPickedUpDelegate,EFoodType,FoodType,float, HealValue);
@@ -36,8 +37,12 @@ class PROJETSPECIAL_API UPowerUpComponent : public UActorComponent
 
 	
 public:
+	
 	// Sets default values for this component's properties
 	UPowerUpComponent();
+
+	TArray<FPowerUpData> ExportPowerUpData();
+	void ImportPowerUpData(TArray<FPowerUpData> PowerUpsInfo);
 	UPROPERTY(BlueprintReadWrite,EditAnywhere)
 	TArray<FPowerUpData> PowerUps;
 	UPROPERTY(BlueprintReadWrite,EditAnywhere)
@@ -51,13 +56,14 @@ public:
 	UPROPERTY(BlueprintReadWrite,EditAnywhere,BlueprintAssignable)
 	FFoodPickedUpDelegate FoodPickedUpDelegate;
 	UFUNCTION(BlueprintCallable)
-	void AddPowerUp(EPowerUpType type,bool isNegative, bool PowerUpDropped = false);
+	void AddPowerUp(EPowerUpType type,bool isNegative, bool PowerUpDropped = false, int NbAdded = 1);
 	UFUNCTION(BlueprintCallable)
 	void AddAbilityPowerUp(EAbilityPowerUpType AbilityType,bool AbilityFinished = false);
 	UFUNCTION(BlueprintCallable)
 	void AddFoodPickup(EFoodType type,float HealValue);
 	UFUNCTION(BlueprintCallable)
 	void DropPowerUps(int number);
+	
 		
 	
 protected:

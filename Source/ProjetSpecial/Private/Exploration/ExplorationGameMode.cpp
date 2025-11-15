@@ -26,7 +26,6 @@ void AExplorationGameMode::BeginPlay()
 void AExplorationGameMode::OnGameTimeElapsed(float EndTime)
 {
 	GEngine->AddOnScreenDebugMessage(-1,1,FColor::Black,FString("travel to trial"));
-	//do the random trial logic
 	
 	OnSwitchToTrialDelegate.Broadcast(ChosenTrial);
 	

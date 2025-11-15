@@ -16,8 +16,21 @@ UPowerUpComponent::UPowerUpComponent()
 	// ...
 }
 
+TArray<FPowerUpData> UPowerUpComponent::ExportPowerUpData()
+{
+	return PowerUps;
+}
 
-void UPowerUpComponent::AddPowerUp(EPowerUpType type, bool isNegative, bool PowerUpDropped)
+void UPowerUpComponent::ImportPowerUpData(TArray<FPowerUpData> PowerUpsInfo)
+{
+	for (auto PowerUp : PowerUpsInfo)
+	{
+		AddPowerUp(PowerUp.Type,false,false,PowerUp.Quantity);
+	}
+}
+
+
+void UPowerUpComponent::AddPowerUp(EPowerUpType type, bool isNegative, bool PowerUpDropped, int NbAdded)
 {
 	
 	for(int i = 0; i < PowerUps.Num();i++)
@@ -28,11 +41,11 @@ void UPowerUpComponent::AddPowerUp(EPowerUpType type, bool isNegative, bool Powe
 			int LastQuantity = PowerUps[i].Quantity;
 			if(isNegative)
 			{
-				newData = FPowerUpData(PowerUps[i].Quantity - 1,type);
+				newData = FPowerUpData(PowerUps[i].Quantity - NbAdded,type);
 			}
 			else
 			{
-				newData = FPowerUpData(PowerUps[i].Quantity + 1,type);
+				newData = FPowerUpData(PowerUps[i].Quantity + NbAdded,type);
 			}
 			if(newData.Quantity == 0)
 			{
