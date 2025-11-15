@@ -19,7 +19,7 @@ class PROJETSPECIAL_API AExplorationGameMode : public AGameModeBase
 public:
 	//game time is in seconds
 	UPROPERTY(BlueprintReadOnly)
-	float GameTime = 30;
+	float GameTime = 360;
 	FOnSwitchToTrial OnSwitchToTrialDelegate;
 	FName ChosenTrial;
 	

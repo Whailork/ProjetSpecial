@@ -3,6 +3,7 @@
 
 #include "Exploration/ExplorationGameMode.h"
 
+#include "ProjetSpecialGameInstance.h"
 #include "Networking/ProjetSpecialNetWorkSubsystem.h"
 #include "Trials/TrialGameModeBase.h"
 
@@ -26,7 +27,7 @@ void AExplorationGameMode::BeginPlay()
 void AExplorationGameMode::OnGameTimeElapsed(float EndTime)
 {
 	GEngine->AddOnScreenDebugMessage(-1,1,FColor::Black,FString("travel to trial"));
-	
+	GetGameInstance<UProjetSpecialGameInstance>()->SavePowerUpDatas();
 	OnSwitchToTrialDelegate.Broadcast(ChosenTrial);
 	
 }

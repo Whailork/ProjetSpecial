@@ -3,6 +3,7 @@
 
 #include "Lobby/LobbyGameState.h"
 
+#include "ProjetSpecialGameInstance.h"
 #include "Lobby/LobbyGamemode.h"
 
 void ALobbyGameState::AddPlayer(AInputReceiver* askingActor)
@@ -24,6 +25,7 @@ void ALobbyGameState::PlayerReady()
 	OnPlayersReadyChangedDelegate.Broadcast(NbPlayersReady);
 	if(NbPlayersReady >=TotalPlayers)
 	{
+		GetGameInstance<UProjetSpecialGameInstance>()->SaveSkinDatas(true);
 		GetWorld()->ServerTravel("/Game/Levels/Lvl_Island?listen");
 	}
 }

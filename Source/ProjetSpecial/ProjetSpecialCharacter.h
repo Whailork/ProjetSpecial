@@ -17,6 +17,21 @@ class UCameraComponent;
 class UInputAction;
 struct FInputActionValue;
 
+
+USTRUCT(BlueprintType)
+struct FSKinData
+{
+	GENERATED_BODY()
+	UPROPERTY(BlueprintReadOnly)
+	USkeletalMesh* SkeletalMesh;
+	UPROPERTY(BlueprintReadOnly)
+	UMaterialInstance* SkinMaterial;
+	UPROPERTY(BlueprintReadOnly)
+	UMaterialInstance* EyeMaterial;
+	
+};
+
+
 USTRUCT(BlueprintType)
 struct FSkinDataRow : public FTableRowBase
 {
@@ -47,6 +62,7 @@ public:
 	/** Constructor */
 	AProjetSpecialCharacter();
 	virtual void BeginPlay() override;
+	virtual void PossessedBy(AController* NewController) override;
 	
 	UPROPERTY(BlueprintReadWrite,EditAnywhere)
 	UFlyingMovementComponent* FlyingMovementComponent;

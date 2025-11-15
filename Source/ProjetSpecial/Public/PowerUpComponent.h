@@ -63,6 +63,8 @@ public:
 	void AddFoodPickup(EFoodType type,float HealValue);
 	UFUNCTION(BlueprintCallable)
 	void DropPowerUps(int number);
+	UFUNCTION(BlueprintCallable)
+	FPowerUpData GetPowerUpsOfType(EPowerUpType type,bool& Success);
 	
 		
 	

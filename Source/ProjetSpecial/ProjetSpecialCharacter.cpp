@@ -13,6 +13,7 @@
 #include "InputActionValue.h"
 #include "PowerUpManager.h"
 #include "ProjetSpecial.h"
+#include "ProjetSpecialGameInstance.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "Kismet/KismetSystemLibrary.h"
@@ -55,54 +56,56 @@ void AProjetSpecialCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 	CachedRotation = GetActorRotation();
-	//we process upgrades
-	
-	
-	for (auto PowerUp : PowerUpComponent->PowerUps)
-	{
-		switch (PowerUp.Type)
-		{
-			case EPowerUpType::Flight:
-				FlyingMovementComponent->BASE_FLYING_SPEED += PowerUp.Quantity*18;
-				break;
-			case EPowerUpType::Friction:
-				FlyingMovementComponent->FlyingFrictionDown += PowerUp.Quantity*0.2;
-			FlyingMovementComponent->FlyingFrictionUp -= PowerUp.Quantity*0.2;
-				break;
-			case EPowerUpType::Speed:
-				
-				MAX_WALK_SPEED += PowerUp.Quantity*8;
-				MAX_RUN_SPEED = MAX_WALK_SPEED +200;
-				break;
-			case EPowerUpType::Stamina:
-				MAX_STAMINA += PowerUp.Quantity*20;
-				break;
-			case EPowerUpType::Jump:
-				GetCharacterMovement()->JumpZVelocity += PowerUp.Quantity*15;
-				break;
-			case EPowerUpType::Strength:
-				break;
-			case EPowerUpType::AttackSpeed:
-				break;
-			case EPowerUpType::Health :
-				MAX_HEALTH += PowerUp.Quantity*10;
-				break;
-			case EPowerUpType::Defense :
-				break;
-			case EPowerUpType::All :
-				break;
-			
-		}
-	}
 	
 	Stamina = MAX_STAMINA;
 	Health = MAX_HEALTH;
 
+	
+	CanAttack = true;
+
+	
+}
+
+void AProjetSpecialCharacter::PossessedBy(AController* NewController)
+{
+	Super::PossessedBy(NewController);
 	PowerUpComponent->PowerUpAddedDelegate.AddDynamic(this,&AProjetSpecialCharacter::PowerUpAdded);
 	PowerUpComponent->AbilityActivatedDelegate.AddDynamic(this,&AProjetSpecialCharacter::AbilityActivated);
 	PowerUpComponent->FoodPickedUpDelegate.AddDynamic(this,&AProjetSpecialCharacter::FoodPickedUp);
-	CanAttack = true;
-	
+	UProjetSpecialGameInstance* GI = GetGameInstance<UProjetSpecialGameInstance>();
+	int PlayerId = -1;
+	if(GI)
+	{
+		auto LocalPlayers = GI->GetLocalPlayers();
+		for (auto LocalPlayer : LocalPlayers)
+		{
+			if(LocalPlayer->PlayerController == GetController())
+			{
+				PlayerId = LocalPlayer->GetLocalPlayerIndex();
+			}
+		}
+
+		if(PlayerId != -1)
+		{
+			PowerUpComponent->ImportPowerUpData(GI->GetPowerUpDatas(PlayerId));
+
+			FSKinData SkinData = GI->GetSkinData(PlayerId);
+			if(SkinData.SkeletalMesh)
+			{
+				GetMesh()->SetSkeletalMesh(SkinData.SkeletalMesh);
+			}
+			if(SkinData.SkinMaterial)
+			{
+				GetMesh()->SetMaterial(0,SkinData.SkinMaterial);
+			}
+			if(SkinData.EyeMaterial)
+			{
+				GetMesh()->SetMaterial(1,SkinData.EyeMaterial);
+			}
+
+		}
+		
+	}
 }
 
 

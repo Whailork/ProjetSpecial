@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "PowerUpComponent.h"
+#include "ProjetSpecialCharacter.h"
 #include "Engine/GameInstance.h"
 #include "ProjetSpecialGameInstance.generated.h"
 
@@ -16,9 +17,16 @@ class PROJETSPECIAL_API UProjetSpecialGameInstance : public UGameInstance
 	GENERATED_BODY()
 
 	TArray<TArray<FPowerUpData>> SavedPowerUps;
+	TArray<FSKinData> SavedSkins;
 public:
+	UFUNCTION(BlueprintCallable)
+	void SavePowerUpDatas();
 	UFUNCTION(BlueprintCallable)
 	TArray<FPowerUpData> GetPowerUpDatas(int LocalPlayerNumber);
 	void AssignSavedPowerUps(TArray<APlayerController*> Players);
+	UFUNCTION(BlueprintCallable)
+	void SaveSkinDatas(bool FromLobby);
+	void AssingSavedSkins(TArray<APlayerController*> Players);
+	FSKinData GetSkinData(int LocalPlayerNumber);
 	
 };

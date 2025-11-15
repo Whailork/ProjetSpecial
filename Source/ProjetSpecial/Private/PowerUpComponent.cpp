@@ -4,6 +4,7 @@
 #include "PowerUpComponent.h"
 
 #include "PowerUpManager.h"
+#include "ProjetSpecialGameInstance.h"
 #include "Algo/ForEach.h"
 
 
@@ -64,11 +65,11 @@ void UPowerUpComponent::AddPowerUp(EPowerUpType type, bool isNegative, bool Powe
 	FPowerUpData newData;
 	if(isNegative)
 	{
-		newData = FPowerUpData(-1,type);
+		newData = FPowerUpData(-NbAdded,type);
 	}
 	else
 	{
-		newData = FPowerUpData(1,type);
+		newData = FPowerUpData(NbAdded,type);
 	}
 	
 	PowerUps.Add(newData);
@@ -126,6 +127,22 @@ void UPowerUpComponent::DropPowerUps(int number)
 		
 		GetWorld()->GetSubsystem<UPowerUpManager>()->SpawnPowerUps(PowerUpsToDrop,GetOwner()->GetActorLocation());
 	}
+}
+
+FPowerUpData UPowerUpComponent::GetPowerUpsOfType(EPowerUpType type,bool& Success)
+{
+	for (auto PowerUp : PowerUps)
+	{
+		if(PowerUp.Type == type)
+		{
+			Success = true;
+			return PowerUp;
+			
+		}
+	}
+	Success = false;
+	return FPowerUpData();
+	
 }
 
 // Called when the game starts
