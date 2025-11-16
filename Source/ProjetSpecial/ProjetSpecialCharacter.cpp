@@ -68,6 +68,7 @@ void AProjetSpecialCharacter::BeginPlay()
 
 void AProjetSpecialCharacter::PossessedBy(AController* NewController)
 {
+	
 	Super::PossessedBy(NewController);
 	PowerUpComponent->PowerUpAddedDelegate.AddDynamic(this,&AProjetSpecialCharacter::PowerUpAdded);
 	PowerUpComponent->AbilityActivatedDelegate.AddDynamic(this,&AProjetSpecialCharacter::AbilityActivated);
@@ -106,6 +107,7 @@ void AProjetSpecialCharacter::PossessedBy(AController* NewController)
 		}
 		
 	}
+	OnPlayerPossessedDelegate.Broadcast();
 }
 
 
@@ -582,6 +584,10 @@ void AProjetSpecialCharacter::MeleeAttack_Implementation()
 		TriggeredMeleeAttack = true;
 		CanAttack = false;
 		GetWorldTimerManager().SetTimer(AttackCoolDownHandle,this,&AProjetSpecialCharacter::ResetAttackCooldown,AttackSpeed);
+		if(AttackSpeed < 0.38)
+		{
+			AttackTrace();
+		}
 		GetWorldTimerManager().SetTimer(ResetAttackTriggerHandle,this,&AProjetSpecialCharacter::ResetAttackTrigger,0.1);
 	}
 }
@@ -627,10 +633,10 @@ void AProjetSpecialCharacter::AttackTrace()
 	//Params.bIgnoreTouches = true;
 	Params.AddIgnoredActors(ActorsToIgnore);
 
-	FVector Start = GetActorLocation() + GetActorForwardVector()*100;
+	FVector Start = GetActorLocation() + GetActorForwardVector()*80;
 
 	bool hasHit = GetWorld()->SweepMultiByObjectType(HitResults, Start,(Start + GetActorForwardVector() * 0.001), FQuat::Identity, ObjectParams,FCollisionShape::MakeSphere(100),Params);
-	DrawDebugSphere(GetWorld(),Start,50,10,FColor::Blue);
+	DrawDebugSphere(GetWorld(),Start,100,10,FColor::Blue);
 	if(hasHit)
 	{
 		TArray<AActor*> DifferentHitActors;

@@ -18,6 +18,8 @@ class UInputAction;
 struct FInputActionValue;
 
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPlayerPossessed);
+
 USTRUCT(BlueprintType)
 struct FSKinData
 {
@@ -63,6 +65,8 @@ public:
 	AProjetSpecialCharacter();
 	virtual void BeginPlay() override;
 	virtual void PossessedBy(AController* NewController) override;
+	UPROPERTY(BlueprintAssignable)
+	FOnPlayerPossessed OnPlayerPossessedDelegate;
 	
 	UPROPERTY(BlueprintReadWrite,EditAnywhere)
 	UFlyingMovementComponent* FlyingMovementComponent;
