@@ -31,7 +31,7 @@ public:
 	float FlyingFrictionDown;
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	float BASE_FLYING_SPEED = 450.0f;
+	float BASE_FLYING_SPEED = 750.0f;
 	UPROPERTY(BlueprintReadWrite,EditAnywhere)
 	UInputAction* TakeOffAction;
 
