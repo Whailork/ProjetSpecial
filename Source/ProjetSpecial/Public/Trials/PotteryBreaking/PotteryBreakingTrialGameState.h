@@ -4,13 +4,14 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameStateBase.h"
+#include "Trials/TrialGameStateBase.h"
 #include "PotteryBreakingTrialGameState.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class PROJETSPECIAL_API APotteryBreakingTrialGameState : public AGameStateBase
+class PROJETSPECIAL_API APotteryBreakingTrialGameState : public ATrialGameStateBase
 {
 	GENERATED_BODY()
 };

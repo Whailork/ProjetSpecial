@@ -4,13 +4,14 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "Trials/TrialGameModeBase.h"
 #include "PrecisionFlightTrialGameMode.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class PROJETSPECIAL_API APrecisionFlightTrialGameMode : public AGameModeBase
+class PROJETSPECIAL_API APrecisionFlightTrialGameMode : public ATrialGameModeBase
 {
 	GENERATED_BODY()
 };

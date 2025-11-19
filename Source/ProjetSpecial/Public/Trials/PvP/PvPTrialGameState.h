@@ -4,13 +4,14 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameStateBase.h"
+#include "Trials/TrialGameStateBase.h"
 #include "PvPTrialGameState.generated.h"
 
 /**
  * -
  */
 UCLASS()
-class PROJETSPECIAL_API APvPTrialGameState : public AGameStateBase
+class PROJETSPECIAL_API APvPTrialGameState : public ATrialGameStateBase
 {
 	GENERATED_BODY()
 };

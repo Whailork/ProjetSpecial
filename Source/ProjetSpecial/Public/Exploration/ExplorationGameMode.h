@@ -17,9 +17,11 @@ class PROJETSPECIAL_API AExplorationGameMode : public AGameModeBase
 	virtual void BeginPlay() override;
 
 public:
+	UPROPERTY(EditDefaultsOnly)
+	TSoftObjectPtr<UWorld> TrialLevelRef;
 	//game time is in seconds
 	UPROPERTY(BlueprintReadOnly)
-	float GameTime = 1200;
+	float GameTime = 10;
 	FOnSwitchToTrial OnSwitchToTrialDelegate;
 	FName ChosenTrial;
 	

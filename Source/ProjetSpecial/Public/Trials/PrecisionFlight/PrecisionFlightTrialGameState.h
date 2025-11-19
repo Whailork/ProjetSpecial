@@ -4,13 +4,14 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameStateBase.h"
+#include "Trials/TrialGameStateBase.h"
 #include "PrecisionFlightTrialGameState.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class PROJETSPECIAL_API APrecisionFlightTrialGameState : public AGameStateBase
+class PROJETSPECIAL_API APrecisionFlightTrialGameState : public ATrialGameStateBase
 {
 	GENERATED_BODY()
 };

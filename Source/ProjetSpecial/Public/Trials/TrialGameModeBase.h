@@ -10,13 +10,16 @@
  * 
  */
 
+class ATrialGameModeBase;
+
 USTRUCT(BlueprintType)
 struct FTrialDataRow : public FTableRowBase
 {
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TrialData")
-	TSoftObjectPtr<UWorld> LevelRef;
+	TSubclassOf<ATrialGameModeBase> GameModeRef;
+	
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TrialData")
 	UTexture2D* TrialBackground;
@@ -30,9 +33,7 @@ UCLASS()
 class PROJETSPECIAL_API ATrialGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
-
 	
-
 	virtual void PostLogin(APlayerController* NewPlayer) override;
 
 	

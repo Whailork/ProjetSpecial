@@ -4,13 +4,14 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "Trials/TrialGameModeBase.h"
 #include "PvPTrialGameMode.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class PROJETSPECIAL_API APvPTrialGameMode : public AGameModeBase
+class PROJETSPECIAL_API APvPTrialGameMode : public ATrialGameModeBase
 {
 	GENERATED_BODY()
 };

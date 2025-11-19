@@ -4,13 +4,14 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameStateBase.h"
+#include "Trials/TrialGameStateBase.h"
 #include "ParcourTrialGameState.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class PROJETSPECIAL_API AParcourTrialGameState : public AGameStateBase
+class PROJETSPECIAL_API AParcourTrialGameState : public ATrialGameStateBase
 {
 	GENERATED_BODY()
 };

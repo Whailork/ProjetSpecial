@@ -4,6 +4,7 @@
 #include "Exploration/ExplorationGameMode.h"
 
 #include "ProjetSpecialGameInstance.h"
+#include "Kismet/GameplayStatics.h"
 #include "Networking/ProjetSpecialNetWorkSubsystem.h"
 #include "Trials/TrialGameModeBase.h"
 
@@ -34,6 +35,16 @@ void AExplorationGameMode::OnGameTimeElapsed(float EndTime)
 
 void AExplorationGameMode::TravelToTrial()
 {
-	FTrialDataRow TrialData = *TrialsDataTable->FindRow<FTrialDataRow>(ChosenTrial,TEXT("Looking for chosenTrial data Row"));
-	GetWorld()->ServerTravel(*FPackageName::ObjectPathToPackageName(TrialData.LevelRef.ToString()) .Append("?listen"));
+	//travel to trial is now handled into the hud
+
+	
+	/*FTrialDataRow TrialData = *TrialsDataTable->FindRow<FTrialDataRow>(ChosenTrial,TEXT("Looking for chosenTrial data Row"));
+	GEngine->AddOnScreenDebugMessage(-1,5,FColor::Black,TrialData.GameModeRef->GetPathName());
+	GetWorld()->ServerTravel(*FPackageName::ObjectPathToPackageName(TrialLevelRef->GetPathName()).Append("?game=/Game/Blueprints/Trials/FlightRace/BP_FlightRaceTrialGameMode.BP_FlightRaceTrialGameMode_C"),true);
+	FString Cmd = FPackageName::ObjectPathToPackageName(TrialLevelRef->GetPathName());
+	
+	Cmd += FString(TEXT("?game=/Game/Blueprints/Trials/FlightRace/BP_FlightRaceTrialGameMode.BP_FlightRaceTrialGameMode_C"));
+	UGameplayStatics::OpenLevel(this,*FPackageName::ObjectPathToPackageName(TrialLevelRef->GetPathName()),true,FString(TEXT("?game=/Game/Blueprints/Trials/FlightRace/BP_FlightRaceTrialGameMode.BP_FlightRaceTrialGameMode_C")));
+	*/
+	//GEngine->SetClientTravel(GetWorld(), *Cmd, ETravelType::TRAVEL_Absolute );
 }

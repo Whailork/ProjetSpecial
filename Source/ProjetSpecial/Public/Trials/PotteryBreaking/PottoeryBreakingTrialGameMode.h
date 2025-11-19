@@ -4,13 +4,14 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "Trials/TrialGameModeBase.h"
 #include "PottoeryBreakingTrialGameMode.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class PROJETSPECIAL_API APottoeryBreakingTrialGameMode : public AGameModeBase
+class PROJETSPECIAL_API APottoeryBreakingTrialGameMode : public ATrialGameModeBase
 {
 	GENERATED_BODY()
 };
