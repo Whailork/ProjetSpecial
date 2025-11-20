@@ -13,29 +13,22 @@
   <component name="ChangeListManager">
     <list default="true" id="af21e49e-7ad0-41e9-a8eb-fc2c3127f65d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetSpecial/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjetSpecial/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/TrialDataTable.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/TrialDataTable.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Trials/GroundRace/BP_GroundRaceTrialGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Trials/GroundRace/BP_GroundRaceTrialGameMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Trials/Parcour/BP_ParcourTrialGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Trials/Parcour/BP_ParcourTrialGameMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Trials/PotteryBreaking/BP_PotteryBreakingTrialGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Trials/PotteryBreaking/BP_PotteryBreakingTrialGameMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Trials/PrecisionFlight/BP_PrecisionFlightTrialGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Trials/PrecisionFlight/BP_PrecisionFlightTrialGameMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Trials/PvP/BP_PvPTrialGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Trials/PvP/BP_PvPTrialGameMode.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Levels/Lvl_Island.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/Lvl_Island.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Levels/Trials/SubLvl_FlightRaceTrial.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/Trials/SubLvl_FlightRaceTrial.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/UW_TrialScreen.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/UW_TrialScreen.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Exploration/ExplorationGameMode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Exploration/ExplorationGameMode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Levels/Trials/Lvl_FlightRaceTrial.umap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Levels/Trials/Lvl_GroundRaceTrial.umap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/gaea/Actors/KB3D_GAE_BldgLG_J.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Actors/KB3D_GAE_BldgLG_J.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_E_BaseB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_E_BaseB.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_E_Stairs.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_E_Stairs.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_Building.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_Building.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_RoofB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_RoofB.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_Sphere.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_Sphere.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_StairsA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_StairsA.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_StairsB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_StairsB.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_Pergola_A_Main.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_Pergola_A_Main.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/ProjetSpecialCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/ProjetSpecialCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/AbilityPowerUp.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/AbilityPowerUp.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Exploration/ExplorationGameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Exploration/ExplorationGameMode.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/GroundRace/GroundRaceTrialGameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/GroundRace/GroundRaceTrialGameMode.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/GroundRace/GroundRaceTrialGameState.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/GroundRace/GroundRaceTrialGameState.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/Parcour/ParcourTrialGameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/Parcour/ParcourTrialGameMode.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/Parcour/ParcourTrialGameState.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/Parcour/ParcourTrialGameState.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/PotteryBreaking/PotteryBreakingTrialGameState.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/PotteryBreaking/PotteryBreakingTrialGameState.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/PotteryBreaking/PottoeryBreakingTrialGameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/PotteryBreaking/PottoeryBreakingTrialGameMode.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/PrecisionFlight/PrecisionFlightTrialGameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/PrecisionFlight/PrecisionFlightTrialGameMode.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/PrecisionFlight/PrecisionFlightTrialGameState.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/PrecisionFlight/PrecisionFlightTrialGameState.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/PvP/PvPTrialGameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/PvP/PvPTrialGameMode.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/PvP/PvPTrialGameState.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/PvP/PvPTrialGameState.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/TrialGameModeBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/TrialGameModeBase.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -570,6 +563,8 @@
       <workItem from="1763482118943" duration="1870000" />
       <workItem from="1763514554323" duration="1362000" />
       <workItem from="1763566283919" duration="9517000" />
+      <workItem from="1763578408028" duration="36000" />
+      <workItem from="1763606722538" duration="2271000" />
     </task>
     <servers />
   </component>

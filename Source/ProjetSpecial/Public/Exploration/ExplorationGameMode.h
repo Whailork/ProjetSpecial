@@ -21,7 +21,7 @@ public:
 	TSoftObjectPtr<UWorld> TrialLevelRef;
 	//game time is in seconds
 	UPROPERTY(BlueprintReadOnly)
-	float GameTime = 10;
+	float GameTime = 120;
 	FOnSwitchToTrial OnSwitchToTrialDelegate;
 	FName ChosenTrial;
 	

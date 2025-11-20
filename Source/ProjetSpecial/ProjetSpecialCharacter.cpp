@@ -278,13 +278,31 @@ void AProjetSpecialCharacter::DoMove(float Right, float Forward)
 	{
 		if(bIsRunning)
 		{
-			GetCharacterMovement()->MaxWalkSpeed = SpeedPercentage*MAX_RUN_SPEED;
-			GetCharacterMovement()->MinAnalogWalkSpeed = SpeedPercentage*MAX_RUN_SPEED;
+			if(PowerUpComponent->ActiveAbility == SpeedUp)
+			{
+				GetCharacterMovement()->MaxWalkSpeed = SpeedPercentage*(MAX_RUN_SPEED*2);
+				GetCharacterMovement()->MinAnalogWalkSpeed = SpeedPercentage*(MAX_RUN_SPEED*2);
+			}
+			else
+			{
+				GetCharacterMovement()->MaxWalkSpeed = SpeedPercentage*MAX_RUN_SPEED;
+				GetCharacterMovement()->MinAnalogWalkSpeed = SpeedPercentage*MAX_RUN_SPEED;
+			}
+			
 		}
 		else
 		{
-			GetCharacterMovement()->MaxWalkSpeed = SpeedPercentage*MAX_WALK_SPEED;
-			GetCharacterMovement()->MinAnalogWalkSpeed = SpeedPercentage*MAX_WALK_SPEED;
+			if(PowerUpComponent->ActiveAbility == SpeedUp)
+			{
+				GetCharacterMovement()->MaxWalkSpeed = SpeedPercentage*(MAX_WALK_SPEED*2);
+				GetCharacterMovement()->MinAnalogWalkSpeed = SpeedPercentage*(MAX_WALK_SPEED*2);
+			}
+			else
+			{
+				GetCharacterMovement()->MaxWalkSpeed = SpeedPercentage*MAX_WALK_SPEED;
+				GetCharacterMovement()->MinAnalogWalkSpeed = SpeedPercentage*MAX_WALK_SPEED;
+			}
+			
 		}
 		if (GetController() != nullptr)
 		{
@@ -548,7 +566,7 @@ void AProjetSpecialCharacter::TriggerAbilityEffect_Implementation()
 
 void AProjetSpecialCharacter::RemoveAbility_Implementation()
 {
-	PowerUpComponent->AddAbilityPowerUp(EAbilityPowerUpType::None,true);
+	
 	if(GetWorldTimerManager().IsTimerActive(AbilityTriggerTimerHandle))
 	{
 		GetWorldTimerManager().ClearTimer(AbilityTriggerTimerHandle);
@@ -557,6 +575,7 @@ void AProjetSpecialCharacter::RemoveAbility_Implementation()
 	{
 		FireBreathingParticles->Deactivate();
 	}
+	PowerUpComponent->AddAbilityPowerUp(EAbilityPowerUpType::None,true);
 }
 
 void AProjetSpecialCharacter::AbilityActivated_Implementation(EAbilityPowerUpType AbilityType,bool AbilityFinished)
@@ -569,12 +588,21 @@ void AProjetSpecialCharacter::AbilityActivated_Implementation(EAbilityPowerUpTyp
 	{
 		GetWorldTimerManager().ClearTimer(AbilityTriggerTimerHandle);
 	}
-	GetWorldTimerManager().SetTimer(AbilityLossHandle,this, &AProjetSpecialCharacter::RemoveAbility,AbilityDuration);
+	if(AbilityType == FireBreathing)
+	{
+		GetWorldTimerManager().SetTimer(AbilityLossHandle,this, &AProjetSpecialCharacter::RemoveAbility,AbilityDuration);
+	}
+	else
+	{
+		GetWorldTimerManager().SetTimer(AbilityLossHandle,this, &AProjetSpecialCharacter::RemoveAbility,3);
+	}
+	
 	GetWorldTimerManager().SetTimer(AbilityTriggerTimerHandle,this,&AProjetSpecialCharacter::TriggerAbilityEffect,0.1,true);
 	if(AbilityType == FireBreathing)
 	{
 		FireBreathingParticles->Activate();
 	}
+	
 }
 
 void AProjetSpecialCharacter::MeleeAttack_Implementation()

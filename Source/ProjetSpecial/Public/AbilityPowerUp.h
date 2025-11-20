@@ -12,7 +12,8 @@ UENUM(BlueprintType)
 enum EAbilityPowerUpType : uint8
 {
 	None UMETA(DisplayName = "None"),
-	FireBreathing UMETA(DisplayName = "FireBreathing")
+	FireBreathing UMETA(DisplayName = "FireBreathing"),
+	SpeedUp UMETA(DisplayName = "SpeedUp")
 	
 };
 
