@@ -65,6 +65,8 @@ public:
 	AProjetSpecialCharacter();
 	virtual void BeginPlay() override;
 	virtual void PossessedBy(AController* NewController) override;
+	UFUNCTION(BlueprintCallable)
+	void LoadPowerUps();
 	UPROPERTY(BlueprintAssignable)
 	FOnPlayerPossessed OnPlayerPossessedDelegate;
 	

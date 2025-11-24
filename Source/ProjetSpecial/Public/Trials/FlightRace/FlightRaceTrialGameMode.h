@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "Trials/RaceTrialGameMode.h"
 #include "Trials/TrialGameModeBase.h"
 #include "FlightRaceTrialGameMode.generated.h"
 
@@ -11,7 +12,7 @@
  * 
  */
 UCLASS()
-class PROJETSPECIAL_API AFlightRaceTrialGameMode : public ATrialGameModeBase
+class PROJETSPECIAL_API AFlightRaceTrialGameMode : public ARaceTrialGameMode
 {
 	GENERATED_BODY()
 	

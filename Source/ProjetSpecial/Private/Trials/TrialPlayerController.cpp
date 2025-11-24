@@ -11,7 +11,11 @@ void ATrialPlayerController::BeginPlay()
 	Super::BeginPlay();
 	if(IsLocalController())
 	{
-		GetWorld()->GetGameState<ATrialGameStateBase>()->TrialFinishedDelegate.AddDynamic(this,&ATrialPlayerController::OnTrialFinished);
+		if(auto GameState = GetWorld()->GetGameState<ATrialGameStateBase>())
+		{
+			GameState->TrialFinishedDelegate.AddDynamic(this,&ATrialPlayerController::OnTrialFinished);
+		}
+		
 	}
 	
 }
@@ -24,17 +28,35 @@ void ATrialPlayerController::OnTrialFinished_Implementation()
 
 void ATrialPlayerController::TrialStarted()
 {
-	TrialStartTime = GetWorld()->GetSubsystem<UProjetSpecialNetWorkSubsystem>()->GetCurrentServerTime();
-	GetWorld()->GetGameState<ATrialGameStateBase>()->OnPlayerStartTrial(this);
+	if(!bIsTrialStarted)
+	{
+		TrialStartTime = GetWorld()->GetSubsystem<UProjetSpecialNetWorkSubsystem>()->GetCurrentServerTime();
+		GetWorld()->GetGameState<ATrialGameStateBase>()->OnPlayerStartTrial(this);
+		bIsTrialStarted = true;
+	}
+	
 }
 
-void ATrialPlayerController::TrialEnded()
+void ATrialPlayerController::TrialEnded(bool bIsPlayerDisqualified)
 {
-	TrialEndTime = GetWorld()->GetSubsystem<UProjetSpecialNetWorkSubsystem>()->GetCurrentServerTime();
-	GetWorld()->GetGameState<ATrialGameStateBase>()->OnPlayerFinishedTrial(this,false);
+	if(!bIsTrialFinished)
+	{
+		TrialEndTime = GetWorld()->GetSubsystem<UProjetSpecialNetWorkSubsystem>()->GetCurrentServerTime();
+		GetWorld()->GetGameState<ATrialGameStateBase>()->OnPlayerFinishedTrial(this,bIsPlayerDisqualified);
+		bIsTrialFinished = true;
+	}
+	
 }
 
 float ATrialPlayerController::GetTrialDuration() const
 {
-	return TrialEndTime - TrialStartTime;
+	if(TrialEndTime != 0)
+	{
+		return TrialEndTime - TrialStartTime;
+	}
+	else
+	{
+		return GetWorld()->GetSubsystem<UProjetSpecialNetWorkSubsystem>()->GetCurrentServerTime() - TrialStartTime;
+	}
+	
 }

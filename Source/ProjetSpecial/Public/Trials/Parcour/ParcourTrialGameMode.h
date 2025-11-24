@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "Trials/RaceTrialGameMode.h"
 #include "Trials/TrialGameModeBase.h"
 #include "ParcourTrialGameMode.generated.h"
 
@@ -11,7 +12,7 @@
  * 
  */
 UCLASS()
-class PROJETSPECIAL_API AParcourTrialGameMode : public ATrialGameModeBase
+class PROJETSPECIAL_API AParcourTrialGameMode : public ARaceTrialGameMode
 {
 	GENERATED_BODY()
 };

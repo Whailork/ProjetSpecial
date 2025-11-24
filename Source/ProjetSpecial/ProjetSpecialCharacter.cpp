@@ -73,6 +73,12 @@ void AProjetSpecialCharacter::PossessedBy(AController* NewController)
 	PowerUpComponent->PowerUpAddedDelegate.AddDynamic(this,&AProjetSpecialCharacter::PowerUpAdded);
 	PowerUpComponent->AbilityActivatedDelegate.AddDynamic(this,&AProjetSpecialCharacter::AbilityActivated);
 	PowerUpComponent->FoodPickedUpDelegate.AddDynamic(this,&AProjetSpecialCharacter::FoodPickedUp);
+	
+	OnPlayerPossessedDelegate.Broadcast();
+}
+
+void AProjetSpecialCharacter::LoadPowerUps()
+{
 	UProjetSpecialGameInstance* GI = GetGameInstance<UProjetSpecialGameInstance>();
 	int PlayerId = -1;
 	if(GI)
@@ -107,7 +113,6 @@ void AProjetSpecialCharacter::PossessedBy(AController* NewController)
 		}
 		
 	}
-	OnPlayerPossessedDelegate.Broadcast();
 }
 
 

@@ -13,6 +13,15 @@ void ATrialGameModeBase::PostLogin(APlayerController* NewPlayer)
 	GetGameState<ATrialGameStateBase>()->OnPlayerLoggedIn(NewPlayer);
 }
 
+AActor* ATrialGameModeBase::ChoosePlayerStart_Implementation(AController* Player)
+{
+	if(TrialSpawn.IsValid())
+	{
+		return TrialSpawn.Get();
+	}
+	return Super::ChoosePlayerStart_Implementation(Player);
+}
+
 ATrialGameModeBase::ATrialGameModeBase()
 {
 	PlayerControllerClass = ATrialPlayerController::StaticClass();

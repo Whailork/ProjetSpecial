@@ -16,8 +16,12 @@ class PROJETSPECIAL_API ATrialPlayerController : public AProjetSpecialPlayerCont
 	GENERATED_BODY()
 
 protected:
-	float TrialStartTime;
-	float TrialEndTime;
+	bool bIsTrialStarted;
+	bool bIsTrialFinished;
+	UPROPERTY(BlueprintReadOnly)
+	float TrialStartTime = 0;
+	UPROPERTY(BlueprintReadOnly)
+	float TrialEndTime = 0;
 
 	virtual void BeginPlay() override;
 	UFUNCTION(BlueprintNativeEvent)
@@ -26,7 +30,8 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void TrialStarted();
 	UFUNCTION(BlueprintCallable)
-	void TrialEnded();
-	float GetTrialDuration() const;
+	void TrialEnded(bool bIsPlayerDisqualified = false);
+	UFUNCTION(BlueprintCallable)
+	virtual float GetTrialDuration() const;
 	
 };

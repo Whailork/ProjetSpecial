@@ -48,3 +48,12 @@ void AExplorationGameMode::TravelToTrial()
 	*/
 	//GEngine->SetClientTravel(GetWorld(), *Cmd, ETravelType::TRAVEL_Absolute );
 }
+
+AActor* AExplorationGameMode::ChoosePlayerStart_Implementation(AController* Player)
+{
+	if(ExplorationSpawn.IsValid())
+	{
+		return ExplorationSpawn.Get();
+	}
+	return Super::ChoosePlayerStart_Implementation(Player);
+}

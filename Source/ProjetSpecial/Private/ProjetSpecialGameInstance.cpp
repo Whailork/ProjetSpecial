@@ -20,6 +20,11 @@ void UProjetSpecialGameInstance::SavePowerUpDatas()
 	}
 }
 
+void UProjetSpecialGameInstance::ClearSavedPowerUpDatas()
+{
+	SavedPowerUps.Empty();
+}
+
 TArray<FPowerUpData> UProjetSpecialGameInstance::GetPowerUpDatas(int LocalPlayerNumber)
 {
 	

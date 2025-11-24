@@ -30,6 +30,6 @@ public:
 	virtual int32 GetFinishScore(APlayerController* Player);
 	UFUNCTION()
 	virtual void OnPlayerStartTrial(APlayerController* Player);
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	virtual void OnPlayerFinishedTrial(APlayerController* Player, bool bIsPlayerDisqualified);
 };

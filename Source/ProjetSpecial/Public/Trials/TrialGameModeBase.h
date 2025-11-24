@@ -36,7 +36,10 @@ class PROJETSPECIAL_API ATrialGameModeBase : public AGameModeBase
 	
 	virtual void PostLogin(APlayerController* NewPlayer) override;
 
-	
+	UPROPERTY(EditDefaultsOnly)
+	TSoftObjectPtr<AActor> TrialSpawn;
+
+	virtual AActor* ChoosePlayerStart_Implementation(AController* Player) override;
 public:
 	ATrialGameModeBase();
 	

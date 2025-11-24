@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameStateBase.h"
+#include "Trials/RaceTrialGameState.h"
 #include "Trials/TrialGameStateBase.h"
 #include "GroundRaceTrialGameState.generated.h"
 
@@ -11,7 +12,7 @@
  * 
  */
 UCLASS()
-class PROJETSPECIAL_API AGroundRaceTrialGameState : public ATrialGameStateBase
+class PROJETSPECIAL_API AGroundRaceTrialGameState : public ARaceTrialGameState
 {
 	GENERATED_BODY()
 };

@@ -22,6 +22,8 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SavePowerUpDatas();
 	UFUNCTION(BlueprintCallable)
+	void ClearSavedPowerUpDatas();
+	UFUNCTION(BlueprintCallable)
 	TArray<FPowerUpData> GetPowerUpDatas(int LocalPlayerNumber);
 	void AssignSavedPowerUps(TArray<APlayerController*> Players);
 	UFUNCTION(BlueprintCallable)

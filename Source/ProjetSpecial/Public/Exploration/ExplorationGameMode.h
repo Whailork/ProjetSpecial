@@ -21,15 +21,17 @@ public:
 	TSoftObjectPtr<UWorld> TrialLevelRef;
 	//game time is in seconds
 	UPROPERTY(BlueprintReadOnly)
-	float GameTime = 120;
+	float GameTime = 30;
 	FOnSwitchToTrial OnSwitchToTrialDelegate;
 	FName ChosenTrial;
 	
 	UPROPERTY(EditDefaultsOnly)
 	UDataTable* TrialsDataTable;
-	
+	UPROPERTY(EditDefaultsOnly)
+	TSoftObjectPtr<AActor> ExplorationSpawn;
 	UFUNCTION()
 	void OnGameTimeElapsed(float EndTime);
 	UFUNCTION()
 	void TravelToTrial();
+	virtual AActor* ChoosePlayerStart_Implementation(AController* Player) override;
 };
