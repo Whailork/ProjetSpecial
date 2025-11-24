@@ -31,10 +31,14 @@ float ARaceTrialPlayerController::GetTrialDuration() const
 
 void ARaceTrialPlayerController::GateReached(int GateNb)
 {
-	if(PreviousGate + 1 != GateNb)
+	if(PreviousGate + 1 != GateNb && PreviousGate != GateNb)
 	{
 		GatesMissed++;
 		GateMissedPenalty += GetTrialDuration()*0.1;
 	}
-	PreviousGate = GateNb;
+	if(GateNb > PreviousGate)
+	{
+		PreviousGate = GateNb;
+	}
+	
 }

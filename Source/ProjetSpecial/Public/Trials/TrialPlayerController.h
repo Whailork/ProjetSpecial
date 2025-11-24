@@ -16,7 +16,9 @@ class PROJETSPECIAL_API ATrialPlayerController : public AProjetSpecialPlayerCont
 	GENERATED_BODY()
 
 protected:
+	UPROPERTY(BlueprintReadOnly)
 	bool bIsTrialStarted;
+	UPROPERTY(BlueprintReadOnly)
 	bool bIsTrialFinished;
 	UPROPERTY(BlueprintReadOnly)
 	float TrialStartTime = 0;
