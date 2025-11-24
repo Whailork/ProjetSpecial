@@ -3,6 +3,8 @@
 
 #include "Trials/RaceTrialGameState.h"
 
+#include "Kismet/GameplayStatics.h"
+#include "Trials/RaceGate.h"
 #include "Trials/RaceTrialPlayerController.h"
 
 TArray<FRaceTrialData> ARaceTrialGameState::SortRaceDatas()
@@ -31,7 +33,15 @@ TArray<FRaceTrialData> ARaceTrialGameState::SortRaceDatas()
 	});
 	DeadPlayers.Sort([](const FRaceTrialData& A, const FRaceTrialData& B)
 	{
-		return A.DistanceWithEnd > B.DistanceWithEnd;
+		if(A.LastGate == B.LastGate)
+		{
+			return A.DistanceWithNextGate > B.DistanceWithNextGate;
+		}
+		else
+		{
+			return A.LastGate > B.LastGate;
+		}
+		
 	});
 	SortedArray.Append(FinishedPlayers);
 	SortedArray.Append(DeadPlayers);
@@ -42,7 +52,20 @@ void ARaceTrialGameState::OnPlayerFinishedRace(APawn* Player, bool bHasFinishedR
 {
 	ARaceTrialPlayerController* TrialPC = Cast<ARaceTrialPlayerController>(Player->GetController());
 	checkf(TrialPC,TEXT("Trial game state put not a trial player controller"));
-	FRaceTrialData newRaceData = FRaceTrialData(TrialPC,TrialPC->GetTrialDuration(),FVector::Dist(Player->GetActorLocation(),FinalGatePosition),bHasFinishedRace);
+	FVector NextGateLocation = FVector::Zero();
+	TArray<AActor*> AllRaceGates;
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(),ARaceGate::StaticClass(),AllRaceGates);
+	for (auto RaceGateActor : AllRaceGates)
+	{
+		if(auto RaceGate = Cast<ARaceGate>(RaceGateActor))
+		{
+			if(RaceGate->GateNumber == TrialPC->PreviousGate +1)
+			{
+				NextGateLocation = RaceGate->GetActorLocation();
+			}
+		}
+	}
+	FRaceTrialData newRaceData = FRaceTrialData(TrialPC,TrialPC->GetTrialDuration(),FVector::Dist(Player->GetActorLocation(),NextGateLocation),TrialPC->PreviousGate,bHasFinishedRace);
 
 	for (auto Data : RaceDatas)
 	{

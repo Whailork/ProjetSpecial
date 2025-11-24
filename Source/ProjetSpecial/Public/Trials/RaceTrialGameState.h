@@ -17,7 +17,8 @@ struct FRaceTrialData
 	UPROPERTY()
 	APlayerController* LinkedPlayer;
 	float EndTime;
-	float DistanceWithEnd;
+	float DistanceWithNextGate;
+	int LastGate;
 	bool bHasFinishedRace;
 	
 };
