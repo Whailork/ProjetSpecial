@@ -73,10 +73,45 @@ void AProjetSpecialCharacter::PossessedBy(AController* NewController)
 	PowerUpComponent->PowerUpAddedDelegate.AddDynamic(this,&AProjetSpecialCharacter::PowerUpAdded);
 	PowerUpComponent->AbilityActivatedDelegate.AddDynamic(this,&AProjetSpecialCharacter::AbilityActivated);
 	PowerUpComponent->FoodPickedUpDelegate.AddDynamic(this,&AProjetSpecialCharacter::FoodPickedUp);
+
+	LoadSkin();
 	
 	OnPlayerPossessedDelegate.Broadcast();
 }
+void AProjetSpecialCharacter::LoadSkin()
+{
+	UProjetSpecialGameInstance* GI = GetGameInstance<UProjetSpecialGameInstance>();
+	int PlayerId = -1;
+	if(GI)
+	{
+		auto LocalPlayers = GI->GetLocalPlayers();
+		for (auto LocalPlayer : LocalPlayers)
+		{
+			if(LocalPlayer->PlayerController == GetController())
+			{
+				PlayerId = LocalPlayer->GetLocalPlayerIndex();
+			}
+		}
 
+		if(PlayerId != -1)
+		{
+			FSKinData SkinData = GI->GetSkinData(PlayerId);
+			if(SkinData.SkeletalMesh)
+			{
+				GetMesh()->SetSkeletalMesh(SkinData.SkeletalMesh);
+			}
+			if(SkinData.SkinMaterial)
+			{
+				GetMesh()->SetMaterial(0,SkinData.SkinMaterial);
+			}
+			if(SkinData.EyeMaterial)
+			{
+				GetMesh()->SetMaterial(1,SkinData.EyeMaterial);
+			}
+
+		}
+	}
+}
 void AProjetSpecialCharacter::LoadPowerUps()
 {
 	UProjetSpecialGameInstance* GI = GetGameInstance<UProjetSpecialGameInstance>();
@@ -95,21 +130,6 @@ void AProjetSpecialCharacter::LoadPowerUps()
 		if(PlayerId != -1)
 		{
 			PowerUpComponent->ImportPowerUpData(GI->GetPowerUpDatas(PlayerId));
-
-			FSKinData SkinData = GI->GetSkinData(PlayerId);
-			if(SkinData.SkeletalMesh)
-			{
-				GetMesh()->SetSkeletalMesh(SkinData.SkeletalMesh);
-			}
-			if(SkinData.SkinMaterial)
-			{
-				GetMesh()->SetMaterial(0,SkinData.SkinMaterial);
-			}
-			if(SkinData.EyeMaterial)
-			{
-				GetMesh()->SetMaterial(1,SkinData.EyeMaterial);
-			}
-
 		}
 		
 	}
@@ -686,6 +706,8 @@ void AProjetSpecialCharacter::AttackTrace()
 		}
 	}
 }
+
+
 
 
 
