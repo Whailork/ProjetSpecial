@@ -29,13 +29,13 @@ TArray<FRaceTrialData> ARaceTrialGameState::SortRaceDatas()
 	}
 	FinishedPlayers.Sort([](const FRaceTrialData& A, const FRaceTrialData& B)
 	{
-		return A.EndTime > B.EndTime;
+		return A.EndTime < B.EndTime;
 	});
 	DeadPlayers.Sort([](const FRaceTrialData& A, const FRaceTrialData& B)
 	{
 		if(A.LastGate == B.LastGate)
 		{
-			return A.DistanceWithNextGate > B.DistanceWithNextGate;
+			return A.DistanceWithNextGate < B.DistanceWithNextGate;
 		}
 		else
 		{

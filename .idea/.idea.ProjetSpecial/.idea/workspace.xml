@@ -12,213 +12,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af21e49e-7ad0-41e9-a8eb-fc2c3127f65d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Trials/RaceGate.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/RaceGate.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjetSpecial/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjetSpecial/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Trials/BP_RaceFinishGateActor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Trials/BP_RaceFinishGateActor.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Trials/BP_RaceGateActor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Trials/BP_RaceGateActor.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Trials/BP_RaceStartingGateActor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Trials/BP_RaceStartingGateActor.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Trials/FlightRace/SpeedUpZone.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Trials/FlightRace/SpeedUpZone.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Trials/GroundRace/GroundSpeedUpZone.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Trials/GroundRace/GroundSpeedUpZone.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/JarSpawner/BT_JarSpawner.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/JarSpawner/BT_JarSpawner.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/JarSpawner/EQS_FindSpawnPosition.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/JarSpawner/EQS_FindSpawnPosition.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Trials/FlightRace/BP_FlightRaceTrialGameState.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Trials/FlightRace/BP_FlightRaceTrialGameState.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Levels/Lvl_Island.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/Lvl_Island.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Levels/Trials/SubLvl_GroundRaceTrial.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/Trials/SubLvl_GroundRaceTrial.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Actors/KB3D_GAE_BldgLG_J.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Actors/KB3D_GAE_BldgLG_J.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Actors/KB3D_GAE_BldgMD_B.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Actors/KB3D_GAE_BldgMD_B.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Actors/KB3D_GAE_BldgMD_F.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Actors/KB3D_GAE_BldgMD_F.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Actors/KB3D_GAE_BldgMD_G.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Actors/KB3D_GAE_BldgMD_G.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Actors/KB3D_GAE_BldgSM_A.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Actors/KB3D_GAE_BldgSM_A.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Actors/KB3D_GAE_BldgSM_F.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Actors/KB3D_GAE_BldgSM_F.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Actors/KB3D_GAE_BldgSM_H.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Actors/KB3D_GAE_BldgSM_H.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Actors/KB3D_GAE_Fence_A.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Actors/KB3D_GAE_Fence_A.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_B_PergolaB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_B_PergolaB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_BasketC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_BasketC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_BasketD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_BasketD.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_BasketE.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_BasketE.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_BenchA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_BenchA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_BenchD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_BenchD.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_BenchI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_BenchI.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_BenchJ.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_BenchJ.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_BlanketC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_BlanketC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_CarpetA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_CarpetA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_CarpetD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_CarpetD.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_FlagA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_FlagA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_FlagB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_FlagB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_FlagC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_FlagC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_LanternA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_LanternA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_LanternB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_LanternB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_LanternC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_LanternC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_LanternD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_LanternD.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_LanternE.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_LanternE.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_LanternF.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_LanternF.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_LanternG.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_LanternG.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_LanternH.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_LanternH.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_LanternI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_LanternI.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_LanternJ.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_LanternJ.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_RoofA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgLG_J_RoofA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_BarrelsA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_BarrelsA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_BasketA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_BasketA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_FlagB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_FlagB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_FlagE.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_FlagE.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_LanternA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_LanternA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_LanternB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_LanternB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_LanternC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_LanternC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_LanternD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_LanternD.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_LanternE.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_LanternE.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_LanternF.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_LanternF.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_LanternG.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_LanternG.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_LanternH.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_LanternH.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_LanternI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_LanternI.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_LanternJ.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_LanternJ.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_LanternK.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_LanternK.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_LanternL.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_LanternL.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_TableA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_TableA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_TableB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_TableB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_TableC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_B_TableC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_Barrels.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_Barrels.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_BasketB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_BasketB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_BenchA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_BenchA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_BlanketA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_BlanketA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_BlanketD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_BlanketD.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_CarpetB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_CarpetB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_LanternB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_LanternB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_LanternC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_LanternC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_LanternD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_LanternD.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_LanternE.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_LanternE.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_LanternF.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_LanternF.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_LanternG.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_LanternG.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_LanternH.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_LanternH.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_LanternI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_C_LanternI.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_D_BarrelsA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_D_BarrelsA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_D_BarrelsB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_D_BarrelsB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_D_BasketA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_D_BasketA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_D_BasketC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_D_BasketC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_D_BenchA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_D_BenchA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_D_BenchB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_D_BenchB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_D_BenchC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_D_BenchC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_D_BenchD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_D_BenchD.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_D_Blanket.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_D_Blanket.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_F_BarrelsA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_F_BarrelsA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_F_BenchA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_F_BenchA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_F_BenchB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_F_BenchB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_F_BenchC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_F_BenchC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_F_BenchD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_F_BenchD.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_F_LanternB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_F_LanternB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_F_LanternC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_F_LanternC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_F_TableA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_F_TableA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_F_TableB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_F_TableB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_BarrelsA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_BarrelsA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_BarrelsB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_BarrelsB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_BarrelsC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_BarrelsC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_Base.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_Base.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_BasketA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_BasketA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_BasketC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_BasketC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_BenchA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_BenchA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_BenchB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_BenchB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_BlanketA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_BlanketA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_BlanketC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_BlanketC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_BlanketD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_BlanketD.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_Building.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_Building.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_CarpetA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_CarpetA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_CarpetE.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_CarpetE.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_FlagA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_FlagA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_FlagB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_FlagB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_FlagC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_FlagC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_FlagD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_FlagD.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_FlagE.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_FlagE.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_FlagH.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_FlagH.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_FlagI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_FlagI.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_LanternB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_LanternB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_LanternC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_LanternC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_LanternD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_LanternD.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_LanternE.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_LanternE.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_LanternF.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_LanternF.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_LanternG.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_LanternG.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_LanternH.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_LanternH.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_LanternI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_LanternI.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_TableA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_TableA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_TableB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_G_TableB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_J_BarrelsA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_J_BarrelsA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_J_BenchA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_J_BenchA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_J_BenchB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_J_BenchB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_J_BenchC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_J_BenchC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_J_BenchD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_J_BenchD.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_J_CarpetB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgMD_J_CarpetB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_A_BenchA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_A_BenchA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_A_BenchB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_A_BenchB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_A_Building.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_A_Building.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_A_ChairsA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_A_ChairsA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_A_ChairsB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_A_ChairsB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_A_FlagA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_A_FlagA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_A_FlagB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_A_FlagB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_A_Lamp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_A_Lamp.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_B_Building.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_B_Building.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_B_ChairsA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_B_ChairsA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_B_ChairsB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_B_ChairsB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_C_BasketA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_C_BasketA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_C_BasketB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_C_BasketB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_C_Bench.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_C_Bench.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_C_Blanket.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_C_Blanket.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_C_Building.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_C_Building.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_C_ChairsA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_C_ChairsA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_C_ChairsB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_C_ChairsB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_C_Fence.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_C_Fence.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_C_FlagC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_C_FlagC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_C_Lantern.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_C_Lantern.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_C_WindowA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_C_WindowA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_C_WindowB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_C_WindowB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_D_BarrelsB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_D_BarrelsB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_D_BarrelsC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_D_BarrelsC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_D_BasketB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_D_BasketB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_D_FlagB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_D_FlagB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_E_Barrels.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_E_Barrels.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_E_Base.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_E_Base.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_E_BasketA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_E_BasketA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_E_BasketC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_E_BasketC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_E_BenchA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_E_BenchA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_E_BenchB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_E_BenchB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_E_Building.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_E_Building.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_E_Flag.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_E_Flag.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_E_LanternA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_E_LanternA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_F_Barrels.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_F_Barrels.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_F_BasketB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_F_BasketB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_F_BasketC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_F_BasketC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_F_Bench.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_F_Bench.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_F_Building.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_F_Building.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_F_Carpet.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_F_Carpet.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_F_Lantern.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_F_Lantern.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_F_TableA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_F_TableA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_F_TableB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_F_TableB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_G_Base.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_G_Base.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_G_BasketA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_G_BasketA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_G_BasketB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_G_BasketB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_G_Building.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_G_Building.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_G_CarpetA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_G_CarpetA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_G_Lantern.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_G_Lantern.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_G_Table.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_G_Table.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_H_BasketA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_H_BasketA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_H_BasketB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_H_BasketB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_H_BenchA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_H_BenchA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_H_BenchB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_H_BenchB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_H_Building.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_H_Building.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_H_Carpet.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_H_Carpet.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_H_Flag.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_H_Flag.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_H_Roof.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_H_Roof.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_I_Base.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_I_Base.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_I_BenchA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_I_BenchA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_I_BenchB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_I_BenchB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_I_Building.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_I_Building.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_I_CarpetA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_I_CarpetA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_I_CarpetB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_I_CarpetB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_I_CarpetC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_I_CarpetC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_I_Flag.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_I_Flag.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_I_LanternA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_I_LanternA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_I_LanternB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_I_LanternB.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_I_Roof.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_I_Roof.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_J_LanternA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_BldgSM_J_LanternA.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_Fence_A_Main.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/gaea/Geometries/KB3D_GAE_Fence_A_Main.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/ProjetSpecialGameInstance.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/ProjetSpecialGameInstance.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Trials/RaceTrialGameState.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Private/Trials/RaceTrialGameState.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Exploration/ExplorationGameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Exploration/ExplorationGameMode.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/RaceTrialGameState.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjetSpecial/Public/Trials/RaceTrialGameState.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,27 +67,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "C++ Project.ProjetSpecial.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;C++ Project.ProjetSpecial.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\berge\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\berge\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\berge\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\berge\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\berge\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\berge\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="C++ Project.ProjetSpecial">
     <configuration name="ProjetSpecial" type="CppProject" factoryName="C++ Project">
       <configuration_1>
@@ -766,7 +569,8 @@
       <workItem from="1763771925385" duration="5198000" />
       <workItem from="1763929623242" duration="16105000" />
       <workItem from="1764002220189" duration="1257000" />
-      <workItem from="1764007290957" duration="4980000" />
+      <workItem from="1764007290957" duration="7202000" />
+      <workItem from="1764168676053" duration="2782000" />
     </task>
     <servers />
   </component>

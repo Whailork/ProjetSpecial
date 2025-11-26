@@ -63,6 +63,10 @@ void UProjetSpecialGameInstance::SaveSkinDatas(bool FromLobby)
 		{
 			if(auto InputReceiver = Cast<AInputReceiver>(LocalPlayer->PlayerController->GetPawn()))
 			{
+				if(!InputReceiver->LinkedAvatar)
+				{
+					return;
+				}
 				USkeletalMeshComponent* MeshComp = InputReceiver->LinkedAvatar->GetComponentByClass<USkeletalMeshComponent>();
 				if(!MeshComp)
 				{
@@ -75,6 +79,10 @@ void UProjetSpecialGameInstance::SaveSkinDatas(bool FromLobby)
 		}
 		else
 		{
+			if(!LocalPlayer->PlayerController->GetPawn())
+			{
+				return;
+			}
 			USkeletalMeshComponent* MeshComp = LocalPlayer->PlayerController->GetPawn()->GetComponentByClass<USkeletalMeshComponent>();
 			if(!MeshComp)
 			{
@@ -114,5 +122,13 @@ FSKinData UProjetSpecialGameInstance::GetSkinData(int LocalPlayerNumber)
 	{
 		return EmptyData;
 	}
-	return SavedSkins[LocalPlayerNumber];
+	if(LocalPlayerNumber < SavedSkins.Num())
+	{
+		return SavedSkins[LocalPlayerNumber];
+	}
+	else
+	{
+		return EmptyData;
+	}
+	
 }
